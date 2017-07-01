@@ -8,7 +8,7 @@
 </head>
 <body>
 
-	<form action="" method="post">
+	<form action="cadastroComSucesso" method="post">
 
 		<label for="cpf">CPF:</label> 	
 		<input type="text" id="cpf" name="cpf"><br>	
