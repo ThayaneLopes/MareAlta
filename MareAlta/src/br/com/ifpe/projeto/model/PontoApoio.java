@@ -17,7 +17,7 @@ public class PontoApoio {
 	private String horario_funcionamento;
 	private boolean faz_coleta;
 	private boolean faz_triagem;
-	private boolean precisa_voluntarios;
+	private boolean precisa_voluntario;
 	public int getId() {
 		return id;
 	}
@@ -108,11 +108,11 @@ public class PontoApoio {
 	public void setFaz_triagem(boolean faz_triagem) {
 		this.faz_triagem = faz_triagem;
 	}
-	public boolean isPrecisa_voluntarios() {
-		return precisa_voluntarios;
+	public boolean isPrecisa_voluntario() {
+		return precisa_voluntario;
 	}
-	public void setPrecisa_voluntarios(boolean precisa_voluntarios) {
-		this.precisa_voluntarios = precisa_voluntarios;
+	public void setPrecisa_voluntario(boolean precisa_voluntario) {
+		this.precisa_voluntario = precisa_voluntario;
 	}
 
 	

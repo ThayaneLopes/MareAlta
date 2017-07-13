@@ -26,6 +26,9 @@ public class ItensAceitosPontoColetaDAO {
 				stmt.setInt(1, itensaceitospontocoleta.getId()); 
 				stmt.setInt(2, itensaceitospontocoleta.getId_ponto_apoio());
 				stmt.setInt(3, itensaceitospontocoleta.getId_tipo_doacao());
+				stmt.execute();
+				stmt.close();
+				connection.close();
 				}catch (SQLException e) { 
 					throw new RuntimeException(e); 
 			}

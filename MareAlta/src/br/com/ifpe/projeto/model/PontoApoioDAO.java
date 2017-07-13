@@ -21,8 +21,8 @@ public class PontoApoioDAO {
 	//Metodo inserir do ponto de apoio
 	public void inserirPontoApoio(PontoApoio pontoapoio) { 
 		try { 
-		String sql = "INSERT INTO ponto_apoio (nome,responsavel,telefone1,telefone2,estado,bairro,endereco,complemento,cidade,cep,ativo,horario_funcionamento,faz_coleta,faz_triagem,precisa_voluntarios) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)"; 
-		PreparedStatement stmt = (PreparedStatement) connection.prepareStatement(sql); 
+		String sql = "INSERT INTO ponto_apoio (nome,responsavel,telefone_1,telefone_2,estado,bairro,rua_avenida,complemento,cidade,cep,ativo,horario_funcionamento,faz_coleta,faz_triagem,precisa_voluntario) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)"; 
+		PreparedStatement stmt = connection.prepareStatement(sql); 
 		stmt.setString(1, pontoapoio.getNome()); 
 		stmt.setString(2, pontoapoio.getResponsavel());
 		stmt.setString(3, pontoapoio.getTelefone1());
@@ -37,9 +37,10 @@ public class PontoApoioDAO {
 		stmt.setString(12, pontoapoio.getHorario_funcionamento());
 		stmt.setBoolean(13, pontoapoio.isFaz_coleta());
 		stmt.setBoolean(14, pontoapoio.isFaz_triagem());
-		stmt.setBoolean(15, pontoapoio.isPrecisa_voluntarios());
-				
-								
+		stmt.setBoolean(15, pontoapoio.isPrecisa_voluntario());
+		stmt.execute();
+		stmt.close();
+		connection.close();	
 		}catch (SQLException e) { 
 			throw new RuntimeException(e); 
 	}

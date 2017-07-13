@@ -25,7 +25,9 @@ public class TipoDoacaoDAO {
 			PreparedStatement stmt = (PreparedStatement) connection.prepareStatement(sql); 
 			stmt.setString(1, tipodoacao.getNome()); 
 			stmt.setBoolean(2, tipodoacao.isAtivo());
-			
+			stmt.execute();
+			stmt.close();
+			connection.close();
 			}catch (SQLException e) { 
 				throw new RuntimeException(e); 
 		}

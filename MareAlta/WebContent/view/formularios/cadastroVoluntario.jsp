@@ -8,7 +8,7 @@
 </head>
 <body>
 
-	<form action="cadastroComSucesso" method="post">
+	<form action="cadastroComSucessoVoluntario" method="post">
 
 		<label for="cpf">CPF:</label> 	
 		<input type="text" id="cpf" name="cpf"><br>	
@@ -24,7 +24,12 @@
 		
 		<label for="telefone">Telefone:</label> 	
 		<input type="text" id="telefone" name="telefone"><br>	
-
+		
+		<label for="telefone"></label> 	
+		<input type="text" id="telefone" name="telefone"><br>	
+		
+		<label for="telefone">Telefone:</label> 	
+		<input type="text" id="telefone" name="telefone"><br>	
 		
 		<input type="submit"> <input type="reset">
 

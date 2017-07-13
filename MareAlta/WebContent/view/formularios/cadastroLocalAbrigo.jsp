@@ -8,7 +8,7 @@
 </head>
 <body>
 
-	<form action="cadastroComSucesso" method="post">
+	<form action="cadastroComSucessoLocalAbrigo" method="post">
 
 		<label for="nome">Nome: </label>	
 		<input type="text" id="nome" name="nome"> <br>	
@@ -29,7 +29,7 @@
 		<input type="text" id="bairro" name="bairro"> <br>	
 
 		<label for="endereco">Endereço: </label>	
-		<input type="text" id="endereco" name="endereco"> <br>	
+		<input type="text" id="endereco" name="rua_avenida"> <br>	
 
 		<label for="complemento">Complemento: </label>		
 		<input type="text" id="complemento" name="complemento"> <br>

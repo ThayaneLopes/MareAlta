@@ -7,7 +7,7 @@
 <title>Cadastro de Tipos de Doação</title>
 </head>
 <body>
-	<form action="cadastroComSucesso" method="post">
+	<form action="cadastroComSucessoTipoDoacao" method="post">
 
 		<label for="nome">Nome: </label> 
 		<input type="text" id="nome" name="nome"><br>

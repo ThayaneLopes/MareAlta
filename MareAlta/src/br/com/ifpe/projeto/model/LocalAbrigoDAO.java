@@ -21,22 +21,23 @@ public class LocalAbrigoDAO {
 		//Metodo inserir do local de abrigo
 		public void inserirLocalAbrigo(LocalAbrigo localabrigo) { 
 			try { 
-			String sql = "INSERT INTO local_abrigo (nome,responsavel,telefone1,telefone2,estado,bairro,endereco,complemento,cidade,cep,precisa_voluntario,quantidade_familias) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)"; 
-			PreparedStatement stmt = (PreparedStatement) connection.prepareStatement(sql); 
+			String sql = "INSERT INTO local_abrigo (nome,responsavel,telefone_1,telefone_2,estado,bairro,rua_avenida,complemento,cidade,cep,precisa_voluntario,quant_de_familias) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)"; 
+			PreparedStatement stmt =connection.prepareStatement(sql); 
 			stmt.setString(1, localabrigo.getNome()); 
 			stmt.setString(2, localabrigo.getResponsavel());
 			stmt.setString(3, localabrigo.getTelefone1());
 			stmt.setString(4, localabrigo.getTelefone2());
 			stmt.setString(5, localabrigo.getEstado());
 			stmt.setString(6, localabrigo.getBairro());
-			stmt.setString(7, localabrigo.getEndereco());
+			stmt.setString(7, localabrigo.getRua_avenida());
 			stmt.setString(8, localabrigo.getComplemento());
-			stmt.setString(9, localabrigo.getCidade());
+			stmt.setInt(9, localabrigo.getCidade());
 			stmt.setString(10, localabrigo.getCep());
 			stmt.setBoolean(11, localabrigo.isPrecisa_voluntario());
 			stmt.setInt(12, localabrigo.getQuantidade_familias());
-			
-			
+			stmt.execute();
+			stmt.close();
+			connection.close();
 			}catch (SQLException e) { 
 				throw new RuntimeException(e); 
 		}

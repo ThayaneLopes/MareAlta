@@ -9,9 +9,9 @@ public class LocalAbrigo {
 	private String telefone2;
 	private String estado;
 	private String bairro;
-	private String endereco;
+	private String rua_avenida;
 	private String complemento;
-	private String cidade;
+	private int cidade;
 	private String cep;
 	private boolean precisa_voluntario;
 	private int quantidade_familias;
@@ -59,11 +59,12 @@ public class LocalAbrigo {
 	public void setBairro(String bairro) {
 		this.bairro = bairro;
 	}
-	public String getEndereco() {
-		return endereco;
+	
+	public String getRua_avenida() {
+		return rua_avenida;
 	}
-	public void setEndereco(String endereco) {
-		this.endereco = endereco;
+	public void setRua_avenida(String rua_avenida) {
+		this.rua_avenida = rua_avenida;
 	}
 	public String getComplemento() {
 		return complemento;
@@ -71,10 +72,10 @@ public class LocalAbrigo {
 	public void setComplemento(String complemento) {
 		this.complemento = complemento;
 	}
-	public String getCidade() {
+	public int getCidade() {
 		return cidade;
 	}
-	public void setCidade(String cidade) {
+	public void setCidade(int cidade) {
 		this.cidade = cidade;
 	}
 	public String getCep() {

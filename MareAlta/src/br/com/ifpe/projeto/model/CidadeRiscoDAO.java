@@ -22,10 +22,13 @@ public class CidadeRiscoDAO {
 		public void inserirCidadeRisco(CidadeRisco cidaderisco) { 
 			try { 
 			String sql = "INSERT INTO cidade_risco (nome,regiao,situacao_risco) VALUES (?,?,?)"; 
-			PreparedStatement stmt = (PreparedStatement) connection.prepareStatement(sql); 
+			PreparedStatement stmt = connection.prepareStatement(sql); 
 			stmt.setString(1, cidaderisco.getNome()); 
 			stmt.setString(2, cidaderisco.getRegiao());
 			stmt.setString(3, cidaderisco.getSituacao_risco());
+			stmt.execute();
+			stmt.close();
+			connection.close();
 			}catch (SQLException e) { 
 				throw new RuntimeException(e); 
 		}

@@ -26,6 +26,9 @@ public class ItensNecessariosLocalAbrigoDAO {
 					stmt.setInt(1, itensnecessarioslocalabrigo.getId()); 
 					stmt.setInt(2, itensnecessarioslocalabrigo.getId_local_abrigo());
 					stmt.setInt(3, itensnecessarioslocalabrigo.getId_tipo_doacao());
+					stmt.execute();
+					stmt.close();
+					connection.close();
 					}catch (SQLException e) { 
 						throw new RuntimeException(e); 
 				}

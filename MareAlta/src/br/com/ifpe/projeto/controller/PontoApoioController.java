@@ -18,7 +18,7 @@ public class PontoApoioController {
 	} 
 
 	@RequestMapping("/cadastroPontoApoio") 
-	public String cadastroPontoColeta() { 
+	public String cadastroPontoApoio() { 
 		return "formularios/cadastroPontoApoio"; 
 	}
 	

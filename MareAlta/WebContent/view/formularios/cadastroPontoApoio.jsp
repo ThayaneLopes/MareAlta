@@ -7,7 +7,7 @@
 <title>Cadastro de Ponto de Apoio</title>
 </head>
 <body>
-	<form action="cadastroComSucesso" method="post">
+	<form action="cadastroComSucessoPontoApoio" method="post">
 
 		<label for="nome">Nome: </label>	
 		<input type="text" id="nome" name="nome"> <br>	
@@ -54,8 +54,10 @@
 		<input type="radio" name="faz_triagem" value="true"> Sim
 		<input type="radio" name="faz_triagem" value="false"> Não<br>	
 		
-		
-
+		<label for="precisa_voluntario">Precisa de Voluntario:</label>
+		<input type="radio" name="precisa_voluntario" value="true">Sim
+		<input type="radio" name="precisa_voluntario" value="false">Não
+		<br>
 		<input type="submit"> <input type="reset">
 
 	</form>

@@ -8,8 +8,8 @@ public class Voluntario {
 	private String orgao_publico;
 	private String email;
 	private String telefone;
-	private int id_ponto_apoio;
-	private int id_local_abrigo;
+	private Integer id_ponto_apoio;
+	private Integer id_local_abrigo;
 	
 	
 	public String getTelefone() {
@@ -18,16 +18,16 @@ public class Voluntario {
 	public void setTelefone(String telefone) {
 		this.telefone = telefone;
 	}
-	public int getId_ponto_apoio() {
+	public Integer getId_ponto_apoio() {
 		return id_ponto_apoio;
 	}
-	public void setId_ponto_apoio(int id_ponto_apoio) {
+	public void setId_ponto_apoio(Integer id_ponto_apoio) {
 		this.id_ponto_apoio = id_ponto_apoio;
 	}
-	public int getId_local_abrigo() {
+	public Integer getId_local_abrigo() {
 		return id_local_abrigo;
 	}
-	public void setId_local_abrigo(int id_local_abrigo) {
+	public void setId_local_abrigo(Integer id_local_abrigo) {
 		this.id_local_abrigo = id_local_abrigo;
 	}
 	public int getId() {
