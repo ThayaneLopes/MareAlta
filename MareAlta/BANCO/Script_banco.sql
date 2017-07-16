@@ -18,7 +18,7 @@ faz_coleta tinyint(1),faz_triagem tinyint(1),precisa_voluntario tinyint(1));
 create table local_abrigo(id int auto_increment primary key,
 nome varchar(30),responsavel varchar(30),telefone_1 varchar(15),
 telefone_2 varchar(15), estado varchar(2), bairro varchar(30),
-rua_avenida varchar(50),complemento varchar(100), cidade varchar(30),
+rua_avenida varchar(50),complemento varchar(100), cidade int,
 cep varchar(8),precisa_voluntario tinyint(1),quant_de_familias int,
 foreign key(cidade) references cidade_risco(id));
 
