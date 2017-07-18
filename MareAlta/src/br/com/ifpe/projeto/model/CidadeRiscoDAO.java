@@ -2,7 +2,10 @@ package br.com.ifpe.projeto.model;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import br.com.ifpe.projeto.util.ConnectionFactory;
 
@@ -34,4 +37,34 @@ public class CidadeRiscoDAO {
 			throw new RuntimeException(e);
 		}
 	}
+	public List<CidadeRisco> listar() {
+
+		try {
+
+		    List<CidadeRisco> listaCidades = new ArrayList<CidadeRisco>();
+		    PreparedStatement stmt = this.connection.prepareStatement("SELECT * FROM cidade_risco ORDER BY nome");
+		    ResultSet rs = stmt.executeQuery();
+
+		    while (rs.next()) {
+
+			CidadeRisco cidades = new CidadeRisco();
+
+			cidades.setId(rs.getInt("id"));
+			cidades.setNome(rs.getString("nome"));
+			cidades.setRegiao(rs.getString("regiao"));
+			cidades.setSituacao_risco(rs.getString("situacao_risco"));
+
+			listaCidades.add(cidades);
+		    }
+
+		    rs.close();
+		    stmt.close();
+		    connection.close();
+
+		    return listaCidades;
+
+		} catch (SQLException e) {
+		    throw new RuntimeException(e);
+		}
+	    }
 }

@@ -1,10 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Cadastro de Tipos de DoaÃ§Ã£o</title>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Cadastro de Tipos de Doação</title>
 </head>
 <body>
 	<form action="cadastroComSucessoTipoDoacao" method="post">
@@ -14,7 +14,7 @@
 
 		<label for="ativo">Esta Ativo?</label>
 		<input type="radio" name="ativo" value="true" checked>Sim<br>
-		<input type="radio" name="ativo" value="false">NÃ£o<br>
+		<input type="radio" name="ativo" value="false">Não<br>
 
 		<input type="submit"> <input type="reset">
 
