@@ -58,6 +58,6 @@ public class Voluntario {
 	public void setIdLocalAbrigo(Integer idLocalAbrigo) {
 		this.idLocalAbrigo = idLocalAbrigo;
 	}
-	
+}
 	
 	

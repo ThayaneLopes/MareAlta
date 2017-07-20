@@ -114,4 +114,5 @@ public class PontoApoio {
 	public void setPrecisaVoluntarios(boolean precisaVoluntarios) {
 		this.precisaVoluntarios = precisaVoluntarios;
 	}
+}
 	

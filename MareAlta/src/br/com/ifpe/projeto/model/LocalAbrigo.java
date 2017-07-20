@@ -93,5 +93,6 @@ public class LocalAbrigo {
 	public void setQuantidadeFamilia(int quantidadeFamilia) {
 		this.quantidadeFamilia = quantidadeFamilia;
 	}
+}
 	
 	

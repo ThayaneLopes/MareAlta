@@ -23,5 +23,6 @@ public class ItensAceitosPontoColeta {
 	public void setIdTipoDoacao(int idTipoDoacao) {
 		this.idTipoDoacao = idTipoDoacao;
 	}
+}
 	
 	

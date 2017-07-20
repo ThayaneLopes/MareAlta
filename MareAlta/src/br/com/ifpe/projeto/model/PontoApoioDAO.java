@@ -37,7 +37,7 @@ public class PontoApoioDAO {
 		stmt.setString(12, pontoapoio.getHorarioFuncionamento());
 		stmt.setBoolean(13, pontoapoio.isFazColeta());
 		stmt.setBoolean(14, pontoapoio.isFazTriagem());
-		stmt.setBoolean(15, pontoapoio.isPrecisaVoluntario());
+		stmt.setBoolean(15, pontoapoio.isPrecisaVoluntarios());
 		stmt.execute();
 		stmt.close();
 		connection.close();	

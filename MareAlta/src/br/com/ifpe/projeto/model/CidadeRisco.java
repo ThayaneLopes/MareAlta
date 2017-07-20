@@ -30,5 +30,6 @@ public class CidadeRisco {
 	public void setSituacaoRisco(String situacaoRisco) {
 		this.situacaoRisco = situacaoRisco;
 	}
+}
 	
 	
