@@ -58,7 +58,7 @@
 		<input type="text" style="width: 200px;" maxlength="50" class="form-control" id="bairro" name="bairro" required> <br>	
 
 		<label for="endereco">Endereço: </label>	
-		<input type="text" style="width: 400px;" maxlength="150" class="form-control" id="endereco" name="rua_avenida" required> <br>	
+		<input type="text" style="width: 400px;" maxlength="150" class="form-control" id="endereco" name="ruaAvenida" required> <br>	
 
 		<label for="complemento">Complemento: </label>		
 		<input type="text" style="width: 400px;" maxlength="150" class="form-control" id="complemento" name="complemento" required> <br>
@@ -71,8 +71,8 @@
 
 		<div type="radio">
 		<label for="precisaVoluntario">Precisa de Voluntario</label>		
-		<input type="radio" name="precisaVoluntario" value="true" checked> Sim
-		<input type="radio" name="precisaVoluntario" value="false"> Não <br>
+		<input type="radio" name="precisaVoluntarios" value="1" checked> Sim
+		<input type="radio" name="precisaVoluntarios" value="0"> Não <br>
 		</div> 
 
 		<label for="quantidadeFamilia">Quantidade de Familias: </label>		

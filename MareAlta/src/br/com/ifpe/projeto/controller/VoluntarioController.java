@@ -27,7 +27,7 @@ public class VoluntarioController {
 
 
 
-@RequestMapping("/buscarVoluntario")
+	@RequestMapping("/buscarVoluntario")
 	public String buscarVoluntarios()
 	{
 		return "buscas/buscarVoluntario";

@@ -2,7 +2,10 @@ package br.com.ifpe.projeto.model;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import br.com.ifpe.projeto.util.ConnectionFactory;
 
@@ -42,6 +45,46 @@ public class LocalAbrigoDAO {
 				throw new RuntimeException(e); 
 		}
 		}
+		
+		public List<LocalAbrigo> listar(String busca) {
+
+			try {
+			    List<LocalAbrigo> listabrigo = new ArrayList<LocalAbrigo>();
+			    PreparedStatement stmt = connection.prepareStatement("SELECT * FROM local_abrigo WHERE nome like ?");
+			    stmt.setString(1, '%' + busca + '%');
+			    ResultSet rs = stmt.executeQuery();
+
+			    while (rs.next()) {
+
+				LocalAbrigo abrigo = new LocalAbrigo();
+
+				abrigo.setId(rs.getInt("id"));
+				abrigo.setNome(rs.getString("nome"));
+				abrigo.setResponsavel(rs.getString("responsavel"));
+				abrigo.setTelefone1(rs.getString("telefone_1"));
+				abrigo.setTelefone2(rs.getString("telefone_2"));
+				abrigo.setEstado(rs.getString("estado"));
+				abrigo.setBairro(rs.getString("bairro"));
+				abrigo.setRuaAvenida(rs.getString("rua_avenida"));
+				abrigo.setComplemento(rs.getString("complemento"));
+				abrigo.setCidade(rs.getInt("cidade"));
+				abrigo.setCep(rs.getString("cep"));
+				abrigo.setPrecisaVoluntarios(rs.getBoolean("precisa_voluntario"));
+				abrigo.setQuantidadeFamilia(rs.getInt("quant_de_familias"));
+				
+				listabrigo.add(abrigo);
+			    }
+
+			    rs.close();
+			    stmt.close();
+			    connection.close();
+
+			    return listabrigo;
+
+			} catch (SQLException e) {
+			    throw new RuntimeException(e);
+			}
+		    }
 		
 		
 		
