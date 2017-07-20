@@ -18,14 +18,14 @@ pageEncoding="ISO-8859-1"%>
 			<td>Telefone(1º Opção)</td>
 			<td>Telefone (2º Opção)</td>
 		</tr>
-		<c:forEach var="xxxx" items="${listavoluntarios}">
+		<c:forEach var="voluntario" items="${listaVoluntario}">
 		<tr>
-			<td>${xxx.id}</td>
-			<td>${xxx.nome}</td>
-			<td>${xxx.orgaoPublico}</td>
-			<td>${xxx.email}</td>
-			<td>${xxx.telefone1}</td>
-			<td>${xxx.telefone2}</td>
+			<td>${voluntario.id}</td>
+			<td>${voluntario.nome}</td>
+			<td>${voluntario.orgaoPublico}</td>
+			<td>${voluntario.email}</td>
+			<td>${voluntario.telefone1}</td>
+			<td>${voluntario.telefone2}</td>
 
 
 
