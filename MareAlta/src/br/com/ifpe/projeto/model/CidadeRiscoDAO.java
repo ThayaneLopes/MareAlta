@@ -51,7 +51,7 @@ public class CidadeRiscoDAO {
 			cidades.setId(rs.getInt("id"));
 			cidades.setNome(rs.getString("nome"));
 			cidades.setRegiao(rs.getString("regiao"));
-			cidades.setSituacao_risco(rs.getString("situacao_risco"));
+			cidades.setSituacaoRisco(rs.getString("situacao_risco"));
 
 			listaCidades.add(cidades);
 		    }
