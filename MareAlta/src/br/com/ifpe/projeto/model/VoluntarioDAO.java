@@ -38,3 +38,37 @@ public class VoluntarioDAO {
 	}
 	}
 }
+
+public List<Voluntario> listar(String busca) {
+
+		try {
+		    List<Voluntario> listaVoluntarios = new ArrayList<Voluntario>();
+		    PreparedStatement stmt = this.connection.prepareStatement("SELECT * FROM voluntario WHERE nome like ?");
+		    stmt.setString(1, '%' + busca + '%');
+		    ResultSet rs = stmt.executeQuery();
+
+		    while (rs.next()) {
+
+			Voluntario voluntario = new Voluntario();
+
+			voluntario.setId(rs.getInt("id"));
+			voluntario.setNome(rs.getString("nome"));
+			voluntario.setOrgaoPublico(rs.getString("orgaoPublico"));
+			voluntario.setEmail(rs.getString("email"));
+			voluntario.setTelefone1(rs.getString("telefone1"));
+			voluntario.setTelefone2(rs.getString("telefone2"));
+
+			listaVoluntarios.add(voluntario);
+		    }
+
+		    rs.close();
+		    stmt.close();
+		    connection.close();
+
+		    return listaVoluntarios;
+
+		} catch (SQLException e) {
+		    throw new RuntimeException(e);
+		}
+	    }
+}

@@ -22,3 +22,27 @@ public class VoluntarioController {
 		return "formularios/cadastroVoluntario"; 
 	}
 }
+
+
+@RequestMapping("/buscarVoluntario")
+	public String buscarVoluntarios()
+	{
+		return "buscas/buscarVoluntario";
+	}
+		
+		@RequestMapping("/listarVoluntarios")
+	    public String listarVoluntarios(String busca,Model model) {
+		if(busca == null)
+		{
+			return "buscas/buscarVoluntario";
+		}
+		else
+		{
+		VoluntarioDAO dao = new VoluntarioDAO();
+		List<Voluntario> listaVoluntario = dao.listar(busca);
+		model.addAttribute("listaVoluntario", listaVoluntario);
+		
+		return "buscas/listarVoluntarios";
+		}
+	    }
+}
