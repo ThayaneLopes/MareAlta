@@ -4,25 +4,28 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link rel="stylesheet" type="text/css" href="view/bootstrap-3.3.7-dist/css/bootstrap.min.css" /> 
+<script type="text/javascript" src="view/bootstrap-3.3.7-dis/js/bootstrap.min.js"></script> 
 <title>Cadastro de Ponto de Apoio</title>
 </head>
 <body>
 	<form action="cadastroComSucessoPontoApoio" method="post">
 
 		<label for="nome">Nome: </label>	
-		<input type="text" style="width: 400px;" maxlength="50" class="form-control" id="nome" name="nome"> <br>	
+		<input type="text" style="width: 400px;" maxlength="50" class="form-control" id="nome" name="nome" required> <br>	
 
 		<label for="responsavel">Responsável: </label> 	
-		<input type="text" style="width: 400px;" maxlength="50" class="form-control" id="responsavel" name="responsavel"> <br>	
+		<input type="text" style="width: 400px;" maxlength="50" class="form-control" id="responsavel" name="responsavel" required> <br>	
 
 		<label for="telefone1">Telefone: </label>		
-		<input type="text" style="width: 400px;" maxlength="15" class="form-control" id="telefone1" name="telefone1"> <br>
+		<input type="tel" style="width: 200px;" maxlength="15" class="form-control" id="telefone1" name="telefone1" required> <br>
 
 		<label for="telefone2">Telefone: </label>		
-		<input type="text" style="width: 400px;" maxlength="15" class="form-control" id="telefone2" name="telefone2"> <br>
+		<input type="tel" style="width: 200px;" maxlength="15" class="form-control" id="telefone2" name="telefone2" required> <br>
 
 		<label for="estado">Estado: </label> 
 		<select style="width: 400px;" class="form-control" id="estado" name="estado">
+			<option>Selecione uma opção</option>
 			<option value="AC">Acre</option>
 			<option value="AL">Alagoas</option>
 			<option value="AP">Amapá</option>
@@ -52,41 +55,41 @@
 		</select>	
 
 		<label for="bairro">Bairro: </label>	
-		<input type="text" style="width: 400px;" maxlength="20" class="form-control" id="bairro" name="bairro"> <br>	
+		<input type="text" style="width: 200px;" maxlength="20" class="form-control" id="bairro" name="bairro" required> <br>	
 
 		<label for="endereco">Endereço: </label>	
-		<input type="text"  style="width: 400px;" maxlength="150" class="form-control" id="endereco" name="endereco"> <br>	
+		<input type="text"  style="width: 400px;" maxlength="150" class="form-control" id="endereco" name="endereco" required> <br>	
 
 		<label for="complemento">Complemento: </label>		
-		<input type="text" style="width: 400px;" maxlength="150" class="form-control" id="complemento" name="complemento"> <br>
+		<input type="text" style="width: 400px;" maxlength="150" class="form-control" id="complemento" name="complemento" required> <br>
 
 		<label for="cidade">Cidade: </label>	
-		<input type="text" style="width: 400px;" maxlength="25" class="form-control" id="cidade" name="cidade"> <br>	
+		<input type="text" style="width: 300px;" maxlength="25" class="form-control" id="cidade" name="cidade" required> <br>	
 
 		<label for="cep">CEP: </label>		
-		<input type="text" style="width: 400px;" maxlength="10" class="form-control" id="cep" name="cep"> <br>
+		<input type="text" style="width: 200px;" maxlength="10" class="form-control" id="cep" name="cep" required> <br>
 
-		<div class="checkbox" >
-			<label for="ativo">Está Ativo? </label>	
-			<input type="checkbox" name="ativo" value="true"> Sim
-			<input type="checkbox" name="ativo" value="false"> Não <br>	
+		<div type="radio">
+		<label for="ativo">Está Ativo? </label>	<br>
+		<input type="radio" name="ativo" value="true" checked> Sim
+		<input type="radio" name="ativo" value="false"> Não <br>	
 		</div>
 
 		<label for="horarioFuncionamento">Horário de Funcionamento: </label>		
-		<input type="text" style="width: 400px;" maxlength="10" class="form-control" id="horarioFuncionamento" name="horarioFuncionamento" placeholder="Ex.: Das 08:00 as 17:00"> <br>
+		<input type="text" style="width: 400px;" maxlength="10" class="form-control" id="horarioFuncionamento" name="horarioFuncionamento" placeholder="Ex.: Das 08:00 as 17:00" required> <br>
 	
-		<div class="checkbox" >
-			<label for="fazColeta">Faz Coleta?: </label>		
-			<input type="checkbox" name="fazColeta" value="true"> Sim
-			<input type="checkbox" name="fazColeta" value="false"> Não <br>
+		<div type="radio">
+		<label for="fazColeta">Faz Coleta?:  </label> <br>	
+		<input type="radio" name="fazColeta" value="true" checked> Sim 
+		<input type="radio" name="fazColeta" value="false"> Não <br>
 			
-			<label for="fazTriagem">Faz Triagem?: </label> 	
-			<input type="checkbox" name="fazTriagem" value="true"> Sim
-			<input type="checkbox" name="fazTriagem" value="false"> Não<br>	
-			
-			<label for="precisaVoluntarios">Precisa de Voluntario:</label>
-			<input type="checkbox" name="precisaVoluntarios" value="true">Sim
-			<input type="checkbox" name="precisaVoluntarios" value="false">Não <br>
+		<label for="fazTriagem">Faz Triagem?:  </label><br>
+		<input type="radio" name="fazTriagem" value="true" checked> Sim 
+		<input type="radio" name="fazTriagem" value="false"> Não<br>	
+		
+		<label for="precisaVoluntarios">Precisa de Voluntario: </label> <br>
+		<input type="radio" name="precisaVoluntarios" value="true" checked> Sim 
+		<input type="radio" name="precisaVoluntarios" value="false"> Não <br>
 		</div>
 
 

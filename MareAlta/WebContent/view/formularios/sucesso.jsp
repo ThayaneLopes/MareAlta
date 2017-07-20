@@ -4,10 +4,15 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link rel="stylesheet" type="text/css" href="view/bootstrap-3.3.7-dist/css/bootstrap.min.css" /> 
+<script type="text/javascript" src="view/bootstrap-3.3.7-dis/js/bootstrap.min.js"></script> 
 <title>Cadastro concluído com sucesso!</title>
 </head>
 <body>
 	
-	<h2> Cadastro concluído com sucesso! </h2> 
+	<div class="alert alert-sucess" style="background-color:#FA8072; width: 400px; color:#B22222;">  
+		<strong>Sucesso!</strong> Seu cadastro está feito.
+	</div>
+	
 </body>
 </html>

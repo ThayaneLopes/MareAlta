@@ -13,27 +13,27 @@
 	<form action="cadastroComSucessoCidadeRisco" method="post">
 
 		<div class="form-group">
-		<label for="nome">Nome</label> 	
-		<input type="text"  style="width: 400px;" maxlength="50" class="form-control" id="nome" name="nome"><br>	
-		
-		<label for="regiao">Região</label> 
-		<select style="width: 400px;" class="form-control" id="regiao" name="regiao">
-		  <option value="urbana">Urbana</option>
-		  <option value="rural">Rural</option>
-		 </select> <br>
+			<label for="nome">Nome</label> 	
+			<input type="text" style="width: 400px;" maxlength="50" class="form-control" id="nome" name="nome" required><br>	
+			
+			<label for="regiao">Região</label> 
+			<select style="width: 400px;" class="form-control" id="regiao" name="regiao" >
+				<option value="urbana">Urbana</option>
+				<option value="rural">Rural</option>
+			</select> <br>
 
 
-		<label for="situacao_risco">Situação de Risco</label> 
-		<select style="width: 400px;" class="form-control" id="situacaoRisco" name="situacaoRisco">
-		  <option value="baixa">Baixa</option>
-		  <option value="media">Média</option>
-		  <option value="alta">Alta</option>
-		  <option value="catastrofica">Catastrófica</option>
-		</select> <br>
+			<label for="situacaoRisco">Situação de Risco</label> 
+			<select style="width: 400px;" class="form-control" id="situacaoRisco" name="situacaoRisco">
+				<option value="baixa">Baixa</option>
+				<option value="media">Média</option>
+				<option value="alta">Alta</option>
+				<option value="catastrofica">Catastrófica</option>
+			</select> <br>
 
-		<input type="submit" class="btn btn-primary" value="Cadastrar"> <input type="reset" class="btn btn-warning" value="Limpar">
+			<input type="submit" class="btn btn-primary" value="Cadastrar"> 
+			<input type="reset" class="btn btn-warning" value="Limpar">
 		</div>
-		
 	</form>
 
 
