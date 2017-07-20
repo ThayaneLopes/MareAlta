@@ -23,19 +23,25 @@ public class CidadeRiscoController {
 		dao.inserirCidadeRisco(cidaderisco); 
 		return "formularios/sucesso"; 
 	}
-	
-	@RequestMapping("/listarcidadesrisco")
-	public String listarcidade()
+	@RequestMapping("/buscarcidades")
+	public String buscarCidades()
 	{
-		return "formularios/listarCidades";
+		return "buscas/buscarCidade";
 	}
+		
 		@RequestMapping("/listarcidade")
-	    public String listarProduto(Model model) {
-
+	    public String listarProduto(String busca,Model model) {
+		if(busca == null)
+		{
+			return "buscas/buscarCidade";
+		}
+		else
+		{
 		CidadeRiscoDAO dao = new CidadeRiscoDAO();
-		List<CidadeRisco> listacidades = dao.listar();
+		List<CidadeRisco> listacidades = dao.listar(busca);
 		model.addAttribute("listacidades", listacidades);
 		
-		return "formularios/listarCidades";
+		return "buscas/listarCidades";
+		}
 	    }
 }
