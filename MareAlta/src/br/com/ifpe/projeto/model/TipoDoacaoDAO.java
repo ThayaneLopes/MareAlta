@@ -8,7 +8,7 @@ import br.com.ifpe.projeto.util.ConnectionFactory;
 
 public class TipoDoacaoDAO {
 	
-	// Conexao com o banco
+
 		private Connection connection; 
 		public TipoDoacaoDAO() { 
 			try { 
@@ -17,8 +17,7 @@ public class TipoDoacaoDAO {
 					throw new RuntimeException(e); 
 			}
 		}
-		
-		//Metodo inserir do itens doados
+	
 		public void inserirTipoDoacao(TipoDoacao tipodoacao) { 
 			try { 
 			String sql = "INSERT INTO tipo_doacao (nome,ativo) VALUES (?,?)"; 

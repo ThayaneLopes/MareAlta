@@ -5,31 +5,11 @@ public class Voluntario {
 	private int id;
 	private String cpf;
 	private String nome;
-	private String orgao_publico;
+	private String orgaoPublico;
 	private String email;
 	private String telefone;
-	private Integer id_ponto_apoio;
-	private Integer id_local_abrigo;
-	
-	
-	public String getTelefone() {
-		return telefone;
-	}
-	public void setTelefone(String telefone) {
-		this.telefone = telefone;
-	}
-	public Integer getId_ponto_apoio() {
-		return id_ponto_apoio;
-	}
-	public void setId_ponto_apoio(Integer id_ponto_apoio) {
-		this.id_ponto_apoio = id_ponto_apoio;
-	}
-	public Integer getId_local_abrigo() {
-		return id_local_abrigo;
-	}
-	public void setId_local_abrigo(Integer id_local_abrigo) {
-		this.id_local_abrigo = id_local_abrigo;
-	}
+	private Integer idPontoApoio;
+	private Integer idLocalAbrigo;
 	public int getId() {
 		return id;
 	}
@@ -48,11 +28,11 @@ public class Voluntario {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public String getOrgao_publico() {
-		return orgao_publico;
+	public String getOrgaoPublico() {
+		return orgaoPublico;
 	}
-	public void setOrgao_publico(String orgao_publico) {
-		this.orgao_publico = orgao_publico;
+	public void setOrgaoPublico(String orgaoPublico) {
+		this.orgaoPublico = orgaoPublico;
 	}
 	public String getEmail() {
 		return email;
@@ -60,6 +40,24 @@ public class Voluntario {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-
-
-}
+	public String getTelefone() {
+		return telefone;
+	}
+	public void setTelefone(String telefone) {
+		this.telefone = telefone;
+	}
+	public Integer getIdPontoApoio() {
+		return idPontoApoio;
+	}
+	public void setIdPontoApoio(Integer idPontoApoio) {
+		this.idPontoApoio = idPontoApoio;
+	}
+	public Integer getIdLocalAbrigo() {
+		return idLocalAbrigo;
+	}
+	public void setIdLocalAbrigo(Integer idLocalAbrigo) {
+		this.idLocalAbrigo = idLocalAbrigo;
+	}
+	
+	
+	

@@ -14,10 +14,10 @@ public class PontoApoio {
 	private String cidade;
 	private String cep;
 	private boolean ativo;
-	private String horario_funcionamento;
-	private boolean faz_coleta;
-	private boolean faz_triagem;
-	private boolean precisa_voluntario;
+	private String horarioFuncionamento;
+	private boolean fazColeta;
+	private boolean fazTriagem;
+	private boolean precisaVoluntarios;
 	public int getId() {
 		return id;
 	}
@@ -90,30 +90,28 @@ public class PontoApoio {
 	public void setAtivo(boolean ativo) {
 		this.ativo = ativo;
 	}
-	public String getHorario_funcionamento() {
-		return horario_funcionamento;
+	public String getHorarioFuncionamento() {
+		return horarioFuncionamento;
 	}
-	public void setHorario_funcionamento(String horario_funcionamento) {
-		this.horario_funcionamento = horario_funcionamento;
+	public void setHorarioFuncionamento(String horarioFuncionamento) {
+		this.horarioFuncionamento = horarioFuncionamento;
 	}
-	public boolean isFaz_coleta() {
-		return faz_coleta;
+	public boolean isFazColeta() {
+		return fazColeta;
 	}
-	public void setFaz_coleta(boolean faz_coleta) {
-		this.faz_coleta = faz_coleta;
+	public void setFazColeta(boolean fazColeta) {
+		this.fazColeta = fazColeta;
 	}
-	public boolean isFaz_triagem() {
-		return faz_triagem;
+	public boolean isFazTriagem() {
+		return fazTriagem;
 	}
-	public void setFaz_triagem(boolean faz_triagem) {
-		this.faz_triagem = faz_triagem;
+	public void setFazTriagem(boolean fazTriagem) {
+		this.fazTriagem = fazTriagem;
 	}
-	public boolean isPrecisa_voluntario() {
-		return precisa_voluntario;
+	public boolean isPrecisaVoluntarios() {
+		return precisaVoluntarios;
 	}
-	public void setPrecisa_voluntario(boolean precisa_voluntario) {
-		this.precisa_voluntario = precisa_voluntario;
+	public void setPrecisaVoluntarios(boolean precisaVoluntarios) {
+		this.precisaVoluntarios = precisaVoluntarios;
 	}
-
 	
-}

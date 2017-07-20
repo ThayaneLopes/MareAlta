@@ -11,7 +11,6 @@ import br.com.ifpe.projeto.util.ConnectionFactory;
 
 public class CidadeRiscoDAO {
 
-	// Conexao com o banco
 	private Connection connection;
 
 	public CidadeRiscoDAO() {
@@ -22,14 +21,14 @@ public class CidadeRiscoDAO {
 		}
 	}
 
-	// Metodo inserir do cidade de risco
+	
 	public void inserirCidadeRisco(CidadeRisco cidaderisco) {
 		try {
 			String sql = "INSERT INTO cidade_risco (nome,regiao,situacao_risco) VALUES (?,?,?)";
 			PreparedStatement stmt = connection.prepareStatement(sql);
 			stmt.setString(1, cidaderisco.getNome());
 			stmt.setString(2, cidaderisco.getRegiao());
-			stmt.setString(3, cidaderisco.getSituacao_risco());
+			stmt.setString(3, cidaderisco.getSituacaoRisco());
 			stmt.execute();
 			stmt.close();
 			connection.close();

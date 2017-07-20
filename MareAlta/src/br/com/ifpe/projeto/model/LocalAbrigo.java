@@ -9,14 +9,12 @@ public class LocalAbrigo {
 	private String telefone2;
 	private String estado;
 	private String bairro;
-	private String rua_avenida;
+	private String ruaAvenida;
 	private String complemento;
 	private int cidade;
 	private String cep;
-	private boolean precisa_voluntario;
-	private int quantidade_familias;
-	
-	
+	private boolean precisaVoluntarios;
+	private int quantidadeFamilia;
 	public int getId() {
 		return id;
 	}
@@ -59,12 +57,11 @@ public class LocalAbrigo {
 	public void setBairro(String bairro) {
 		this.bairro = bairro;
 	}
-	
-	public String getRua_avenida() {
-		return rua_avenida;
+	public String getRuaAvenida() {
+		return ruaAvenida;
 	}
-	public void setRua_avenida(String rua_avenida) {
-		this.rua_avenida = rua_avenida;
+	public void setRuaAvenida(String ruaAvenida) {
+		this.ruaAvenida = ruaAvenida;
 	}
 	public String getComplemento() {
 		return complemento;
@@ -84,18 +81,17 @@ public class LocalAbrigo {
 	public void setCep(String cep) {
 		this.cep = cep;
 	}
-	public boolean isPrecisa_voluntario() {
-		return precisa_voluntario;
+	public boolean isPrecisaVoluntarios() {
+		return precisaVoluntarios;
 	}
-	public void setPrecisa_voluntario(boolean precisa_voluntario) {
-		this.precisa_voluntario = precisa_voluntario;
+	public void setPrecisaVoluntarios(boolean precisaVoluntarios) {
+		this.precisaVoluntarios = precisaVoluntarios;
 	}
-	public int getQuantidade_familias() {
-		return quantidade_familias;
+	public int getQuantidadeFamilia() {
+		return quantidadeFamilia;
 	}
-	public void setQuantidade_familias(int quantidade_familias) {
-		this.quantidade_familias = quantidade_familias;
+	public void setQuantidadeFamilia(int quantidadeFamilia) {
+		this.quantidadeFamilia = quantidadeFamilia;
 	}
-
-
-}
+	
+	

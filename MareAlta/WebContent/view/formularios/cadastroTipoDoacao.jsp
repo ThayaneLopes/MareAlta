@@ -7,17 +7,21 @@
 <title>Cadastro de Tipos de Doação</title>
 </head>
 <body>
+	
 	<form action="cadastroComSucessoTipoDoacao" method="post">
 
 		<label for="nome">Nome: </label> 
-		<input type="text" id="nome" name="nome"><br>
+		<input type="text" style="width: 400px;" maxlength="50" class="form-control" id="nome" name="nome"><br>
 
-		<label for="ativo">Esta Ativo?</label>
-		<input type="radio" name="ativo" value="true" checked>Sim<br>
-		<input type="radio" name="ativo" value="false">Não<br>
+		<div class="checkbox" >
+			<label for="ativo">Está Ativo?</label>
+			<input type="checkbox" name="ativo" value="true" checked>Sim<br>
+			<input type="checkbox" name="ativo" value="false">Não<br>
+		</div>
 
-		<input type="submit"> <input type="reset">
+		<input type="submit" class="btn btn-primary" value="Cadastrar"> <input type="reset" class="btn btn-warning" value="Limpar">
 
 	</form>
+	
 </body>
 </html>

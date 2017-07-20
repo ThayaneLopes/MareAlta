@@ -8,7 +8,7 @@ import br.com.ifpe.projeto.util.ConnectionFactory;
 
 public class LocalAbrigoDAO {
 
-	// Conexao com o banco
+
 		private Connection connection; 
 		public LocalAbrigoDAO() { 
 			try { 
@@ -18,7 +18,7 @@ public class LocalAbrigoDAO {
 			}
 		}
 		
-		//Metodo inserir do local de abrigo
+
 		public void inserirLocalAbrigo(LocalAbrigo localabrigo) { 
 			try { 
 			String sql = "INSERT INTO local_abrigo (nome,responsavel,telefone_1,telefone_2,estado,bairro,rua_avenida,complemento,cidade,cep,precisa_voluntario,quant_de_familias) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)"; 
@@ -29,12 +29,12 @@ public class LocalAbrigoDAO {
 			stmt.setString(4, localabrigo.getTelefone2());
 			stmt.setString(5, localabrigo.getEstado());
 			stmt.setString(6, localabrigo.getBairro());
-			stmt.setString(7, localabrigo.getRua_avenida());
+			stmt.setString(7, localabrigo.getRuaAvenida());
 			stmt.setString(8, localabrigo.getComplemento());
 			stmt.setInt(9, localabrigo.getCidade());
 			stmt.setString(10, localabrigo.getCep());
-			stmt.setBoolean(11, localabrigo.isPrecisa_voluntario());
-			stmt.setInt(12, localabrigo.getQuantidade_familias());
+			stmt.setBoolean(11, localabrigo.isPrecisaVoluntarios());
+			stmt.setInt(12, localabrigo.getQuantidadeFamilia());
 			stmt.execute();
 			stmt.close();
 			connection.close();

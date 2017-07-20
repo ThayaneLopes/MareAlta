@@ -8,7 +8,7 @@ import br.com.ifpe.projeto.util.ConnectionFactory;
 
 public class VoluntarioDAO {
 
-	// Conexao com o banco
+	
 		private Connection connection; 
 		public VoluntarioDAO() { 
 			try { 
@@ -18,18 +18,18 @@ public class VoluntarioDAO {
 			}
 		}
 		
-	//Metodo inserir do voluntario
+	
 	public void inserirVoluntario(Voluntario voluntario) { 
 		try { 
 		String sql = "INSERT INTO voluntario (cpf, nome, orgao_publico, email,telefone,id_ponto_apoio,id_local_abrigo) VALUES (?,?,?,?,?,?,?)"; 
 		PreparedStatement stmt =connection.prepareStatement(sql); 
 		stmt.setString(1, voluntario.getCpf()); 
 		stmt.setString(2, voluntario.getNome());
-		stmt.setString(3, voluntario.getOrgao_publico());
+		stmt.setString(3, voluntario.getOrgaoPublico());
 		stmt.setString(4, voluntario.getEmail());
 		stmt.setString(5, voluntario.getTelefone());
-		stmt.setObject(6, voluntario.getId_ponto_apoio());
-		stmt.setObject(7, voluntario.getId_local_abrigo());
+		stmt.setObject(6, voluntario.getIdPontoApoio());
+		stmt.setObject(7, voluntario.getIdLocalAbrigo());
 		stmt.execute();
 		stmt.close();
 		connection.close();

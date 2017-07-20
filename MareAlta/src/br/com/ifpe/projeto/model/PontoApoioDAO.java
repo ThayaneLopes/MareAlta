@@ -8,7 +8,7 @@ import br.com.ifpe.projeto.util.ConnectionFactory;
 
 public class PontoApoioDAO {
 	
-	// Conexao com o banco
+
 		private Connection connection; 
 		public PontoApoioDAO() { 
 			try { 
@@ -18,7 +18,7 @@ public class PontoApoioDAO {
 			}
 		}
 		
-	//Metodo inserir do ponto de apoio
+
 	public void inserirPontoApoio(PontoApoio pontoapoio) { 
 		try { 
 		String sql = "INSERT INTO ponto_apoio (nome,responsavel,telefone_1,telefone_2,estado,bairro,rua_avenida,complemento,cidade,cep,ativo,horario_funcionamento,faz_coleta,faz_triagem,precisa_voluntario) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)"; 
@@ -34,10 +34,10 @@ public class PontoApoioDAO {
 		stmt.setString(9, pontoapoio.getCidade());
 		stmt.setString(10, pontoapoio.getCep());
 		stmt.setBoolean(11, pontoapoio.isAtivo());
-		stmt.setString(12, pontoapoio.getHorario_funcionamento());
-		stmt.setBoolean(13, pontoapoio.isFaz_coleta());
-		stmt.setBoolean(14, pontoapoio.isFaz_triagem());
-		stmt.setBoolean(15, pontoapoio.isPrecisa_voluntario());
+		stmt.setString(12, pontoapoio.getHorarioFuncionamento());
+		stmt.setBoolean(13, pontoapoio.isFazColeta());
+		stmt.setBoolean(14, pontoapoio.isFazTriagem());
+		stmt.setBoolean(15, pontoapoio.isPrecisaVoluntario());
 		stmt.execute();
 		stmt.close();
 		connection.close();	

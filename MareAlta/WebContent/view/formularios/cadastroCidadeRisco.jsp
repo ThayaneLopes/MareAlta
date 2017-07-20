@@ -4,22 +4,36 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link rel="stylesheet" type="text/css" href="view/bootstrap-3.3.7-dist/css/bootstrap.min.css" /> 
+<script type="text/javascript" src="view/bootstrap-3.3.7-dis/js/bootstrap.min.js"></script> 
 <title>Cadastro de Cidades em Risco</title>
 </head>
 <body>
+	
 	<form action="cadastroComSucessoCidadeRisco" method="post">
 
+		<div class="form-group">
 		<label for="nome">Nome</label> 	
-		<input type="text" id="nome" name="nome"><br>	
-
+		<input type="text"  style="width: 400px;" maxlength="50" class="form-control" id="nome" name="nome"><br>	
+		
 		<label for="regiao">Região</label> 
-		<input type="text" id="regiao" name="regiao"><br>
+		<select style="width: 400px;" class="form-control" id="regiao" name="regiao">
+		  <option value="urbana">Urbana</option>
+		  <option value="rural">Rural</option>
+		 </select> <br>
+
 
 		<label for="situacao_risco">Situação de Risco</label> 
-		<input type="text" id="situacao_risco" name="situacao_risco" placeholder="Ex.: Baixa;Média;Alta."> <br>
+		<select style="width: 400px;" class="form-control" id="situacaoRisco" name="situacaoRisco">
+		  <option value="baixa">Baixa</option>
+		  <option value="media">Média</option>
+		  <option value="alta">Alta</option>
+		  <option value="catastrofica">Catastrófica</option>
+		</select> <br>
 
-		<input type="submit"> <input type="reset">
-
+		<input type="submit" class="btn btn-primary" value="Cadastrar"> <input type="reset" class="btn btn-warning" value="Limpar">
+		</div>
+		
 	</form>
 
 

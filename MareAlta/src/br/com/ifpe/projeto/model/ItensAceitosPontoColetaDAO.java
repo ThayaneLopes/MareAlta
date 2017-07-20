@@ -8,7 +8,7 @@ import br.com.ifpe.projeto.util.ConnectionFactory;
 
 public class ItensAceitosPontoColetaDAO {
 	
-		// Conexao com o banco
+		
 			private Connection connection; 
 			public ItensAceitosPontoColetaDAO() { 
 				try { 
@@ -18,14 +18,14 @@ public class ItensAceitosPontoColetaDAO {
 				}
 			}
 			
-		//Metodo inserir dos itens aceitos ponto de coleta
+		
 			public void inserirItensAceitosPontoColeta(ItensAceitosPontoColeta itensaceitospontocoleta) { 
 				try { 
 				String sql = "INSERT INTO itens_aceitos_ponto_coleta (id,id_ponto_apoio,id_tipo_doacao) VALUES (?,?,?)"; 
 				PreparedStatement stmt = (PreparedStatement) connection.prepareStatement(sql); 
 				stmt.setInt(1, itensaceitospontocoleta.getId()); 
-				stmt.setInt(2, itensaceitospontocoleta.getId_ponto_apoio());
-				stmt.setInt(3, itensaceitospontocoleta.getId_tipo_doacao());
+				stmt.setInt(2, itensaceitospontocoleta.getIdPontoApoio());
+				stmt.setInt(3, itensaceitospontocoleta.getIdTipoDoacao());
 				stmt.execute();
 				stmt.close();
 				connection.close();
