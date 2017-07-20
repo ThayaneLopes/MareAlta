@@ -1,6 +1,9 @@
 package br.com.ifpe.projeto.controller;
 
+import java.util.List;
+
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import br.com.ifpe.projeto.model.Voluntario;
@@ -21,7 +24,7 @@ public class VoluntarioController {
 	public String cadastroVoluntario() { 
 		return "formularios/cadastroVoluntario"; 
 	}
-}
+
 
 
 @RequestMapping("/buscarVoluntario")
