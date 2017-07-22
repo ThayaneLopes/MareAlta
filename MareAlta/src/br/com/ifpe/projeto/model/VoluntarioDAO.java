@@ -56,7 +56,7 @@ public class VoluntarioDAO {
 
 				voluntario.setId(rs.getInt("id"));
 				voluntario.setNome(rs.getString("nome"));
-				voluntario.setOrgaoPublico(rs.getString("orgaoPublico"));
+				voluntario.setOrgaoPublico(rs.getString("orgao_publico"));
 				voluntario.setEmail(rs.getString("email"));
 				voluntario.setTelefone(rs.getString("telefone"));
 				

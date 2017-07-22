@@ -18,11 +18,11 @@
 		<label for="responsavel">Responsável: </label> 	
 		<input type="text" style="width: 400px;" maxlength="50" class="form-control" id="responsavel" name="responsavel" required> <br>	
 
-		<label for="telefone1">Telefone: </label>		
-		<input type="tel" style="width: 200px;" maxlength="15" class="form-control" id="telefone1" name="telefone1" required> <br>
+		<label for="telefone1">Telefone 1: </label>		
+		<input type="tel" style="width: 200px;" maxlength="11" class="form-control" id="telefone1" name="telefone1" required placeholder="DD+Numero de telefone"> <br>
 
-		<label for="telefone2">Telefone: </label>		
-		<input type="tel" style="width: 200px;" maxlength="15" class="form-control" id="telefone2" name="telefone2" required> <br>
+		<label for="telefone2">Telefone 2: </label>		
+		<input type="tel" style="width: 200px;" maxlength="11" class="form-control" id="telefone2" name="telefone2" required placeholder="DD+Numero de telefone"> <br>
 
 		<label for="estado">Estado: </label> 
 		<select style="width: 400px;" class="form-control" id="estado" name="estado">
@@ -67,7 +67,7 @@
 		<input type="text" style="width: 300px;" maxlength="50" class="form-control" id="cidade" name="cidade" required> <br>	
 
 		<label for="cep">CEP: </label>		
-		<input type="text" style="width: 200px;" maxlength="10" class="form-control" id="cep" name="cep" required> <br>
+		<input type="text" style="width: 200px;" maxlength="8" minlength="8" class="form-control" id="cep" name="cep" required> <br>
 
 		<div type="radio">
 		<label for="precisaVoluntario">Precisa de Voluntario</label>		

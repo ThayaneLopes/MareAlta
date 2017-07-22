@@ -45,7 +45,7 @@ public class VoluntarioController {
 		List<Voluntario> listaVoluntario = dao.listar(busca);
 		model.addAttribute("listaVoluntario", listaVoluntario);
 		
-		return "buscas/listarVoluntarios";
+		return "buscas/listarVoluntario";
 		}
 	    }
 }

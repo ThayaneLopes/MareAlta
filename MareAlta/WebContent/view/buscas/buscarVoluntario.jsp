@@ -8,10 +8,10 @@ pageEncoding="ISO-8859-1"%>
 </head>
 <body>
 
-<form action="listaVoluntario" method="post">
+<form action="listarVoluntarios" method="post">
 
-		<input type="search" name="buscaVoluntario" id="buscaVoluntario" class="form-control" placeholder="Insira aqui sua busca de voluntÃ¡rios" style="width:300px;" required> <br>
-		<input type="submit" class="btn btn-primary" value="Cadastrar"> 
+		<input type="search" name="busca" id="buscaVoluntario" class="form-control" placeholder="Insira aqui sua busca de voluntários" style="width:300px;"> <br>
+		<input type="submit" class="btn btn-primary" value="Buscar"> 
 		<input type="reset" class="btn btn-warning" value="Limpar">
 
 	</form>	
