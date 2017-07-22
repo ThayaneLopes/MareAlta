@@ -5,7 +5,7 @@ public class Voluntario {
 	private int id;
 	private String cpf;
 	private String nome;
-	private String orgaoPublico;
+	private String orgao_publico;
 	private String email;
 	private String telefone;
 	private Integer idPontoApoio;
@@ -28,11 +28,11 @@ public class Voluntario {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public String getOrgaoPublico() {
-		return orgaoPublico;
+	public String getOrgao_publico() {
+		return orgao_publico;
 	}
-	public void setOrgaoPublico(String orgaoPublico) {
-		this.orgaoPublico = orgaoPublico;
+	public void setOrgao_publico(String orgao_publico) {
+		this.orgao_publico = orgao_publico;
 	}
 	public String getEmail() {
 		return email;

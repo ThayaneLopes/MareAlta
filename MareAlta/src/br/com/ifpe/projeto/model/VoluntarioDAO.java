@@ -27,7 +27,7 @@ public class VoluntarioDAO {
 			PreparedStatement stmt = connection.prepareStatement(sql);
 			stmt.setString(1, voluntario.getCpf());
 			stmt.setString(2, voluntario.getNome());
-			stmt.setString(3, voluntario.getOrgaoPublico());
+			stmt.setString(3, voluntario.getOrgao_publico());
 			stmt.setString(4, voluntario.getEmail());
 			stmt.setString(5, voluntario.getTelefone());
 			stmt.setObject(6, voluntario.getIdPontoApoio());
@@ -56,7 +56,8 @@ public class VoluntarioDAO {
 
 				voluntario.setId(rs.getInt("id"));
 				voluntario.setNome(rs.getString("nome"));
-				voluntario.setOrgaoPublico(rs.getString("orgao_publico"));
+				voluntario.setCpf(rs.getString("cpf"));
+				voluntario.setOrgao_publico(rs.getString("orgao_publico"));
 				voluntario.setEmail(rs.getString("email"));
 				voluntario.setTelefone(rs.getString("telefone"));
 				

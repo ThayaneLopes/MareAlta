@@ -28,7 +28,7 @@ public class CidadeRiscoDAO {
 			PreparedStatement stmt = connection.prepareStatement(sql);
 			stmt.setString(1, cidaderisco.getNome());
 			stmt.setString(2, cidaderisco.getRegiao());
-			stmt.setString(3, cidaderisco.getSituacaoRisco());
+			stmt.setString(3, cidaderisco.getSituacao_risco());
 			stmt.execute();
 			stmt.close();
 			connection.close();
@@ -51,7 +51,7 @@ public class CidadeRiscoDAO {
 			cidades.setId(rs.getInt("id"));
 			cidades.setNome(rs.getString("nome"));
 			cidades.setRegiao(rs.getString("regiao"));
-			cidades.setSituacaoRisco(rs.getString("situacao_risco"));
+			cidades.setSituacao_risco(rs.getString("situacao_risco"));
 
 			listaCidades.add(cidades);
 		    }

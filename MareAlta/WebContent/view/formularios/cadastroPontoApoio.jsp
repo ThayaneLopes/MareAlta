@@ -12,16 +12,16 @@
 	<form action="cadastroComSucessoPontoApoio" method="post">
 
 		<label for="nome">Nome: </label>	
-		<input type="text" style="width: 400px;" maxlength="50" class="form-control" id="nome" name="nome" required> <br>	
+		<input type="text" style="width: 400px;" maxlength="100" class="form-control" id="nome" name="nome" required> <br>	
 
 		<label for="responsavel">Responsável: </label> 	
 		<input type="text" style="width: 400px;" maxlength="50" class="form-control" id="responsavel" name="responsavel" required> <br>	
 
 		<label for="telefone1">Telefone: </label>		
-		<input type="tel" style="width: 200px;" maxlength="15" class="form-control" id="telefone1" name="telefone1" required> <br>
+		<input type="tel" style="width: 200px;" maxlength="11" minlength="11" class="form-control" id="telefone1" name="telefone1" required placeholder="DD+N° Telefone"> <br>
 
 		<label for="telefone2">Telefone: </label>		
-		<input type="tel" style="width: 200px;" maxlength="15" class="form-control" id="telefone2" name="telefone2" required> <br>
+		<input type="tel" style="width: 200px;" maxlength="11" minlength="11" class="form-control" id="telefone2" name="telefone2" required placeholder="DD+N° Telefone"> <br>
 
 		<label for="estado">Estado: </label> 
 		<select style="width: 400px;" class="form-control" id="estado" name="estado">
@@ -67,7 +67,7 @@
 		<input type="text" style="width: 300px;" maxlength="25" class="form-control" id="cidade" name="cidade" required> <br>	
 
 		<label for="cep">CEP: </label>		
-		<input type="text" style="width: 200px;" maxlength="10" class="form-control" id="cep" name="cep" required> <br>
+		<input type="text" style="width: 200px;" maxlength="8" minlength="8" class="form-control" id="cep" name="cep" required> <br>
 
 		<div type="radio">
 		<label for="ativo">Está Ativo? </label>	<br>
@@ -76,7 +76,7 @@
 		</div>
 
 		<label for="horarioFuncionamento">Horário de Funcionamento: </label>		
-		<input type="text" style="width: 400px;" maxlength="10" class="form-control" id="horarioFuncionamento" name="horarioFuncionamento" placeholder="Ex.: Das 08:00 as 17:00" required> <br>
+		<input type="text" style="width: 400px;" maxlength="30" class="form-control" id="horarioFuncionamento" name="horarioFuncionamento" placeholder="Ex.: Das 08:00 as 17:00" required> <br>
 	
 		<div type="radio">
 		<label for="fazColeta">Faz Coleta?:  </label> <br>	

@@ -13,22 +13,19 @@
 	 <form action="cadastroComSucessoVoluntario" method="post" onSubmit="return enviardados();">
 
 		<label for="cpf">CPF:</label> 	
-		<input type="text" style="width: 200px;" maxlength="15" class="form-control" id="cpf" name="cpf" required><br>	
+		<input type="text" style="width: 200px;" maxlength="11" class="form-control" id="cpf" name="cpf" required><br>	
 
 		<label for="nome">Nome:</label>		
-		<input type="text" style="width: 400px;" maxlength="50" class="form-control" id="nome" name="nome" required> <br>
+		<input type="text" style="width: 400px;" maxlength="50" class="form-control" id="nome" name="nome" required minlength="10"> <br>
 
 		<label for="orgaoPublico">Orgão Publico:</label> 		
-		<input type="text" style="width: 200px;" maxlength="50" class="form-control" id="orgao_publico" name="orgao_publico" placeholder="Se sim, favor insira a sigla"><br>
+		<input type="text" style="width: 200px;" maxlength="50" class="form-control" id="orgao_publico" name="orgaoPublico" placeholder="Se sim, favor insira a sigla"><br>
 
 		<label for="email">E-mail:</label> 	
 		<input type="email" style="width: 400px;" maxlength="50" class="form-control"  id="email" name="email" required><br>	
 		
 		<label for="telefone1">Telefone:</label> 	
-		<input type="tel" style="width: 200px;" maxlength="15" class="form-control"  id="telefone1" name="telefone1" required><br>	
-		
-		<label for="telefone2">Telefone</label> 	
-		<input type="tel" style="width: 200px;" maxlength="15" class="form-control" id="telefone2" name="telefone2" required><br>	
+		<input type="tel" style="width: 200px;" maxlength="11" minlength="11" class="form-control"  id="telefone1" name="telefone" required placeholder="DD+N° Telefone"><br>	
 
 		
 		<input type="submit" class="btn btn-primary" value="Cadastrar"> <input type="reset" class="btn btn-warning" value="Limpar">

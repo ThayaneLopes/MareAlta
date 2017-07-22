@@ -9,7 +9,7 @@ pageEncoding="ISO-8859-1"%>
 <body>
 	<form action="listarcidade" method="post">
 		<input type="text" name="busca" placeholder="Digite o nome da cidade">
-		<BR>
+		<br>
 			<input type="submit" value="BUSCAR">
 		</form>
 	</body>

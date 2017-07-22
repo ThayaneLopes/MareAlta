@@ -26,7 +26,7 @@ public class LocalAbrigoController {
 	}
 	
 	@RequestMapping("/buscarlocalabrigo")
-	public String buscarCidades()
+	public String buscarLocalAbrigo()
 	{
 		return "buscas/buscarlocalabrigo";
 	}

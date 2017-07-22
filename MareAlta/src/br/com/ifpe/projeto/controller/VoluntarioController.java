@@ -42,8 +42,8 @@ public class VoluntarioController {
 		else
 		{
 		VoluntarioDAO dao = new VoluntarioDAO();
-		List<Voluntario> listaVoluntario = dao.listar(busca);
-		model.addAttribute("listaVoluntario", listaVoluntario);
+		List<Voluntario> listaVoluntarios = dao.listar(busca);
+		model.addAttribute("listaVoluntarios", listaVoluntarios);
 		
 		return "buscas/listarVoluntario";
 		}
