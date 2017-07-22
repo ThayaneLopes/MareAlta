@@ -10,6 +10,15 @@ pageEncoding="ISO-8859-1"%>
 	<form action="listarcidade" method="post">
 		<input type="text" name="busca" placeholder="Digite o nome da cidade">
 		<br>
+		<label for="situacaoRisco">Filtra por Situação de Risco</label>
+			<select  name="situacaoRisco">
+				<option value="">Não Filtrar</option>
+				<option value="baixa">Baixa</option>
+				<option value="media">Média</option>
+				<option value="alta">Alta</option>
+				<option value="catastrofica">Catastrófica</option>
+			</select> <br>
+		<br>
 			<input type="submit" value="BUSCAR">
 		</form>
 	</body>

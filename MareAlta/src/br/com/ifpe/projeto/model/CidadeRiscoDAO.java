@@ -36,12 +36,13 @@ public class CidadeRiscoDAO {
 			throw new RuntimeException(e);
 		}
 	}
-	public List<CidadeRisco> listar(String busca) {
+	public List<CidadeRisco> listar(String busca, String situacaoRisco) {
 
 		try {
 		    List<CidadeRisco> listaCidades = new ArrayList<CidadeRisco>();
-		    PreparedStatement stmt = this.connection.prepareStatement("SELECT * FROM cidade_risco WHERE nome like ?");
+		    PreparedStatement stmt = this.connection.prepareStatement("SELECT * FROM cidade_risco WHERE nome like ? AND situacao_risco like ?");
 		    stmt.setString(1, '%' + busca + '%');
+		    stmt.setString(2, '%'+situacaoRisco+'%');
 		    ResultSet rs = stmt.executeQuery();
 
 		    while (rs.next()) {

@@ -30,7 +30,7 @@ public class CidadeRiscoController {
 	}
 		
 		@RequestMapping("/listarcidade")
-	    public String listarProduto(String busca,Model model) {
+	    public String listarProduto(String busca,String situacaoRisco,Model model) {
 		if(busca == null)
 		{
 			return "buscas/buscarCidade";
@@ -38,7 +38,7 @@ public class CidadeRiscoController {
 		else
 		{
 		CidadeRiscoDAO dao = new CidadeRiscoDAO();
-		List<CidadeRisco> listacidades = dao.listar(busca);
+		List<CidadeRisco> listacidades = dao.listar(busca,situacaoRisco);
 		model.addAttribute("listacidades", listacidades);
 		
 		return "buscas/listarCidades";
