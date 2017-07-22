@@ -9,10 +9,10 @@ nome varchar(50) not null, regiao varchar(50),
  situacao_risco varchar(20));
  
 create table ponto_apoio(id int auto_increment primary key,
-nome varchar(30),responsavel varchar(30),telefone_1 varchar(15),
+nome varchar(100),responsavel varchar(30),telefone_1 varchar(15),
 telefone_2 varchar(15), estado varchar(2), bairro varchar(30),
 rua_avenida varchar(50),complemento varchar(100), cidade varchar(30),
-cep varchar(8),ativo tinyint(1),horario_funcionamento varchar(15),
+cep varchar(8),ativo tinyint(1),horario_funcionamento varchar(50),
 faz_coleta tinyint(1),faz_triagem tinyint(1),precisa_voluntario tinyint(1));
 
 create table local_abrigo(id int auto_increment primary key,
