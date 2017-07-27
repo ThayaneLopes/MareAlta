@@ -38,7 +38,7 @@
       <div class="thumbnail">
         <img src="logo.png" alt="logo" width="200" height="150">
         <p><strong>Voluntários</strong></p>
-        <button class="btn" data-toggle="modal" data-target="#myModal"><a href="cadastroVoluntario">Cadastrar</a></button> 
+        <button class="btn" data-toggle="modal" data-target="#myModal"><a href="/cadastroVoluntario">Cadastrar</a></button> 
       </div>
     </div>
   </div>

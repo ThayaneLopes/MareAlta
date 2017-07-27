@@ -26,7 +26,7 @@ pageEncoding="ISO-8859-1"%>
 			<td>${cidade.id}</td>
 			<td>${cidade.nome}</td>
 			<td>${cidade.regiao}</td>
-			<td>${cidade.situacao_risco}</td>
+			<td>${cidade.situacaoRisco}</td>
 		</tr>
 	</c:forEach>
 	

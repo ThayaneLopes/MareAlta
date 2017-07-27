@@ -5,7 +5,7 @@ public class CidadeRisco {
 	private int id;
 	private String nome;
 	private String regiao;
-	private String SituacaoRisco;
+	private String situacaoRisco;
 	public int getId() {
 		return id;
 	}
@@ -25,10 +25,10 @@ public class CidadeRisco {
 		this.regiao = regiao;
 	}
 	public String getSituacaoRisco() {
-		return SituacaoRisco;
+		return situacaoRisco;
 	}
 	public void setSituacaoRisco(String situacaoRisco) {
-		SituacaoRisco = situacaoRisco;
+		this.situacaoRisco= situacaoRisco;
 	}
 }
 	
