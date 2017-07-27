@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import br.com.ifpe.projeto.model.CidadeRisco;
 import br.com.ifpe.projeto.util.ConnectionFactory;
 
 public class CidadeRiscoDAO {
@@ -28,7 +29,7 @@ public class CidadeRiscoDAO {
 			PreparedStatement stmt = connection.prepareStatement(sql);
 			stmt.setString(1, cidaderisco.getNome());
 			stmt.setString(2, cidaderisco.getRegiao());
-			stmt.setString(3, cidaderisco.getSituacao_risco());
+			stmt.setString(3, cidaderisco.getSituacaoRisco());
 			stmt.execute();
 			stmt.close();
 			connection.close();
@@ -52,7 +53,7 @@ public class CidadeRiscoDAO {
 			cidades.setId(rs.getInt("id"));
 			cidades.setNome(rs.getString("nome"));
 			cidades.setRegiao(rs.getString("regiao"));
-			cidades.setSituacao_risco(rs.getString("situacao_risco"));
+			cidades.setSituacaoRisco(rs.getString("situacao_risco"));
 
 			listaCidades.add(cidades);
 		    }
@@ -62,6 +63,54 @@ public class CidadeRiscoDAO {
 		    connection.close();
 
 		    return listaCidades;
+
+		} catch (SQLException e) {
+		    throw new RuntimeException(e);
+		}
+	    }
+	public void alterar(CidadeRisco cidaderisco) {
+
+		String sql = "UPDATE cidade_risco SET nome=?, regiao=?, situacao_risco=? WHERE id=?";
+		PreparedStatement stmt;
+
+		try {
+		    stmt = connection.prepareStatement(sql);
+
+		    stmt.setString(1, cidaderisco.getNome());
+		    stmt.setString(2, cidaderisco.getRegiao());
+		    stmt.setString(3, cidaderisco.getSituacaoRisco());
+		    stmt.setInt(7, cidaderisco.getId());
+
+		    stmt.execute();
+		    connection.close();
+
+		} catch (SQLException e) {
+		    throw new RuntimeException(e);
+		}
+	    }
+	public CidadeRisco buscarPorId(int id) {
+		
+		try {
+		    
+		    PreparedStatement stmt = this.connection.prepareStatement("SELECT * FROM cidade_risco WHERE id = ?");
+		    stmt.setInt(1, id);
+		    ResultSet rs = stmt.executeQuery();
+		    
+		    CidadeRisco cidaderisco = new CidadeRisco();
+		    
+		    while (rs.next()) {
+
+		    cidaderisco.setId(rs.getInt("id"));
+		    cidaderisco.setNome(rs.getString("nome"));
+		    cidaderisco.setRegiao(rs.getString("regiao"));
+		    cidaderisco.setSituacaoRisco(rs.getString("situacao_risco"));
+			}
+
+		    rs.close();
+		    stmt.close();
+		    connection.close();
+
+		    return cidaderisco;
 
 		} catch (SQLException e) {
 		    throw new RuntimeException(e);

@@ -44,4 +44,24 @@ public class CidadeRiscoController {
 		return "buscas/listarCidades";
 		}
 	    }
+		
+		@RequestMapping("exibirAlterarCidadeRisco")
+	    public String exibirAlterarCidadeRisco(CidadeRisco cidaderisco, Model model) {
+
+		CidadeRiscoDAO dao = new CidadeRiscoDAO();
+		CidadeRisco cidadeRiscoCompleto = dao.buscarPorId(cidaderisco.getId());
+		model.addAttribute("cidaderisco", cidadeRiscoCompleto);
+
+		return "produto/alterarCidadeRisco";
+	    }
+	    
+	    @RequestMapping("/alterarCidadeRisco")
+	    public String alterarCidadeRisco(CidadeRisco cidaderisco, Model model) {
+
+	    CidadeRiscoDAO dao = new CidadeRiscoDAO();
+		dao.alterar(cidaderisco);
+		model.addAttribute("mensagem", "Cidade Alterada com Sucesso!");
+
+		return "forward:listarCidadeRisco";
+	    }
 }

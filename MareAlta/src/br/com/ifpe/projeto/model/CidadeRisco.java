@@ -5,7 +5,7 @@ public class CidadeRisco {
 	private int id;
 	private String nome;
 	private String regiao;
-	private String situacao_risco;
+	private String SituacaoRisco;
 	public int getId() {
 		return id;
 	}
@@ -24,12 +24,11 @@ public class CidadeRisco {
 	public void setRegiao(String regiao) {
 		this.regiao = regiao;
 	}
-	public String getSituacao_risco() {
-		return situacao_risco;
+	public String getSituacaoRisco() {
+		return SituacaoRisco;
 	}
-	public void setSituacao_risco(String situacao_risco) {
-		this.situacao_risco = situacao_risco;
+	public void setSituacaoRisco(String situacaoRisco) {
+		SituacaoRisco = situacaoRisco;
 	}
 }
-	
 	
