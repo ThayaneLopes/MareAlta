@@ -52,7 +52,7 @@ public class CidadeRiscoController {
 		CidadeRisco cidadeRiscoCompleto = dao.buscarPorId(cidaderisco.getId());
 		model.addAttribute("cidaderisco", cidadeRiscoCompleto);
 
-		return "produto/alterarCidadeRisco";
+		return "alterar/alterarCidadeRisco";
 	    }
 	    
 	    @RequestMapping("/alterarCidadeRisco")
