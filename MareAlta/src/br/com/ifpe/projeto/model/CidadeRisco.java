@@ -28,7 +28,7 @@ public class CidadeRisco {
 		return situacaoRisco;
 	}
 	public void setSituacaoRisco(String situacaoRisco) {
-		this.situacaoRisco= situacaoRisco;
+		this.situacaoRisco= situacaoRisco;//
 	}
 }
 	
