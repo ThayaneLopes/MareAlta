@@ -25,7 +25,7 @@
               <ul class="dropdown-menu">
               <li><a href="cadastro.jsp" target="_blanck">Cadastro</a></li>
                 <li><a href="#">login</a></li>
-                <li><a href="#">AlteraÃ§Ã£o de Dados </a></li> 
+                <li><a href="#">Alteração de Dados </a></li> 
               </ul>
             </li>
             <li><a href="buscas.jsp" target="_blanck"><span class="glyphicon glyphicon-search"></span></a></li>

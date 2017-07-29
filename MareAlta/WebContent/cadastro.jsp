@@ -6,14 +6,14 @@
   <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
   <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="view/css/bootstrap-3.3.7-dist/css/bootstrap.min.css">
 	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
 	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="view/js/jquery-3.2.1/jquery.min.js"></script>
+	<script src="view/css/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="style.css">
-	<script href="main.js"></script>
-	<title>Cadastros :: MarÃ© Alta</title>
+	<script href="view/js/main.js"></script>
+	<title>Cadastros :: Maré Alta</title>
 </head>
 <body style="background-color: #000;" id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
 
@@ -37,7 +37,7 @@
     <div class="col-sm-4">
       <div class="thumbnail">
         <img src="logo.png" alt="logo" width="200" height="150">
-        <p><strong>VoluntÃ¡rios</strong></p>
+        <p><strong>Voluntários</strong></p>
         <button class="btn" data-toggle="modal" data-target="#myModal"><a href="cadastroVoluntario">Cadastrar</a></button> 
       </div>
     </div>
@@ -54,7 +54,7 @@
   <div class="col-sm-4">
     <div class="thumbnail">
       <img src="logo.png" alt="logo" width="200" height="150">
-      <p><strong>Tipo de DoaÃ§Ã£o</strong></p>
+      <p><strong>Tipo de Doações</strong></p>
       <button class="btn" data-toggle="modal" data-target="#myModal"><a href="cadastroTipoDoacao">Cadastrar</a></button> 
     </div>
   </div>
