@@ -21,6 +21,7 @@ pageEncoding="ISO-8859-1"%>
 			<td>Orgão Público</td>
 			<td>E-mail</td>
 			<td>Telefone</td>
+			<td>Açôes</td>
 		</tr>
 		<c:forEach var="voluntario" items="${listaVoluntarios}">
 		<tr>
@@ -30,6 +31,7 @@ pageEncoding="ISO-8859-1"%>
 			<td>${voluntario.orgao_publico}</td>
 			<td>${voluntario.email}</td>
 			<td>${voluntario.telefone}</td>
+			<td><a href="alterarVoluntario?id=${voluntario.id}">Alterar</a>
 
 		</tr>
 		</c:forEach>

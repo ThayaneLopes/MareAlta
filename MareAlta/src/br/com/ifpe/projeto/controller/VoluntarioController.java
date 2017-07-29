@@ -15,50 +15,59 @@ import br.com.ifpe.projeto.model.VoluntarioDAO;
 
 @Controller
 public class VoluntarioController {
-	
-	
-	@RequestMapping("/cadastroComSucessoVoluntario")   
-	public String cadastroComSucessoVoluntario(Voluntario voluntario) { 
-		VoluntarioDAO dao = new VoluntarioDAO(); 
-		dao.inserirVoluntario(voluntario); 
-		return "formularios/sucesso"; 
-	} 
-	
-	@RequestMapping("/cadastroVoluntario") 
-	public String cadastroVoluntario(Model model) { 
-		
+
+	@RequestMapping("/cadastroComSucessoVoluntario")
+	public String cadastroComSucessoVoluntario(Voluntario voluntario) {
+		VoluntarioDAO dao = new VoluntarioDAO();
+		dao.inserirVoluntario(voluntario);
+		return "formularios/sucesso";
+	}
+
+	@RequestMapping("/cadastroVoluntario")
+	public String cadastroVoluntario(Model model) {
+
 		PontoApoioDAO pontoapoiodao = new PontoApoioDAO();
 		List<PontoApoio> listaPontoApoio = pontoapoiodao.listar("");
 		model.addAttribute("listaPontoApoio", listaPontoApoio);
-		
+
 		LocalAbrigoDAO localabrigodao = new LocalAbrigoDAO();
 		List<LocalAbrigo> listaLocalAbrigo = localabrigodao.listar("");
 		model.addAttribute("listaLocalAbrigo", listaLocalAbrigo);
-		
-		return "formularios/cadastroVoluntario"; 
+
+		return "formularios/cadastroVoluntario";
 	}
-
-
 
 	@RequestMapping("/buscarVoluntario")
-	public String buscarVoluntarios()
-	{
+	public String buscarVoluntarios() {
 		return "buscas/buscarVoluntario";
 	}
-		
-		@RequestMapping("/listarVoluntarios")
-	    public String listarVoluntarios(String busca,Model model) {
-		if(busca == null)
-		{
+
+	@RequestMapping("/listarVoluntarios")
+	public String listarVoluntarios(String busca, Model model) {
+		if (busca == null) {
 			return "buscas/buscarVoluntario";
+		} else {
+			VoluntarioDAO dao = new VoluntarioDAO();
+			List<Voluntario> listaVoluntarios = dao.listar(busca);
+			model.addAttribute("listaVoluntarios", listaVoluntarios);
+
+			return "buscas/listarVoluntario";
 		}
-		else
-		{
+	}
+
+	@RequestMapping("/alterarVoluntario")
+	public String alterarVoluntario(int id, Model model) {
 		VoluntarioDAO dao = new VoluntarioDAO();
-		List<Voluntario> listaVoluntarios = dao.listar(busca);
-		model.addAttribute("listaVoluntarios", listaVoluntarios);
-		
-		return "buscas/listarVoluntario";
-		}
-	    }
+		Voluntario Voluntarioselect = dao.buscarVoluntarioId(id);
+		model.addAttribute("voluntario", Voluntarioselect);
+
+		return "alterar/alterarVoluntario";
+	}
+
+	@RequestMapping("/atualizarVoluntario")
+	public String atualizarVoluntario(Voluntario voluntario) {
+		VoluntarioDAO dao = new VoluntarioDAO();
+		dao.atualizarVoluntario(voluntario);
+		return "forward:listarVoluntarios?busca=";
+	}
 }

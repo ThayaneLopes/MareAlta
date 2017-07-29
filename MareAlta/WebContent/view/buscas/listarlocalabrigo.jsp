@@ -8,11 +8,11 @@
   <script src="view/js/jquery-3.2.1/jquery.min.js"></script>
   <script src="view/css/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Listar de cidades</title>
+<title>Lista de Locais de Abrigo</title>
 </head>
 <body>
 <hr>
-	<h3>Listar Cidades em Risco</h3>
+	<h3>Listar Locais de Abrigo</h3>
 	<hr>
 	
 <div class="container">

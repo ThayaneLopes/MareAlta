@@ -68,15 +68,15 @@ public class PontoApoioDAO {
 		    apoio.setTelefone2(rs.getString("telefone_2"));
 		    apoio.setEstado(rs.getString("estado"));
 		    apoio.setBairro(rs.getString("bairro"));
-		    apoio.setEndereco(rs.getString("endereco"));
+		    apoio.setEndereco(rs.getString("rua_avenida"));
 		    apoio.setComplemento(rs.getString("complemento"));
 			//abrigo.setCidade(rs.getInt("cidade"));
 		    apoio.setCep(rs.getString("cep"));
 		    apoio.setAtivo(rs.getBoolean("ativo"));
-		    apoio.setHorarioFuncionamento(rs.getString("horarioFuncionamento"));
-		    apoio.setFazColeta(rs.getBoolean("fazColeta"));
-		    apoio.setFazTriagem(rs.getBoolean("fazTriagem"));
-		    apoio.setPrecisaVoluntarios(rs.getBoolean("precisaVoluntarios"));
+		    apoio.setHorarioFuncionamento(rs.getString("horario_funcionamento"));
+		    apoio.setFazColeta(rs.getBoolean("faz_coleta"));
+		    apoio.setFazTriagem(rs.getBoolean("faz_triagem"));
+		    apoio.setPrecisaVoluntarios(rs.getBoolean("precisa_voluntario"));
 		    
 		    
 			listapoio.add(apoio);

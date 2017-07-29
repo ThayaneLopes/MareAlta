@@ -34,7 +34,7 @@ public class LocalAbrigoDAO {
 			stmt.setString(6, localabrigo.getBairro());
 			stmt.setString(7, localabrigo.getRuaAvenida());
 			stmt.setString(8, localabrigo.getComplemento());
-			//stmt.setInt(9, localabrigo.getCidade());
+			stmt.setInt(9, localabrigo.getCidadeRisco().getId());
 			stmt.setString(10, localabrigo.getCep());
 			stmt.setBoolean(11, localabrigo.isPrecisaVoluntarios());
 			stmt.setInt(12, localabrigo.getQuantidadeFamilia());
@@ -67,7 +67,7 @@ public class LocalAbrigoDAO {
 				abrigo.setBairro(rs.getString("bairro"));
 				abrigo.setRuaAvenida(rs.getString("rua_avenida"));
 				abrigo.setComplemento(rs.getString("complemento"));
-				//abrigo.setCidade(rs.getInt("cidade"));
+				abrigo.setCidadeRisco(buscarCidadePorID(rs.getInt("id")));
 				abrigo.setCep(rs.getString("cep"));
 				abrigo.setPrecisaVoluntarios(rs.getBoolean("precisa_voluntario"));
 				abrigo.setQuantidadeFamilia(rs.getInt("quant_de_familias"));
@@ -84,8 +84,16 @@ public class LocalAbrigoDAO {
 			} catch (SQLException e) {
 			    throw new RuntimeException(e);
 			}
+			
 		    }
+		private CidadeRisco buscarCidadePorID(int id)
+		{
+			CidadeRiscoDAO cidade = new CidadeRiscoDAO();
 		
+			return	cidade.buscarPorId(id);
+			
+			
+		}
 		
 		
 		

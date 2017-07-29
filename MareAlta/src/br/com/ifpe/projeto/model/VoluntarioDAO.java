@@ -6,7 +6,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-
 import br.com.ifpe.projeto.util.ConnectionFactory;
 
 public class VoluntarioDAO {
@@ -71,6 +70,55 @@ public class VoluntarioDAO {
 
 			return listaVoluntarios;
 
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+	}
+	public Voluntario buscarVoluntarioId(int id)
+		{
+		try {
+		    
+		    PreparedStatement stmt = this.connection.prepareStatement("SELECT * FROM voluntario WHERE id = ?");
+		    stmt.setInt(1, id);
+		    ResultSet rs = stmt.executeQuery();
+		    
+		    Voluntario voluntario = new Voluntario();
+		    
+		    while (rs.next()) {
+
+		    voluntario.setId(rs.getInt("id"));
+		    voluntario.setCpf(rs.getString("cpf"));
+		    voluntario.setNome(rs.getString("nome"));
+		    voluntario.setOrgao_publico(rs.getString("orgao_publico"));
+		    voluntario.setEmail(rs.getString("email"));
+		    voluntario.setTelefone(rs.getString("telefone"));
+		    }
+
+		    rs.close();
+		    stmt.close();
+		    connection.close();
+
+		    return voluntario;
+
+		} catch (SQLException e) {
+		    throw new RuntimeException(e);
+		}
+		
+	}
+	public void atualizarVoluntario(Voluntario voluntario) {
+		try {
+			String sql = "UPDATE voluntario SET cpf=?, nome=?, orgao_publico=?, email=?,telefone=? WHERE id=?";
+			PreparedStatement stmt = connection.prepareStatement(sql);
+			
+			stmt.setString(1, voluntario.getCpf());
+			stmt.setString(2, voluntario.getNome());
+			stmt.setString(3, voluntario.getOrgao_publico());
+			stmt.setString(4, voluntario.getEmail());
+			stmt.setString(5, voluntario.getTelefone());
+			stmt.setInt(6, voluntario.getId());
+			stmt.execute();
+			stmt.close();
+			connection.close();
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
 		}
