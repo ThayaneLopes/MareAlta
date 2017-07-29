@@ -6,6 +6,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import br.com.ifpe.projeto.model.LocalAbrigo;
+import br.com.ifpe.projeto.model.LocalAbrigoDAO;
+import br.com.ifpe.projeto.model.PontoApoio;
+import br.com.ifpe.projeto.model.PontoApoioDAO;
 import br.com.ifpe.projeto.model.Voluntario;
 import br.com.ifpe.projeto.model.VoluntarioDAO;
 
@@ -21,7 +25,16 @@ public class VoluntarioController {
 	} 
 	
 	@RequestMapping("/cadastroVoluntario") 
-	public String cadastroVoluntario() { 
+	public String cadastroVoluntario(Model model) { 
+		
+		PontoApoioDAO pontoapoiodao = new PontoApoioDAO();
+		List<PontoApoio> listaPontoApoio = pontoapoiodao.listar("");
+		model.addAttribute("listaPontoApoio", listaPontoApoio);
+		
+		LocalAbrigoDAO localabrigodao = new LocalAbrigoDAO();
+		List<LocalAbrigo> listaLocalAbrigo = localabrigodao.listar("");
+		model.addAttribute("listaLocalAbrigo", listaLocalAbrigo);
+		
 		return "formularios/cadastroVoluntario"; 
 	}
 

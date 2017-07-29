@@ -3,6 +3,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <link rel="stylesheet" type="text/css" href="view/bootstrap-3.3.7-dist/css/bootstrap.min.css" /> 
 <script type="text/javascript" src="view/bootstrap-3.3.7-dis/js/bootstrap.min.js"></script> 
@@ -64,8 +65,13 @@
 		<input type="text" style="width: 400px;" maxlength="150" class="form-control" id="complemento" name="complemento" required> <br>
 
 		<label for="cidade">Cidade: </label>	
-		<input type="text" style="width: 300px;" maxlength="50" class="form-control" id="cidade" name="cidade" required> <br>	
-
+		<select name="cidadeRisco">
+			<option value=""> Selecione </option>
+			<c:forEach items="${listaCidadeRisco}" var="obj">
+			<option value="${obj.id}">${obj.nome}</option>
+			</c:forEach>
+		</select> <br>
+	
 		<label for="cep">CEP: </label>		
 		<input type="text" style="width: 200px;" maxlength="8" minlength="8" class="form-control" id="cep" name="cep" required> <br>
 

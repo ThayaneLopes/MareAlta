@@ -6,6 +6,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import br.com.ifpe.projeto.model.CidadeRisco;
+import br.com.ifpe.projeto.model.CidadeRiscoDAO;
 import br.com.ifpe.projeto.model.LocalAbrigo;
 import br.com.ifpe.projeto.model.LocalAbrigoDAO;
 
@@ -21,7 +23,13 @@ public class LocalAbrigoController {
 	} 
 	
 	@RequestMapping("/cadastroLocalAbrigo") 
-	public String cadastroLocalAbrigo() { 
+	public String cadastroLocalAbrigo(Model model) { 
+		
+		
+		CidadeRiscoDAO dao = new CidadeRiscoDAO();
+		List<CidadeRisco> listaCidadeRisco = dao.listar("","");
+		model.addAttribute("listaCidadeRisco", listaCidadeRisco);
+		
 		return "formularios/cadastroLocalAbrigo"; 
 	}
 	

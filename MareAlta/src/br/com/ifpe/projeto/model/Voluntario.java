@@ -8,8 +8,8 @@ public class Voluntario {
 	private String orgao_publico;
 	private String email;
 	private String telefone;
-	private Integer idPontoApoio;
-	private Integer idLocalAbrigo;
+	private PontoApoio pontoApoio;
+	private LocalAbrigo localAbrigo;
 	public int getId() {
 		return id;
 	}
@@ -46,18 +46,19 @@ public class Voluntario {
 	public void setTelefone(String telefone) {
 		this.telefone = telefone;
 	}
-	public Integer getIdPontoApoio() {
-		return idPontoApoio;
+	public PontoApoio getPontoApoio() {
+		return pontoApoio;
 	}
-	public void setIdPontoApoio(Integer idPontoApoio) {
-		this.idPontoApoio = idPontoApoio;
+	public void setPontoApoio(PontoApoio pontoApoio) {
+		this.pontoApoio = pontoApoio;
 	}
-	public Integer getIdLocalAbrigo() {
-		return idLocalAbrigo;
+	public LocalAbrigo getLocalAbrigo() {
+		return localAbrigo;
 	}
-	public void setIdLocalAbrigo(Integer idLocalAbrigo) {
-		this.idLocalAbrigo = idLocalAbrigo;
+	public void setLocalAbrigo(LocalAbrigo localAbrigo) {
+		this.localAbrigo = localAbrigo;
 	}
+
 }
 	
 	

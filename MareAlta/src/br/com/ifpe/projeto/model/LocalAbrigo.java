@@ -11,7 +11,7 @@ public class LocalAbrigo {
 	private String bairro;
 	private String ruaAvenida;
 	private String complemento;
-	private int cidade;
+	private CidadeRisco cidadeRisco;
 	private String cep;
 	private boolean precisaVoluntarios;
 	private int quantidadeFamilia;
@@ -69,11 +69,11 @@ public class LocalAbrigo {
 	public void setComplemento(String complemento) {
 		this.complemento = complemento;
 	}
-	public int getCidade() {
-		return cidade;
+	public CidadeRisco getCidadeRisco() {
+		return cidadeRisco;
 	}
-	public void setCidade(int cidade) {
-		this.cidade = cidade;
+	public void setCidadeRisco(CidadeRisco cidadeRisco) {
+		this.cidadeRisco = cidadeRisco;
 	}
 	public String getCep() {
 		return cep;
@@ -94,5 +94,4 @@ public class LocalAbrigo {
 		this.quantidadeFamilia = quantidadeFamilia;
 	}
 }
-	
 	

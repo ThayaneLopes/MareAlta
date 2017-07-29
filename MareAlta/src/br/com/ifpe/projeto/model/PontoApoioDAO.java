@@ -2,7 +2,10 @@ package br.com.ifpe.projeto.model;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import br.com.ifpe.projeto.util.ConnectionFactory;
 
@@ -45,5 +48,49 @@ public class PontoApoioDAO {
 			throw new RuntimeException(e); 
 	}
 	}
+	
+	public List<PontoApoio> listar(String busca) {
+
+		try {
+		    List<PontoApoio> listapoio = new ArrayList<PontoApoio>();
+		    PreparedStatement stmt = connection.prepareStatement("SELECT * FROM ponto_apoio WHERE nome like ?");
+		    stmt.setString(1, '%' + busca + '%');
+		    ResultSet rs = stmt.executeQuery();
+
+		    while (rs.next()) {
+
+		    PontoApoio apoio = new PontoApoio();
+
+		    apoio.setId(rs.getInt("id"));
+		    apoio.setNome(rs.getString("nome"));
+		    apoio.setResponsavel(rs.getString("responsavel"));
+		    apoio.setTelefone1(rs.getString("telefone_1"));
+		    apoio.setTelefone2(rs.getString("telefone_2"));
+		    apoio.setEstado(rs.getString("estado"));
+		    apoio.setBairro(rs.getString("bairro"));
+		    apoio.setEndereco(rs.getString("endereco"));
+		    apoio.setComplemento(rs.getString("complemento"));
+			//abrigo.setCidade(rs.getInt("cidade"));
+		    apoio.setCep(rs.getString("cep"));
+		    apoio.setAtivo(rs.getBoolean("ativo"));
+		    apoio.setHorarioFuncionamento(rs.getString("horarioFuncionamento"));
+		    apoio.setFazColeta(rs.getBoolean("fazColeta"));
+		    apoio.setFazTriagem(rs.getBoolean("fazTriagem"));
+		    apoio.setPrecisaVoluntarios(rs.getBoolean("precisaVoluntarios"));
+		    
+		    
+			listapoio.add(apoio);
+		    }
+
+		    rs.close();
+		    stmt.close();
+		    connection.close();
+
+		    return listapoio;
+
+		} catch (SQLException e) {
+		    throw new RuntimeException(e);
+		}
+	    }
 
 }

@@ -10,7 +10,7 @@
 </head>
 <body>
 	
-	<div class="alert alert-sucess" style="background-color:green; width: 400px; color:#B22222;">  
+	<div class="alert alert-sucess" style="background-color:#66FF99; width: 400px; color:#006600;">  
 		<strong>Sucesso!</strong> Seu cadastro está feito.
 	</div>
 	
