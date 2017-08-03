@@ -54,4 +54,12 @@ public class LocalAbrigoController {
 	return "buscas/listarlocalabrigo";
 	}
     }
+		
+	@RequestMapping("removerLocalAbrigo") 
+/**/	public String removerLocalAbrigo(Integer localabrigo, Model model) { 
+		LocalAbrigoDAO dao = new LocalAbrigoDAO(); 
+		dao.remover(localabrigo); 
+		model.addAttribute("mensagem", "Local Removido com Sucesso"); 
+		return "forward:listarLocalAbrigo?busca="; 
+		}
 }

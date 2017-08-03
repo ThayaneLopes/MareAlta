@@ -32,6 +32,7 @@ pageEncoding="ISO-8859-1"%>
 			<td>${voluntario.email}</td>
 			<td>${voluntario.telefone}</td>
 			<td><a href="alterarVoluntario?id=${voluntario.id}">Alterar</a>
+			<a href="removerVoluntario?id=${voluntario.id}">Remover</a> 
 
 		</tr>
 		</c:forEach>

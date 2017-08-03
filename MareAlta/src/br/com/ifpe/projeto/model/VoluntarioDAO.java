@@ -123,4 +123,22 @@ public class VoluntarioDAO {
 			throw new RuntimeException(e);
 		}
 	}
+	
+	public void remover(Integer id) {
+
+		try {
+
+		    String sql = "DELETE FROM voluntario WHERE id = ?";
+		    PreparedStatement stmt = connection.prepareStatement(sql);
+		    stmt.setInt(1, id);
+
+		    stmt.execute();
+		    connection.close();
+
+		} catch (SQLException e) {
+		    throw new RuntimeException(e);
+		}
+	    }
+	
+	
 }

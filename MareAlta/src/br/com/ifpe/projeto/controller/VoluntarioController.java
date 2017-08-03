@@ -70,4 +70,11 @@ public class VoluntarioController {
 		dao.atualizarVoluntario(voluntario);
 		return "forward:listarVoluntarios?busca=";
 	}
+	
+	@RequestMapping("removerVoluntario") 
+	/**/public String removerVoluntario(Integer voluntario, Model model) { 
+		VoluntarioDAO dao = new VoluntarioDAO(); 
+		dao.remover(voluntario); 
+		model.addAttribute("mensagem", "Voluntário Removido com Sucesso"); 
+		return "forward:listarVoluntarios?busca="; }
 }
