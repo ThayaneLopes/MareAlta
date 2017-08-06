@@ -31,7 +31,7 @@
 				<td>CEP</td>
 				<td>PRECISA DE VOLUNTARIOS</td>
 				<td>QUANT. FAMILIAS</td>
-				<td> Ações</td>
+				<td> AÇÕES</td>
 						</tr>
 		
 		<c:forEach var="abrigo" items="${listabrigo}">

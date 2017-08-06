@@ -7,7 +7,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import br.com.ifpe.projeto.model.CidadeRisco;
 import br.com.ifpe.projeto.util.ConnectionFactory;
 
 public class CidadeRiscoDAO {
@@ -119,29 +118,27 @@ public class CidadeRiscoDAO {
 			throw new RuntimeException(e);
 		}
 	}
-	public CidadeRisco buscarPorNome(String nome) {
-
+	public boolean removerCidade(int id) throws SQLException
+	{
 		try {
 
-			PreparedStatement stmt = this.connection.prepareStatement("SELECT * FROM cidade_risco WHERE nome = ?");
-			stmt.setString(1, nome);
+			PreparedStatement stmt = this.connection.prepareStatement("SELECT * FROM local_abrigo WHERE cidade = ?");
+			stmt.setInt(1, id);
 			ResultSet rs = stmt.executeQuery();
 
-			CidadeRisco cidaderisco = new CidadeRisco();
-
-			while (rs.next()) {
-
-				cidaderisco.setId(rs.getInt("id"));
-				cidaderisco.setNome(rs.getString("nome"));
-				cidaderisco.setRegiao(rs.getString("regiao"));
-				cidaderisco.setSituacaoRisco(rs.getString("situacao_risco"));
+			if(!rs.first())
+			{
+				PreparedStatement sql = this.connection.prepareStatement("DELETE FROM cidade_risco where id = ?");
+				sql.setInt(1, id);
+				sql.execute();
+				sql.close();
+				connection.close();
+				return true;
 			}
-
-			rs.close();
-			stmt.close();
-			connection.close();
-
-			return cidaderisco;
+			else
+			{
+				return false;
+			}
 
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
