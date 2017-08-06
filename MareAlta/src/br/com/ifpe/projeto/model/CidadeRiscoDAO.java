@@ -119,5 +119,33 @@ public class CidadeRiscoDAO {
 			throw new RuntimeException(e);
 		}
 	}
+	public CidadeRisco buscarPorNome(String nome) {
+
+		try {
+
+			PreparedStatement stmt = this.connection.prepareStatement("SELECT * FROM cidade_risco WHERE nome = ?");
+			stmt.setString(1, nome);
+			ResultSet rs = stmt.executeQuery();
+
+			CidadeRisco cidaderisco = new CidadeRisco();
+
+			while (rs.next()) {
+
+				cidaderisco.setId(rs.getInt("id"));
+				cidaderisco.setNome(rs.getString("nome"));
+				cidaderisco.setRegiao(rs.getString("regiao"));
+				cidaderisco.setSituacaoRisco(rs.getString("situacao_risco"));
+			}
+
+			rs.close();
+			stmt.close();
+			connection.close();
+
+			return cidaderisco;
+
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+	}
 
 }

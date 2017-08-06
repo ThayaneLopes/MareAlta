@@ -12,7 +12,7 @@ xsi:schemaLocation="http://www.springframework.org/schema/mvc
 
 
 	<context:component-scan base-package="br.com.ifpe.projeto" />   
-	<mvc:annotation-driven />
+	<mvc:annotation-driven conversion-service="conversionService" />
 	
 <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver"> 
 	<property name="prefix" value="/view/" /> 
@@ -24,4 +24,12 @@ xsi:schemaLocation="http://www.springframework.org/schema/mvc
 </bean>
 
 <mvc:default-servlet-handler/>
+<bean id="conversionService"
+class="org.springframework.context.support.ConversionServiceFactoryBean">
+<property name="converters">
+<list>
+<bean class="br.com.ifpe.projeto.controller.CidadeRiscoConverter"/>
+</list>
+</property>
+</bean>
 </beans>

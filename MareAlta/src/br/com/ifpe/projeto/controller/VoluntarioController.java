@@ -75,6 +75,6 @@ public class VoluntarioController {
 	/**/public String removerVoluntario(Integer voluntario, Model model) { 
 		VoluntarioDAO dao = new VoluntarioDAO(); 
 		dao.remover(voluntario); 
-		model.addAttribute("mensagem", "Volunt·rio Removido com Sucesso"); 
+		model.addAttribute("mensagem", "Volunt√°rio Removido com Sucesso"); 
 		return "forward:listarVoluntarios?busca="; }
 }

@@ -31,7 +31,7 @@
 				<td>CEP</td>
 				<td>PRECISA DE VOLUNTARIOS</td>
 				<td>QUANT. FAMILIAS</td>
-				<td> AÃ§Ãµes</td>
+				<td> Ações</td>
 						</tr>
 		
 		<c:forEach var="abrigo" items="${listabrigo}">
@@ -45,12 +45,12 @@
 				<td>${abrigo.bairro}</td>
 				<td>${abrigo.ruaAvenida}</td>
 				<td>${abrigo.complemento}</td>
-				<td>${abrigo.cidade}</td>
+				<td>${abrigo.cidadeRisco.nome}</td>
 				<td>${abrigo.cep}</td>
 				<td>${abrigo.precisaVoluntarios}</td>
 				<td>${abrigo.quantidadeFamilia}</td>
 				<td>
-					<a href="removerLocalAbrigo?id=${localabrigo.id}">Remover</a> 
+					<a href="alterarLocalAbrigo?id=${abrigo.id}">Alterar</a> 
 				</td>
 				
 	</tr>
