@@ -7,17 +7,17 @@ import java.sql.SQLException;
 public class ConnectionFactory {
 	public Connection getConnection() throws SQLException {
 
-		String nomeBanco = "marealta";
-		/*String usuario = "root";
+		String nomeBanco = "mareAlta";
+		String usuario = "root";
 		String senha = "12345";
-*/
+
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 		} catch (ClassNotFoundException e) {
 			throw new SQLException(e);
 		}
 
-		return DriverManager.getConnection("jdbc:mysql://localhost:3306/" + nomeBanco/*, usuario, senha*/);
+		return DriverManager.getConnection("jdbc:mysql://localhost:3306/" + nomeBanco, usuario, senha);
 	}
 
 }

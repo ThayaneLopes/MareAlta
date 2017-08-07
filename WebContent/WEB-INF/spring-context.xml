@@ -15,7 +15,7 @@ xsi:schemaLocation="http://www.springframework.org/schema/mvc
 	<mvc:annotation-driven conversion-service="conversionService" />
 	
 <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver"> 
-	<property name="prefix" value="/view" /> 
+	<property name="prefix" value="/view/" /> 
 	<property name="suffix" value=".jsp" /> 
 </bean>
 
