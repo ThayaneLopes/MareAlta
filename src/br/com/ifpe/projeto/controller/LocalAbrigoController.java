@@ -17,7 +17,6 @@ import br.com.ifpe.projeto.model.LocalAbrigoDAO;
 @Controller
 public class LocalAbrigoController {
 
-	private CidadeRisco cidaderisco;
 	@RequestMapping("/cadastroComSucessoLocalAbrigo")
 	public String cadastroComSucessoLocalAbrigo(LocalAbrigo localabrigo) {
 		LocalAbrigoDAO dao = new LocalAbrigoDAO();

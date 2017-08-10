@@ -8,10 +8,10 @@ public class CidadeRisco {
 	
 	private int id;
 	@NotEmpty(message="O nome deve ser preenchido") 
-	@Size(min = 10, max = 150, message="O nome deve deve ter no mínimo 10 caracteres")
+	@Size(min = 10, max = 150, message="O nome deve deve ter no mï¿½nimo 10 caracteres")
 	private String nome;
-	@NotEmpty(message="A região deve ser preenchida") 
-	@Size(min = 10, max = 100, message="A região deve deve ter no mínimo 10 caracteres")
+	@NotEmpty(message="A regiÃ£o deve ser preenchida") 
+	@Size(min = 10, max = 100, message="A regiï¿½o deve deve ter no mï¿½nimo 10 caracteres")
 	private String regiao;
 	private String situacaoRisco;
 	public int getId() {

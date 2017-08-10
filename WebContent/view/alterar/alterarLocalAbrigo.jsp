@@ -105,8 +105,7 @@
 
 
 
-		<input type="submit" class="btn btn-primary"> <input
-			type="reset" class="btn btn-warning">
+		<input type="submit" class="btn btn-primary" value="ALTERAR DADOS">
 
 	</form>
 

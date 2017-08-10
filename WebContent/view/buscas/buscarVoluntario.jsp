@@ -10,7 +10,7 @@ pageEncoding="ISO-8859-1"%>
 
 <form action="listarVoluntarios" method="post">
 
-		<input type="search" name="busca" id="buscaVoluntario" class="form-control" placeholder="Insira aqui sua busca de voluntários" style="width:300px;"> <br>
+		<input type="text" name="busca" id="buscaVoluntario" class="form-control" placeholder="Insira aqui sua busca de voluntários" style="width:300px;"> <br>
 		<input type="submit" class="btn btn-primary" value="Buscar"> 
 		<input type="reset" class="btn btn-warning" value="Limpar">
 

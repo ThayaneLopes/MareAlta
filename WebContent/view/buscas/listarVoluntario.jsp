@@ -8,10 +8,10 @@ pageEncoding="ISO-8859-1"%>
   <script src="view/js/jquery-3.2.1/jquery.min.js"></script>
   <script src="view/css/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-	<title>Listar Voluntários</title>
+	<title>Listar Voluntario</title>
 </head>
 <body>
-	<strong>Lista de Voluntários</strong>
+	<strong>Lista de Voluntarios</strong>
 <div class="container">
 	<table class="table table-striped table-bordered">
 		<tr>
