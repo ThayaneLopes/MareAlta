@@ -58,7 +58,7 @@ public class VoluntarioController {
 
 		return "formularios/cadastroVoluntario";
 	}
-
+	
 	@RequestMapping("/buscarVoluntario")
 	public String buscarVoluntarios() {
 		return "buscas/buscarVoluntario";

@@ -35,6 +35,7 @@ public class CidadeRiscoController {
 		
 		return "formularios/cadastroCidadeRisco";
 	}
+	
 
 	@RequestMapping("/cadastroComSucessoCidadeRisco")
 	public String cadastroComSucessoCidadeRisco(CidadeRisco cidaderisco) {

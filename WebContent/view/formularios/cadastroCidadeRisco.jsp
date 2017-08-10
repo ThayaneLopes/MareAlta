@@ -5,7 +5,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <link rel="stylesheet" type="text/css" href="view/css/bootstrap-3.3.7-dist/css/bootstrap.min.css" /> 
-<script type="text/javascript" src="view/css/bootstrap-3.3.7-dis/js/bootstrap.min.js"></script> 
+<script type="text/javascript" src="view/css/bootstrap-3.3.7-dis/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="view/js/jquery/jquery.min.js"></script> 
 <title>Cadastro de Cidades em Risco</title>
 </head>
 <body>
@@ -16,8 +17,8 @@
 		<form:errors path="cidadeRisco.situacaoRisco" cssStyle="color:red" /> 
 
 		<div class="form-group">
-			<label for="nome">Nome</label> 	
-			<input type="text" style="width: 400px;" maxlength="50" class="form-control" id="nome" name="nome"><br>	
+			<label for="nome">Nome da Cidade</label> 	
+			<input type="text" style="width: 400px;" maxlength="50" class="form-control" id="nome" name="nome" onkeyup="validar(this,'text');"><br>	
 			
 			<label for="regiao">Região</label> 
 			<select style="width: 400px;" class="form-control" id="regiao" name="regiao" >
@@ -38,7 +39,14 @@
 			<input type="reset" class="btn btn-warning" value="Limpar">
 		</div>
 	</form>
-
-
+	<script type="text/javascript">
+function validar(dom,tipo){
+	switch(tipo){
+		case'num':var regex=/[A-Za-z]/g;break;
+		case'text':var regex=/\d/g;break;
+	}
+	dom.value=dom.value.replace(regex,'');
+}
+</script>
 </body>
 </html>

@@ -23,7 +23,8 @@ public class LocalAbrigoController {
 		dao.inserirLocalAbrigo(localabrigo);
 		return "formularios/sucesso";
 	}
-
+	
+	
 	@RequestMapping("/cadastroLocalAbrigo")
 	public String cadastroLocalAbrigo(@Valid LocalAbrigo localAbrigo,BindingResult result,Model model) {
 		if (result.hasErrors()) {    
@@ -101,6 +102,4 @@ public class LocalAbrigoController {
 		dao.atualizaLocalAbrigo(localAbrigo);
 		return "forward:listarlocalabrigo?busca=";
 	}
-
-	
 }

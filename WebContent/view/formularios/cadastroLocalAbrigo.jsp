@@ -6,7 +6,8 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <link rel="stylesheet" type="text/css" href="view/css/bootstrap-3.3.7-dist/css/bootstrap.min.css" /> 
-<script type="text/javascript" src="view/css/bootstrap-3.3.7-dis/js/bootstrap.min.js"></script> 
+<script type="text/javascript" src="view/css/bootstrap-3.3.7-dis/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="view/js/jquery/jquery.min.js"></script> 
 <title>Cadastro de Local de Abrigo</title>
 </head>
 <body>
@@ -21,17 +22,17 @@
 		<form:errors path="localAbrigo.cep" cssStyle="color:red" />  
 
 
-		<label for="nome">Nome: </label>	
+		<label for="nome">Nome do Local de Abrigo: </label>	
 		<input type="text" style="width: 400px;" maxlength="50" class="form-control" id="nome" name="nome" required> <br>	
 
 		<label for="responsavel">Responsável: </label> 	
 		<input type="text" style="width: 400px;" maxlength="50" class="form-control" id="responsavel" name="responsavel" required> <br>	
 
-		<label for="telefone1">Telefone 1: </label>		
-		<input type="tel" style="width: 200px;" maxlength="11" class="form-control" id="telefone1" name="telefone1" required placeholder="DD+Numero de telefone"> <br>
+		<label for="telefone1">Celular: </label>		
+		<input type="tel" style="width: 200px;" maxlength="11" class="form-control" id="telefone1" name="telefone1" required placeholder="DD+Numero de telefone" onkeyup="validar(this,'num');"> <br>
 
-		<label for="telefone2">Telefone 2: </label>		
-		<input type="tel" style="width: 200px;" maxlength="11" class="form-control" id="telefone2" name="telefone2" required placeholder="DD+Numero de telefone"> <br>
+		<label for="telefone2">Telefone: </label>		
+		<input type="tel" style="width: 200px;" maxlength="11" class="form-control" id="telefone2" name="telefone2" required placeholder="Numero de telefone" onkeyup="validar(this,'num');"> <br>
 
 		<label for="estado">Estado: </label> 
 		<select style="width: 400px;" class="form-control" id="estado" name="estado">
@@ -81,7 +82,7 @@
 		</select> <br>
 	
 		<label for="cep">CEP: </label>		
-		<input type="text" style="width: 200px;" maxlength="8" minlength="8" class="form-control" id="cep" name="cep" required> <br>
+		<input type="text" style="width: 200px;" maxlength="8" minlength="8" class="form-control" id="cep" name="cep" required onkeyup="validar(this,'num');"> <br>
 
 		<div type="radio">
 		<label for="precisaVoluntario">Precisa de Voluntario</label>		
@@ -98,7 +99,19 @@
 
 	</form>
 
-
+<script>
+function validar(dom, tipo) {
+	switch (tipo) {
+	case 'num':
+		var regex = /[A-Za-z]/g;
+		break;
+	case 'text':
+		var regex = /\d/g;
+		break;
+	}
+	dom.value = dom.value.replace(regex, '');
+}
+ </script>
 </body>
 </html>
 	
