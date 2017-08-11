@@ -4,6 +4,7 @@
 <html>
 <head>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <link rel="stylesheet" type="text/css" href="view/css/bootstrap-3.3.7-dist/css/bootstrap.min.css" /> 
 <script type="text/javascript" src="view/css/bootstrap-3.3.7-dis/js/bootstrap.min.js"></script> 
@@ -11,7 +12,7 @@
 </head>
 <body>
 
-	 <form action="cadastroComSucessoVoluntario" method="post" onSubmit="return enviardados();">
+	 <form action="cadastroComSucessoVoluntario" method="post">
 	 		<form:errors path="voluntario.nome" cssStyle="color:red" /> 
 	 		<form:errors path="voluntario.cpf" cssStyle="color:red" /> 
 	 		<form:errors path="voluntario.email" cssStyle="color:red" /> 
@@ -24,13 +25,21 @@
 		<input type="text" style="width: 400px;" maxlength="50" class="form-control" id="nome" name="nome" required minlength="10" onkeyup="validar(this,'text');"> <br>
 
 		<label for="orgaoPublico">Orgão Publico:</label> 		
-		<input type="text" style="width: 200px;" maxlength="50" class="form-control" id="orgao_publico" name="orgaoPublico" placeholder="Se sim, favor insira a sigla"><br>
+		<input type="text" style="width: 200px;" maxlength="50" class="form-control" id="orgao_publico" name="orgao_publico" placeholder="Se sim, favor insira a sigla"><br>
 
 		<label for="email">E-mail:</label> 	
 		<input type="email" style="width: 400px;" maxlength="50" class="form-control"  id="email" name="email" required><br>	
 		
 		<label for="telefone1">Telefone:</label> 	
 		<input type="tel" style="width: 200px;" maxlength="11" minlength="11" class="form-control"  id="telefone1" name="telefone" required placeholder="DD+N° Telefone" onkeyup="validar(this,'num');"><br>	
+		
+		<label for="pontoApoio">Ponto de Apoio:</label> 
+		<select name="pontoApoio" >
+			<option value=""> Selecione </option>
+			<c:forEach items="${listaPontoApoio}" var="obj">
+				<option value="${obj.id}"> ${obj.nome} </option>
+			</c:forEach>
+		</select></br> 
 		
 		<label for="localAbrigo">Local Abrigo:</label> 
 		<select name="localAbrigo" >
@@ -40,13 +49,7 @@
 			</c:forEach>
 		</select> </br>
 		
-		<label for="pontoApoio">Ponto de Apoio:</label> 
-		<select name="pontoApoio" >
-			<option value=""> Selecione </option>
-			<c:forEach items="${listaPontoApoio}" var="obj">
-				<option value="${obj.id}"> ${obj.nome} </option>
-			</c:forEach>
-		</select></br>
+	
 		
 		<input type="submit" class="btn btn-primary" value="Cadastrar"> <input type="reset" class="btn btn-warning" value="Limpar">
 

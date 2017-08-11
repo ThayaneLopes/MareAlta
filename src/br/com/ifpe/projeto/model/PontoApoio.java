@@ -8,30 +8,30 @@ public class PontoApoio {
 	
 	private int id;
 	@NotEmpty(message="O nome deve ser preenchido") 
-	@Size(min = 10, max = 150, message="Nome deve ter no mínimo 10 caracteres")
+	@Size(min = 10, max = 150, message="Nome deve ter no mï¿½nimo 10 caracteres")
 	private String nome;
-	@NotEmpty(message="O responsável deve ser preenchido") 
-	@Size(min = 10, max = 150, message="Responsável deve ter no mínimo 10 caracteres")
+	@NotEmpty(message="O responsï¿½vel deve ser preenchido") 
+	@Size(min = 10, max = 150, message="Responsï¿½vel deve ter no mï¿½nimo 10 caracteres")
 	private String responsavel;
 	@NotEmpty(message="O telefone deve ser preenchido") 
-	@Size(min = 11, max = 15, message="Telefone deve ter no mínimo 11 caracteres")
+	@Size(min = 11, max = 15, message="Telefone deve ter no mï¿½nimo 11 caracteres")
 	private String telefone1;
 	private String telefone2;
 	private String estado;
 	@NotEmpty(message="O bairro deve ser preenchido") 
-	@Size(min = 10, max = 50, message="Bairro deve ter no mínimo 10 caracteres")
+	@Size(min = 10, max = 50, message="Bairro deve ter no mï¿½nimo 10 caracteres")
 	private String bairro;
-	@NotEmpty(message="O endereço deve ser preenchido") 
-	@Size(min = 10, max = 150, message="Endereço deve ter no mínimo 10 caracteres")
+	@NotEmpty(message="O endereÃ§o deve ser preenchido") 
+	@Size(min = 10, max = 150, message="Endereï¿½o deve ter no mï¿½nimo 10 caracteres")
 	private String endereco;
 	private String complemento;
 	private String cidade;
 	@NotEmpty(message="O CEP deve ser preenchido") 
-	@Size(min = 8, max = 10, message="CEP deve ter no mínimo 8 caracteres")
+	@Size(min = 8, max = 10, message="CEP deve ter no mnimo 8 caracteres")
 	private String cep;
 	private boolean ativo;
-	@NotEmpty(message="O Horário de Funcionamento deve ser preenchido") 
-	@Size(min = 8,message="Horário de Funcionamento deve ter no mínimo 8 caracteres")
+	@NotEmpty(message="O HorÃ¡rio de Funcionamento deve ser preenchido") 
+	@Size(min = 8,message="HorÃ¡rio de Funcionamento deve ter no mÃ­nimo 8 caracteres")
 	private String horarioFuncionamento;
 	private boolean fazColeta;
 	private boolean fazTriagem;

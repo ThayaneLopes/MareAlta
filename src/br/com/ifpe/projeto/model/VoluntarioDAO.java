@@ -29,8 +29,8 @@ public class VoluntarioDAO {
 			stmt.setString(3, voluntario.getOrgao_publico());
 			stmt.setString(4, voluntario.getEmail());
 			stmt.setString(5, voluntario.getTelefone());
-			stmt.setObject(6, voluntario.getPontoApoio());
-			stmt.setObject(7, voluntario.getLocalAbrigo());
+			stmt.setObject(6, voluntario.getPontoApoio().getId());
+			stmt.setObject(7, voluntario.getLocalAbrigo().getId());
 			stmt.execute();
 			stmt.close();
 			connection.close();

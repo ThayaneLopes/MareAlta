@@ -25,20 +25,20 @@
 
 		<label for="nome">Nome do Ponto de Apoio: </label> <input type="text"
 			style="width: 400px;" maxlength="100" class="form-control" id="nome"
-			name="nome"> <br> <label for="responsavel">Responsável:
+			name="nome" > <br> <label for="responsavel">Responsável:
 		</label> <input type="text" style="width: 400px;" maxlength="50"
 			class="form-control" id="responsavel" name="responsavel"> <br>
 
 		<label for="telefone1">Celular: </label> <input type="tex"
 			style="width: 200px;" maxlength="11" minlength="11"
 			class="form-control" id="telefone1" name="telefone1"
-			placeholder="DD+N° Telefone" onkeyup="validar(this,'num');"> <br> <label
-			for="telefone2">Telefone: </label> <input type="text"
+			placeholder="DD+N° Telefone" onkeyup="validar(this,'num');">
+		<br> <label for="telefone2">Telefone: </label> <input type="text"
 			style="width: 200px;" maxlength="11" minlength="11"
 			class="form-control" id="telefone2" name="telefone2"
-			placeholder="Telefone" onkeyup="validar(this,'num');"> <br> <label for="estado">Estado:
-		</label> <select style="width: 400px;" class="form-control" id="estado"
-			name="estado">
+			placeholder="Telefone" onkeyup="validar(this,'num');"> <br>
+		<label for="estado">Estado: </label> <select style="width: 400px;"
+			class="form-control" id="estado" name="estado">
 			<option>Selecione uma opção</option>
 			<option value="AC">Acre</option>
 			<option value="AL">Alagoas</option>
@@ -79,7 +79,8 @@
 			style="width: 300px;" maxlength="25" class="form-control" id="cidade"
 			name="cidade"> <br> <label for="cep">CEP: </label> <input
 			type="text" style="width: 200px;" maxlength="8" minlength="8"
-			class="form-control" id="cep" name="cep" onkeyup="validar(this,'num');"> <br>
+			class="form-control" id="cep" name="cep"
+			onkeyup="validar(this,'num');"> <br>
 
 		<div type="radio">
 			<label for="ativo">Está Ativo? </label> <br> <input type="radio"
