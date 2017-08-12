@@ -33,52 +33,38 @@ public class VoluntarioController {
 		return "formularios/sucesso";
 	}
 
-//	@RequestMapping("/cadastroVoluntario")
-//	public String cadastroVoluntario(@Valid Voluntario voluntario, BindingResult result,Model model) {
-//		
-//		if (voluntario.getNome() == null || voluntario.getNome().equals("")) { 
-//			return "voluntario/cadastroVoluntario"; 
-//		}		
-//		if (voluntario.getCpf() == null || voluntario.getCpf().equals("")) { 
-//			return "voluntario/cadastroVoluntario"; 
-//		}
-//		if (voluntario.getEmail() == null || voluntario.getEmail().equals("")) { 
-//			return "voluntario/cadastroVoluntario"; 
-//		}		
-//		if (voluntario.getTelefone() == null || voluntario.getTelefone().equals("")) { 
-//			return "voluntario/cadastroVoluntario"; 
-//		}
-//		
-//		
-//		
-//		if (result.hasErrors()) {    
-//			return "forward:cadastroVoluntario"; 
-//		}
-//
-//		PontoApoioDAO pontoapoiodao = new PontoApoioDAO();
-//		List<PontoApoio> listaPontoApoio = pontoapoiodao.listar("");
-//		model.addAttribute("listaPontoApoio", listaPontoApoio);
-//
-//		LocalAbrigoDAO localabrigodao = new LocalAbrigoDAO();
-//		List<LocalAbrigo> listaLocalAbrigo = localabrigodao.listar("");
-//		model.addAttribute("listaLocalAbrigo", listaLocalAbrigo);
-//
-//		return "formularios/cadastroVoluntario";
-//	}
-	
-//	@RequestMapping("/emergencia")
-//	public String emer(Model model)
-//	{
-//		PontoApoioDAO pontoapoiodao = new PontoApoioDAO();
-//		List<PontoApoio> listaPontoApoio = pontoapoiodao.listar("");
-//		model.addAttribute("listaPontoApoio", listaPontoApoio);
-//
-//		LocalAbrigoDAO localabrigodao = new LocalAbrigoDAO();
-//		List<LocalAbrigo> listaLocalAbrigo = localabrigodao.listar("");
-//		model.addAttribute("listaLocalAbrigo", listaLocalAbrigo);
-//
-//		return "formularios/cadastroVoluntario";
-//	}
+	@RequestMapping("/cadastroVoluntario")
+	public String cadastroVoluntario(@Valid Voluntario voluntario, BindingResult result,Model model) {
+		
+		if (voluntario.getNome() == null || voluntario.getNome().equals("")) { 
+			return "voluntario/cadastroVoluntario"; 
+		}		
+		if (voluntario.getCpf() == null || voluntario.getCpf().equals("")) { 
+			return "voluntario/cadastroVoluntario"; 
+		}
+		if (voluntario.getEmail() == null || voluntario.getEmail().equals("")) { 
+			return "voluntario/cadastroVoluntario"; 
+		}		
+		if (voluntario.getTelefone() == null || voluntario.getTelefone().equals("")) { 
+			return "voluntario/cadastroVoluntario"; 
+		}
+		
+		
+		
+		if (result.hasErrors()) {    
+			return "forward:cadastroVoluntario"; 
+		}
+
+		PontoApoioDAO pontoapoiodao = new PontoApoioDAO();
+		List<PontoApoio> listaPontoApoio = pontoapoiodao.listar("");
+		model.addAttribute("listaPontoApoio", listaPontoApoio);
+
+		LocalAbrigoDAO localabrigodao = new LocalAbrigoDAO();
+		List<LocalAbrigo> listaLocalAbrigo = localabrigodao.listar("");
+		model.addAttribute("listaLocalAbrigo", listaLocalAbrigo);
+
+		return "formularios/cadastroVoluntario";
+	}
 	
 	@RequestMapping("/buscarVoluntario")
 	public String buscarVoluntarios() {

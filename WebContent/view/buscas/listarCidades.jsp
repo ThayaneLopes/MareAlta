@@ -32,7 +32,9 @@
 					<td>${cidade.nome}</td>
 					<td>${cidade.regiao}</td>
 					<td>${cidade.situacaoRisco}</td>
-					<td><a href="removerCidade?id=${cidade.id}">Remover</a></td>
+					<td><a href="exibirAlterarCidadeRisco?id=${cidade.id}">Alterar</a>
+					<a href="removerCidade?id=${cidade.id}">Remover</a></td>
+					
 				</tr>
 			</c:forEach>
 
