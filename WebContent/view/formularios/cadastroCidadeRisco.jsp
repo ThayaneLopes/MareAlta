@@ -10,7 +10,7 @@
 <title>Cadastro de Cidades em Risco</title>
 </head>
 <body>
-	
+	<div style="color: red;"> ${mensagem} </div>
 	<form action="cadastroComSucessoCidadeRisco" method="post">
 		<form:errors path="cidadeRisco.nome" cssStyle="color:red" /> 
 		<form:errors path="cidadeRisco.regiao" cssStyle="color:red" /> 
@@ -18,7 +18,7 @@
 
 		<div class="form-group">
 			<label for="nome">Nome da Cidade</label> 	
-			<input type="text" style="width: 400px;" maxlength="50" class="form-control" id="nome" name="nome" onkeyup="validar(this,'text');"><br>	
+			<input type="text" style="width: 400px;" maxlength="50"  minlength="5" class="form-control" id="nome" name="nome" onkeyup="validar(this,'text');" required ><br>	
 			
 			<label for="regiao">Região</label> 
 			<select style="width: 400px;" class="form-control" id="regiao" name="regiao" >

@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.SQLIntegrityConstraintViolationException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,7 +22,7 @@ public class PontoApoioDAO {
 		}
 	}
 
-	public void inserirPontoApoio(PontoApoio pontoapoio) {
+	public void inserirPontoApoio(PontoApoio pontoapoio) throws ElementoJaExistenteException {
 		try {
 			String sql = "INSERT INTO ponto_apoio (nome,responsavel,telefone_1,telefone_2,estado,bairro,rua_avenida,complemento,cidade,cep,ativo,horario_funcionamento,faz_coleta,faz_triagem,precisa_voluntario) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 			PreparedStatement stmt = connection.prepareStatement(sql);
@@ -43,7 +44,11 @@ public class PontoApoioDAO {
 			stmt.execute();
 			stmt.close();
 			connection.close();
-		} catch (SQLException e) {
+		}catch (SQLIntegrityConstraintViolationException e)
+		{
+			throw new ElementoJaExistenteException();
+		}
+		catch (SQLException e) {
 			throw new RuntimeException(e);
 		}
 	}

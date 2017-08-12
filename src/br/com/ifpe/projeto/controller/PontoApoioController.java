@@ -7,6 +7,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import br.com.ifpe.projeto.model.ElementoJaExistenteException;
 import br.com.ifpe.projeto.model.PontoApoio;
 import br.com.ifpe.projeto.model.PontoApoioDAO;
 
@@ -15,9 +16,14 @@ public class PontoApoioController {
 	
 	
 	@RequestMapping("/cadastroComSucessoPontoApoio")   
-	public String cadastroComSucessoPontoApoio(PontoApoio pontoapoio) { 
+	public String cadastroComSucessoPontoApoio(PontoApoio pontoapoio, Model model) { 
 		PontoApoioDAO dao = new PontoApoioDAO(); 
-		dao.inserirPontoApoio(pontoapoio); 
+		try {
+			dao.inserirPontoApoio(pontoapoio);
+		} catch (ElementoJaExistenteException e) {
+			model.addAttribute("mensagem", "Ponto de Apoio já existente");
+			return "formularios/cadastroPontoApoio";
+		} 
 		return "formularios/sucesso"; 
 	} 
 

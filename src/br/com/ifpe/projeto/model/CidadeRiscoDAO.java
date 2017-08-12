@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.SQLIntegrityConstraintViolationException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,7 +22,7 @@ public class CidadeRiscoDAO {
 		}
 	}
 
-	public void inserirCidadeRisco(CidadeRisco cidaderisco) {
+	public void inserirCidadeRisco(CidadeRisco cidaderisco) throws ElementoJaExistenteException {
 		try {
 			String sql = "INSERT INTO cidade_risco (nome,regiao,situacao_risco) VALUES (?,?,?)";
 			PreparedStatement stmt = connection.prepareStatement(sql);
@@ -31,6 +32,8 @@ public class CidadeRiscoDAO {
 			stmt.execute();
 			stmt.close();
 			connection.close();
+		} catch (SQLIntegrityConstraintViolationException e) {
+			throw new ElementoJaExistenteException();
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
 		}
@@ -118,25 +121,22 @@ public class CidadeRiscoDAO {
 			throw new RuntimeException(e);
 		}
 	}
-	public boolean removerCidade(int id) throws SQLException
-	{
+
+	public boolean removerCidade(int id) throws SQLException {
 		try {
 
 			PreparedStatement stmt = this.connection.prepareStatement("SELECT * FROM local_abrigo WHERE cidade = ?");
 			stmt.setInt(1, id);
 			ResultSet rs = stmt.executeQuery();
 
-			if(!rs.first())
-			{
+			if (!rs.first()) {
 				PreparedStatement sql = this.connection.prepareStatement("DELETE FROM cidade_risco where id = ?");
 				sql.setInt(1, id);
 				sql.execute();
 				sql.close();
 				connection.close();
 				return true;
-			}
-			else
-			{
+			} else {
 				return false;
 			}
 

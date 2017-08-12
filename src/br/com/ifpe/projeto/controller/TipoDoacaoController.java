@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import br.com.ifpe.projeto.model.ElementoJaExistenteException;
 import br.com.ifpe.projeto.model.TipoDoacao;
 import br.com.ifpe.projeto.model.TipoDoacaoDAO;
 
@@ -16,22 +17,33 @@ import br.com.ifpe.projeto.model.TipoDoacaoDAO;
 public class TipoDoacaoController {
 
 	@RequestMapping("/cadastroComSucessoTipoDoacao")
-	public String cadastroComSucessoTipoDoacao(TipoDoacao tipodoacao) {
-		TipoDoacaoDAO dao = new TipoDoacaoDAO();
-		dao.inserirTipoDoacao(tipodoacao);
+	public String cadastroComSucessoTipoDoacao(TipoDoacao tipodoacao, Model model) {
+		if (tipodoacao.getNome() == null) {
+			model.addAttribute("mensagem", "O campo nome não pode ser deixado em branco");
+			return "formularios/cadastroTipoDoacao";
+		} else {
+			TipoDoacaoDAO dao = new TipoDoacaoDAO();
+			try {
+				dao.inserirTipoDoacao(tipodoacao);
+			} catch (ElementoJaExistenteException e) {
+				model.addAttribute("mensagem", "Já Existe este tipo de doação");
+				return "formularios/cadastroTipoDoacao";
+			}
+		}
 		return "formularios/sucesso";
 	}
 
 	@RequestMapping("/cadastroTipoDoacao")
-	public String cadastrarTipoDoacao(@Valid TipoDoacao tipoDoacao, BindingResult result, Model model) {
+	public String cadastrarTipoDoacao(@Valid TipoDoacao tipoDoacao,BindingResult result, Model model) {
 
-		if (tipoDoacao.getNome() == null || tipoDoacao.getNome().equals("")) {
-			return "tipoDoacao/cadastroTipoDoacao";
-		}
-
-		if (result.hasErrors()) {
-			return "forward:cadastroTipoDoacao";
-		}
+		 if (tipoDoacao.getNome() == null || tipoDoacao.getNome().equals(""))
+		 {
+		 return "tipoDoacao/cadastroTipoDoacao";
+		 }
+		
+		 if (result.hasErrors()) {
+		 return "forward:cadastroTipoDoacao";
+		 }
 
 		return "formularios/cadastroTipoDoacao";
 	}
@@ -70,10 +82,9 @@ public class TipoDoacaoController {
 
 		return "forward:listartipodoacao?busca=";
 	}
-	
+
 	@RequestMapping("/removertipodoacao")
-	public String removertipodoacao(int id)
-	{
+	public String removertipodoacao(int id) {
 		TipoDoacaoDAO dao = new TipoDoacaoDAO();
 		dao.removertipodoacao(id);
 		return "forward:listartipodoacao?busca=";

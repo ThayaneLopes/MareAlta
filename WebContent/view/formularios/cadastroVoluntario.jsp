@@ -11,7 +11,7 @@
 <title>Cadastro de Voluntário</title>
 </head>
 <body>
-
+<div>${mensagem}</div>
 	 <form action="cadastroComSucessoVoluntario" method="post">
 	 		<form:errors path="voluntario.nome" cssStyle="color:red" /> 
 	 		<form:errors path="voluntario.cpf" cssStyle="color:red" /> 

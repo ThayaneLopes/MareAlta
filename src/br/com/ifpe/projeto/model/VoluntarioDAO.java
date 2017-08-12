@@ -4,8 +4,10 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.SQLIntegrityConstraintViolationException;
 import java.util.ArrayList;
 import java.util.List;
+
 import br.com.ifpe.projeto.util.ConnectionFactory;
 
 public class VoluntarioDAO {
@@ -20,7 +22,7 @@ public class VoluntarioDAO {
 		}
 	}
 
-	public void inserirVoluntario(Voluntario voluntario) {
+	public void inserirVoluntario(Voluntario voluntario) throws ElementoJaExistenteException {
 		try {
 			String sql = "INSERT INTO voluntario (cpf, nome, orgao_publico, email,telefone,id_ponto_apoio,id_local_abrigo) VALUES (?,?,?,?,?,?,?)";
 			PreparedStatement stmt = connection.prepareStatement(sql);
@@ -34,7 +36,10 @@ public class VoluntarioDAO {
 			stmt.execute();
 			stmt.close();
 			connection.close();
-		} catch (SQLException e) {
+		}catch (SQLIntegrityConstraintViolationException e) {
+			throw new ElementoJaExistenteException();
+		}
+		catch (SQLException e) {
 			throw new RuntimeException(e);
 		}
 	}

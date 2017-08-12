@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.SQLIntegrityConstraintViolationException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,7 +22,7 @@ public class TipoDoacaoDAO {
 		}
 	}
 
-	public void inserirTipoDoacao(TipoDoacao tipodoacao) {
+	public void inserirTipoDoacao(TipoDoacao tipodoacao) throws ElementoJaExistenteException {
 		try {
 			String sql = "INSERT INTO tipo_doacao (nome,ativo) VALUES (?,?)";
 			PreparedStatement stmt = (PreparedStatement) connection.prepareStatement(sql);
@@ -30,7 +31,10 @@ public class TipoDoacaoDAO {
 			stmt.execute();
 			stmt.close();
 			connection.close();
-		} catch (SQLException e) {
+		}catch (SQLIntegrityConstraintViolationException e) {
+			throw new ElementoJaExistenteException();
+		} 
+		catch (SQLException e) {
 			throw new RuntimeException(e);
 		}
 	}

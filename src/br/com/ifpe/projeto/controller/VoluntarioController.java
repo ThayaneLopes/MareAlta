@@ -6,10 +6,12 @@ import javax.validation.Valid;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import br.com.ifpe.projeto.model.LocalAbrigo;
 import br.com.ifpe.projeto.model.LocalAbrigoDAO;
+import br.com.ifpe.projeto.model.ElementoJaExistenteException;
 import br.com.ifpe.projeto.model.PontoApoio;
 import br.com.ifpe.projeto.model.PontoApoioDAO;
 import br.com.ifpe.projeto.model.Voluntario;
@@ -19,9 +21,15 @@ import br.com.ifpe.projeto.model.VoluntarioDAO;
 public class VoluntarioController {
 
 	@RequestMapping("/cadastroComSucessoVoluntario")
-	public String cadastroComSucessoVoluntario(@Valid Voluntario voluntario) {
+	public String cadastroComSucessoVoluntario(@Valid Voluntario voluntario,Model model) {
 		VoluntarioDAO dao = new VoluntarioDAO();
-		dao.inserirVoluntario(voluntario);
+		try {
+			dao.inserirVoluntario(voluntario);
+		} catch (ElementoJaExistenteException e) {
+			
+			// TODO Auto-generated catch block
+			model.addAttribute("mensagem", "Voluntario já existente");
+		}
 		return "formularios/sucesso";
 	}
 
@@ -58,18 +66,19 @@ public class VoluntarioController {
 //		return "formularios/cadastroVoluntario";
 //	}
 	
-	@RequestMapping("/emergencia")
-	public String emer(Model model)
-	{
-		PontoApoioDAO pontoapoiodao = new PontoApoioDAO();
-		List<PontoApoio> listaPontoApoio = pontoapoiodao.listar("");
-		model.addAttribute("listaPontoApoio", listaPontoApoio);
-
-		LocalAbrigoDAO localabrigodao = new LocalAbrigoDAO();
-		List<LocalAbrigo> listaLocalAbrigo = localabrigodao.listar("");
-		model.addAttribute("listaLocalAbrigo", listaLocalAbrigo);
-		return "formularios/cadastroVoluntario";
-	}
+//	@RequestMapping("/emergencia")
+//	public String emer(Model model)
+//	{
+//		PontoApoioDAO pontoapoiodao = new PontoApoioDAO();
+//		List<PontoApoio> listaPontoApoio = pontoapoiodao.listar("");
+//		model.addAttribute("listaPontoApoio", listaPontoApoio);
+//
+//		LocalAbrigoDAO localabrigodao = new LocalAbrigoDAO();
+//		List<LocalAbrigo> listaLocalAbrigo = localabrigodao.listar("");
+//		model.addAttribute("listaLocalAbrigo", listaLocalAbrigo);
+//
+//		return "formularios/cadastroVoluntario";
+//	}
 	
 	@RequestMapping("/buscarVoluntario")
 	public String buscarVoluntarios() {

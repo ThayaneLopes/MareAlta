@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import br.com.ifpe.projeto.model.CidadeRisco;
 import br.com.ifpe.projeto.model.CidadeRiscoDAO;
+import br.com.ifpe.projeto.model.ElementoJaExistenteException;
 
 @Controller
 public class CidadeRiscoController {
@@ -35,13 +36,18 @@ public class CidadeRiscoController {
 		
 		return "formularios/cadastroCidadeRisco";
 	}
-	
 
 	@RequestMapping("/cadastroComSucessoCidadeRisco")
-	public String cadastroComSucessoCidadeRisco(CidadeRisco cidaderisco) {
+	public String cadastroComSucessoCidadeRisco(CidadeRisco cidaderisco ,Model model) {
 		CidadeRiscoDAO dao = new CidadeRiscoDAO();
-		dao.inserirCidadeRisco(cidaderisco);
-		return "formularios/sucesso";
+		try {
+			dao.inserirCidadeRisco(cidaderisco);
+			return "formularios/sucesso";
+		} catch (ElementoJaExistenteException e) {
+			model.addAttribute("mensagem", "Cidade já existente");
+			return "formularios/cadastroCidadeRisco";
+		}
+		
 	}
 
 	@RequestMapping("/buscarcidades")

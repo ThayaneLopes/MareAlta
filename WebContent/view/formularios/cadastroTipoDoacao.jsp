@@ -9,12 +9,12 @@
 <title>Cadastro de Tipos de Doação</title>
 </head>
 <body>
-	
+	<div style="color: red;"> ${mensagem} </div>
 	<form action="cadastroComSucessoTipoDoacao" method="post" onSubmit="return enviardados();">
 		<form:errors path="tipoDoacao.nome" cssStyle="color:red" /> 
 
 		<label for="nome">Nome da Doação: </label> 
-		<input type="text" style="width: 400px;" maxlength="50" class="form-control" id="nome" name="nome" required><br>
+		<input type="text" style="width: 400px;" maxlength="50" minlength="3" class="form-control" id="nome" name="nome" required><br>
 
 		<div type="radio">
 		<label for="ativo">Pode ser escolhida por Locais de Abrigo?</label>
