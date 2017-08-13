@@ -2,6 +2,11 @@ package br.com.ifpe.projeto.model;
 
 public class ElementoJaExistenteException extends Exception {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	public ElementoJaExistenteException() {
 		// TODO Auto-generated constructor stub
 	}

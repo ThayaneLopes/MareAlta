@@ -14,8 +14,6 @@
 </head>
 <body style="margin-left: 1%;">
 
-	<c:import url="menu.jsp" />
-
 	<hr><h3>Alterar Cidades de Risco</h3><hr>
 	
 	<div style="text-align: center; color: red;"> ${msg} </div>
@@ -30,24 +28,55 @@
 			
 			<label for="regiao">Região</label> 
 			<select style="width: 400px;" class="form-control" id="regiao" name="regiao" >
-				<option value="urbana">Urbana</option>
+			<c:choose>
+					<c:when test="${cidaderisco.regiao eq 'urbana'}">
+						<option value="urbana" selected>Urbana</option>
 				<option value="rural">Rural</option>
+					</c:when>
+					<c:otherwise>
+						<option value="urbana">Urbana</option>
+				<option value="rural" selected>Rural</option>
+					</c:otherwise>
+				</c:choose>
 			</select> <br>
 
 
 			<label for="situacaoRisco">Situação de Risco</label> 
 			<select style="width: 400px;" class="form-control" id="situacaoRisco" name="situacaoRisco">
-				<option value="baixa">Baixa</option>
-				<option value="media">Média</option>
-				<option value="alta">Alta</option>
-				<option value="catastrofica">Catastrófica</option>
+			<c:choose>
+					<c:when test="${cidaderisco.situacaoRisco eq 'baixa'}">
+					<option value="baixa" selected>Baixa</option>
+					<option value="media">Média</option>
+					<option value="alta">Alta</option>
+					<option value="catastrofica">Catastrófica</option>
+					</c:when>
+					<c:when test="${cidaderisco.situacaoRisco eq 'media'}">
+					<option value="baixa" >Baixa</option>
+					<option value="media" selected>Média</option>
+					<option value="alta">Alta</option>
+					<option value="catastrofica">Catastrófica</option>
+					</c:when>
+					<c:when test="${cidaderisco.situacaoRisco eq 'alta'}">
+					<option value="baixa" >Baixa</option>
+					<option value="media" >Média</option>
+					<option value="alta" selected>Alta</option>
+					<option value="catastrofica">Catastrófica</option>
+					</c:when>
+					
+					<c:otherwise>
+					<option value="baixa" >Baixa</option>
+					<option value="media" >Média</option>
+					<option value="alta" >Alta</option>
+					<option value="catastrofica" selected>Catastrófica</option>
+					</c:otherwise>
+				</c:choose>
+				
 			</select> <br>
 
 		</div>
 
 		<p> 
-			<button type="reset" class="btn btn-default"> &nbsp; Limpar &nbsp; </button> &nbsp;
-			<button type="submit" class="btn btn-primary"> &nbsp; Alterar &nbsp; </button>
+			<button type="submit" class="btn btn-primary">  Alterar </button>
 		</p>
 	</form>
 

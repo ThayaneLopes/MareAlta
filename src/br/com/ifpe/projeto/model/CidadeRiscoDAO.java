@@ -71,7 +71,36 @@ public class CidadeRiscoDAO {
 			throw new RuntimeException(e);
 		}
 	}
+	public List<CidadeRisco> listartodas()
+	{
+		try {
+			List<CidadeRisco> listaCidades = new ArrayList<CidadeRisco>();
+			PreparedStatement stmt = this.connection
+					.prepareStatement("SELECT * FROM cidade_risco");
+			ResultSet rs = stmt.executeQuery();
 
+			while (rs.next()) {
+
+				CidadeRisco cidades = new CidadeRisco();
+
+				cidades.setId(rs.getInt("id"));
+				cidades.setNome(rs.getString("nome"));
+				cidades.setRegiao(rs.getString("regiao"));
+				cidades.setSituacaoRisco(rs.getString("situacao_risco"));
+
+				listaCidades.add(cidades);
+			}
+
+			rs.close();
+			stmt.close();
+			connection.close();
+
+			return listaCidades;
+
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+	}
 	public void alterar(CidadeRisco cidaderisco) {
 
 		String sql = "UPDATE cidade_risco SET nome=?, regiao=?, situacao_risco=? WHERE id=?";
@@ -83,7 +112,7 @@ public class CidadeRiscoDAO {
 			stmt.setString(1, cidaderisco.getNome());
 			stmt.setString(2, cidaderisco.getRegiao());
 			stmt.setString(3, cidaderisco.getSituacaoRisco());
-			stmt.setInt(7, cidaderisco.getId());
+			stmt.setInt(4, cidaderisco.getId());
 
 			stmt.execute();
 			connection.close();
