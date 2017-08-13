@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -14,7 +15,7 @@
 		<form:errors path="tipoDoacao.nome" cssStyle="color:red" /> 
 
 		<label for="nome">Nome da Doação: </label> 
-		<input type="text" style="width: 400px;" maxlength="50" minlength="3" class="form-control" id="nome" name="nome" required><br>
+		<input type="text" style="width: 400px;" class="form-control" id="nome" name="nome" ><br>
 
 		<div type="radio">
 		<label for="ativo">Pode ser escolhida por Locais de Abrigo?</label>

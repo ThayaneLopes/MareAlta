@@ -17,14 +17,19 @@ import br.com.ifpe.projeto.model.TipoDoacaoDAO;
 public class TipoDoacaoController {
 
 	@RequestMapping("/cadastroComSucessoTipoDoacao")
-	public String cadastroComSucessoTipoDoacao(TipoDoacao tipodoacao, Model model) {
-		if (tipodoacao.getNome() == null) {
+	public String cadastroComSucessoTipoDoacao(@Valid TipoDoacao tipoDoacao, BindingResult result, Model model) {
+
+		if (result.hasErrors()) {
+			return "forward:cadastroTipoDoacao";
+		}
+
+		if (tipoDoacao.getNome() == null) {
 			model.addAttribute("mensagem", "O campo nome não pode ser deixado em branco");
 			return "formularios/cadastroTipoDoacao";
 		} else {
 			TipoDoacaoDAO dao = new TipoDoacaoDAO();
 			try {
-				dao.inserirTipoDoacao(tipodoacao);
+				dao.inserirTipoDoacao(tipoDoacao);
 			} catch (ElementoJaExistenteException e) {
 				model.addAttribute("mensagem", "Já Existe este tipo de doação");
 				return "formularios/cadastroTipoDoacao";
@@ -34,16 +39,7 @@ public class TipoDoacaoController {
 	}
 
 	@RequestMapping("/cadastroTipoDoacao")
-	public String cadastrarTipoDoacao(@Valid TipoDoacao tipoDoacao,BindingResult result, Model model) {
-
-		 if (tipoDoacao.getNome() == null || tipoDoacao.getNome().equals(""))
-		 {
-		 return "tipoDoacao/cadastroTipoDoacao";
-		 }
-		
-		 if (result.hasErrors()) {
-		 return "forward:cadastroTipoDoacao";
-		 }
+	public String cadastrarTipoDoacao() {
 
 		return "formularios/cadastroTipoDoacao";
 	}

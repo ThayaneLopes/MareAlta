@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans" 
 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
 xmlns:context="http://www.springframework.org/schema/context" 
@@ -29,8 +29,6 @@ class="org.springframework.context.support.ConversionServiceFactoryBean">
 <property name="converters">
 <list>
 <bean class="br.com.ifpe.projeto.controller.CidadeRiscoConverter"/>
-<bean class="br.com.ifpe.projeto.controller.LocalAbrigoConverter"/>
-<bean class="br.com.ifpe.projeto.controller.PontoApoioConverter"/>
 </list>
 </property>
 </bean>

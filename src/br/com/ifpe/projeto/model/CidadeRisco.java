@@ -7,13 +7,17 @@ import org.hibernate.validator.constraints.NotEmpty;
 public class CidadeRisco {
 	
 	private int id;
+	
 	@NotEmpty(message="O nome deve ser preenchido") 
-	@Size(min = 10, max = 150, message="O nome deve deve ter no m�nimo 10 caracteres")
+	@Size(min = 10, max = 150, message="O nome deve deve ter no minimo 10 caracteres")
 	private String nome;
-	@NotEmpty(message="A região deve ser preenchida") 
-	@Size(min = 10, max = 100, message="A regi�o deve deve ter no m�nimo 10 caracteres")
+	
+	@NotEmpty(message="A regiao deve ser preenchida") 
+	@Size(min = 10, max = 100, message="A regiao deve deve ter no minimo 10 caracteres")
 	private String regiao;
+	
 	private String situacaoRisco;
+	
 	public int getId() {
 		return id;
 	}

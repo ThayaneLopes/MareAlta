@@ -11,7 +11,7 @@
 <title>Cadastro de Voluntário</title>
 </head>
 <body>
-<div>${mensagem}</div>
+	<div style="color: red;">${mensagem}</div>
 	 <form action="cadastroComSucessoVoluntario" method="post">
 	 		<form:errors path="voluntario.nome" cssStyle="color:red" /> 
 	 		<form:errors path="voluntario.cpf" cssStyle="color:red" /> 
@@ -19,19 +19,19 @@
 	 		<form:errors path="voluntario.telefone" cssStyle="color:red" /> 
 
 		<label for="cpf">CPF:</label> 	
-		<input type="text" style="width: 200px;" maxlength="11" class="form-control" id="cpf" name="cpf" required onkeyup="validar(this,'num');"><br>	
+		<input type="text" style="width: 200px;" class="form-control" id="cpf" name="cpf" placeholder="000.000.000-00" onkeyup="validar(this,'num');"><br>	
 
 		<label for="nome">Nome:</label>		
-		<input type="text" style="width: 400px;" maxlength="50" class="form-control" id="nome" name="nome" required minlength="10" onkeyup="validar(this,'text');"> <br>
+		<input type="text" style="width: 400px;" class="form-control" id="nome" name="nome" onkeyup="validar(this,'text');"> <br>
 
 		<label for="orgaoPublico">Orgão Publico:</label> 		
-		<input type="text" style="width: 200px;" maxlength="50" class="form-control" id="orgao_publico" name="orgao_publico" placeholder="Se sim, favor insira a sigla"><br>
+		<input type="text" style="width: 200px;" class="form-control" id="orgao_publico" name="orgao_publico" placeholder="Se sim, favor insira a sigla"><br>
 
 		<label for="email">E-mail:</label> 	
-		<input type="email" style="width: 400px;" maxlength="50" class="form-control"  id="email" name="email" required><br>	
+		<input type="email" style="width: 400px;" class="form-control"  id="email" name="email" ><br>	
 		
 		<label for="telefone1">Telefone:</label> 	
-		<input type="tel" style="width: 200px;" maxlength="11" minlength="11" class="form-control"  id="telefone1" name="telefone" required placeholder="DD+N° Telefone" onkeyup="validar(this,'num');"><br>	
+		<input type="tel" style="width: 200px;" class="form-control"  id="telefone1" name="telefone" placeholder="(DDD) + Telefone" onkeyup="validar(this,'num');"><br>	
 		
 		<label for="pontoApoio">Ponto de Apoio:</label> 
 		<select name="pontoApoio" >
@@ -63,7 +63,7 @@
 	}
 	dom.value=dom.value.replace(regex,'');
 }
- </script>
+</script>
 </body>
 </html>
 	

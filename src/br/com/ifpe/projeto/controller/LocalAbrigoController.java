@@ -18,7 +18,12 @@ import br.com.ifpe.projeto.model.LocalAbrigoDAO;
 public class LocalAbrigoController {
 
 	@RequestMapping("/cadastroComSucessoLocalAbrigo")
-	public String cadastroComSucessoLocalAbrigo(LocalAbrigo localabrigo) {
+	public String cadastroComSucessoLocalAbrigo(@Valid LocalAbrigo localabrigo,BindingResult result, Model model) {
+		
+		if (result.hasErrors()) {    
+			return "forward:cadastroLocalAbrigo"; 
+		}
+		
 		LocalAbrigoDAO dao = new LocalAbrigoDAO();
 		dao.inserirLocalAbrigo(localabrigo);
 		return "formularios/sucesso";
@@ -26,32 +31,9 @@ public class LocalAbrigoController {
 	
 	
 	@RequestMapping("/cadastroLocalAbrigo")
-	public String cadastroLocalAbrigo(@Valid LocalAbrigo localAbrigo,BindingResult result,Model model) {
-		if (result.hasErrors()) {    
-			return "forward:cadastroLocalAbrigo"; 
-		} 
+	public String cadastroLocalAbrigo( Model model) {
 		
-		if (localAbrigo.getNome() == null || localAbrigo.getNome().equals("")) { 
-			return "localAbrigo/cadastroLocalAbrigo"; 
-		} 
-		if (localAbrigo.getResponsavel() == null || localAbrigo.getResponsavel().equals("")) { 
-			return "localAbrigo/cadastroLocalAbrigo"; 
-		} 
-		if (localAbrigo.getTelefone1() == null || localAbrigo.getTelefone1().equals("")) { 
-			return "localAbrigo/cadastroLocalAbrigo"; 
-		}
-		if (localAbrigo.getBairro() == null || localAbrigo.getBairro().equals("")) { 
-			return "localAbrigo/cadastroLocalAbrigo"; 
-		} 
-		if (localAbrigo.getRuaAvenida() == null || localAbrigo.getRuaAvenida().equals("")) { 
-			return "localAbrigo/cadastroLocalAbrigo"; 
-		}
-		if (localAbrigo.getCidadeRisco() == null || localAbrigo.getCidadeRisco().equals("")) { 
-			return "localAbrigo/cadastroLocalAbrigo"; 
-		} 
-		if (localAbrigo.getCep() == null || localAbrigo.getCep().equals("")) { 
-			return "localAbrigo/cadastroLocalAbrigo"; 
-		} 
+				
 		CidadeRiscoDAO dao = new CidadeRiscoDAO();
 		List<CidadeRisco> listaCidadeRisco = dao.listar("", "");
 		model.addAttribute("listaCidadeRisco", listaCidadeRisco);

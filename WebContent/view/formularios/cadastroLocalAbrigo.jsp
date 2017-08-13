@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -11,7 +12,7 @@
 <title>Cadastro de Local de Abrigo</title>
 </head>
 <body>
-
+	<div style="color: red;">${mensagem}</div>
 	<form action="cadastroComSucessoLocalAbrigo" method="post">	
 		<form:errors path="localAbrigo.nome" cssStyle="color:red" /> 
 		<form:errors path="localAbrigo.responsavel" cssStyle="color:red" /> 
@@ -23,16 +24,16 @@
 
 
 		<label for="nome">Nome do Local de Abrigo: </label>	
-		<input type="text" style="width: 400px;" maxlength="50" class="form-control" id="nome" name="nome" required> <br>	
+		<input type="text" style="width: 400px;" class="form-control" id="nome" name="nome" > <br>	
 
 		<label for="responsavel">Responsável: </label> 	
-		<input type="text" style="width: 400px;" maxlength="50" class="form-control" id="responsavel" name="responsavel" required> <br>	
+		<input type="text" style="width: 400px;" class="form-control" id="responsavel" name="responsavel" > <br>	
 
 		<label for="telefone1">Celular: </label>		
-		<input type="tel" style="width: 200px;" maxlength="11" class="form-control" id="telefone1" name="telefone1" required placeholder="DD+Numero de telefone" onkeyup="validar(this,'num');"> <br>
+		<input type="tel" style="width: 200px;" class="form-control" id="telefone1" name="telefone1" placeholder="(DDD) + Telefone" onkeyup="validar(this,'num');"> <br>
 
 		<label for="telefone2">Telefone: </label>		
-		<input type="tel" style="width: 200px;" maxlength="11" class="form-control" id="telefone2" name="telefone2" required placeholder="Numero de telefone" onkeyup="validar(this,'num');"> <br>
+		<input type="tel" style="width: 200px;" class="form-control" id="telefone2" name="telefone2" placeholder="(DDD) + Telefone" onkeyup="validar(this,'num');"> <br>
 
 		<label for="estado">Estado: </label> 
 		<select style="width: 400px;" class="form-control" id="estado" name="estado">
@@ -65,13 +66,13 @@
 		</select>	
 
 		<label for="bairro">Bairro: </label>	
-		<input type="text" style="width: 200px;" maxlength="50" class="form-control" id="bairro" name="bairro" required> <br>	
+		<input type="text" style="width: 200px;" class="form-control" id="bairro" name="bairro" > <br>	
 
 		<label for="endereco">Endereço: </label>	
-		<input type="text" style="width: 400px;" maxlength="150" class="form-control" id="endereco" name="ruaAvenida" required> <br>	
+		<input type="text" style="width: 400px;"  class="form-control" id="endereco" name="ruaAvenida" > <br>	
 
 		<label for="complemento">Complemento: </label>		
-		<input type="text" style="width: 400px;" maxlength="150" class="form-control" id="complemento" name="complemento" required> <br>
+		<input type="text" style="width: 400px;"  class="form-control" id="complemento" name="complemento" > <br>
 
 		<label for="cidade">Cidade: </label>	
 		<select name="cidadeRisco">
@@ -82,7 +83,7 @@
 		</select> <br>
 	
 		<label for="cep">CEP: </label>		
-		<input type="text" style="width: 200px;" maxlength="8" minlength="8" class="form-control" id="cep" name="cep" required onkeyup="validar(this,'num');"> <br>
+		<input type="text" style="width: 200px;" class="form-control" id="cep" name="cep" onkeyup="validar(this,'num');"> <br>
 
 		<div type="radio">
 		<label for="precisaVoluntario">Precisa de Voluntario</label>		
@@ -91,7 +92,7 @@
 		</div> 
 
 		<label for="quantidadeFamilia">Quantidade de Familias: </label>		
-		<input type="number" id="quantidadeFamilia" name="quantidadeFamilia" required> <br>
+		<input type="number" id="quantidadeFamilia" name="quantidadeFamilia" > <br>
 		
 
 	

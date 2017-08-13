@@ -3,6 +3,7 @@
 <head>
   <title></title>
 </head>
+
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
   <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
@@ -12,30 +13,40 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>                        
         </button>
-        <a href="index.jsp"><img src="../img/logo.png" width="55px;"></a>
+        <a href="index">
+          <img src="view/img/logo.png" width="55px;">
+        </a>
       </div>
       <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav navbar-right">
-        <li><a href="cadastro.jsp">Cadastros</a></li>
-        <li><a href="buscas.jsp">Buscas</a></li>
-         <!--   <li><a href="index.jsp">Home</a></li>
-          <li><a href="sobre.jsp">Sobre</a></li>
-          <li><a href="contato.jsp">Contato</a></li>
-          <li class="dropdown">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Mais
-              <span class="caret"></span></a>
-              <ul class="dropdown-menu">
-              <li><a href="cadastro.jsp" target="_blanck">Cadastro</a></li>
-                <li><a href="#">login</a></li>
-                <li><a href="#">Alteração de Dados </a></li> 
-              </ul>
-            </li>-->
-            <li><a href="buscas.jsp" target="_blanck"><span class="glyphicon glyphicon-search"></span></a></li>
-          </ul>
+        <li><a href="colabore">Colabore Conosco</a></li>
+        <li><a href="logout">Logout</a></li>
+          <li><div id="wrap">
+      <h2><a href="#" id="loginform">Login</a> | <a href="menuCadastro">Registre-se</a></h2>
+    <div class="login">
+      <div class="arrow-up"></div>
+      <div class="formholder">
+        <div class="randompad">
+           <fieldset>
+             <label name="email">Email</label>
+             <input type="email" placeholder="example@example.com" />
+             <label name="password">Password</label>
+             <input type="password" />
+             <input type="submit" value="Login" />
+ 
+           </fieldset>
         </div>
       </div>
-    </nav>
-    <br/><br/><br/>
+  </div>
+</div>
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+    <script src="view/js/main.js"></script>
+    </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
 </body>
 </html>
