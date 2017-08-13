@@ -18,27 +18,19 @@ import br.com.ifpe.projeto.model.ElementoJaExistenteException;
 public class CidadeRiscoController {
 
 	@RequestMapping("/cadastroCidadeRisco")
-	public String cadastroCidadeRisco(@Valid CidadeRisco cidadeRisco, BindingResult result, Model model) {
-		
-		if (cidadeRisco.getNome() == null || cidadeRisco.getNome().equals("")) { 
-			return "cidadeRisco/cadastroCidadeRisco"; 
-		} 
-		if (cidadeRisco.getRegiao() == null || cidadeRisco.getRegiao().equals("")) { 
-			return "cidadeRisco/cadastroCidadeRisco"; 
-		} 
-		if (cidadeRisco.getSituacaoRisco() == null || cidadeRisco.getSituacaoRisco().equals("")) { 
-			return "cidadeRisco/cadastroCidadeRisco"; 
-		} 
-		
-		if (result.hasErrors()) {    
-			return "forward:cadastroCidadeRisco"; 
-		} 
-		
+	public String cadastroCidadeRisco(Model model) {
+			
+
 		return "formularios/cadastroCidadeRisco";
 	}
 
 	@RequestMapping("/cadastroComSucessoCidadeRisco")
-	public String cadastroComSucessoCidadeRisco(CidadeRisco cidaderisco ,Model model) {
+	public String cadastroComSucessoCidadeRisco(@Valid CidadeRisco cidaderisco, BindingResult result, Model model) {
+		
+		if (result.hasErrors()) {
+			return "forward:cadastroCidadeRisco";
+		}
+		
 		CidadeRiscoDAO dao = new CidadeRiscoDAO();
 		try {
 			dao.inserirCidadeRisco(cidaderisco);
@@ -47,7 +39,7 @@ public class CidadeRiscoController {
 			model.addAttribute("mensagem", "Cidade já existente");
 			return "formularios/cadastroCidadeRisco";
 		}
-		
+
 	}
 
 	@RequestMapping("/buscarcidades")
@@ -89,16 +81,12 @@ public class CidadeRiscoController {
 	}
 
 	@RequestMapping("/removerCidade")
-	public String removerCidadeRisco(int id, Model model) throws SQLException 
-	{
+	public String removerCidadeRisco(int id, Model model) throws SQLException {
 		CidadeRiscoDAO dao = new CidadeRiscoDAO();
-		if(dao.removerCidade(id))
-		{
+		if (dao.removerCidade(id)) {
 			model.addAttribute("mensagem", "Cidade Excluida com Sucesso");
-			
-		}
-		else
-		{
+
+		} else {
 			model.addAttribute("mensagem", "A cidade não pode ser excluida");
 		}
 		return "forward:listarcidade?busca=&situacaoRisco=";
