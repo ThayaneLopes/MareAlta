@@ -22,6 +22,6 @@
    <div  class="colabore">
       <h2>Participe desse projeto e também seja um voluntário!</h2>
       <p>Se deseja colaborar conosco, registre-se e faça parte.</p>
-      <button><a href="#"> Registre-se</a></button>
+      <button><a href="menuCadastro"> Registre-se</a></button>
     </div>
  

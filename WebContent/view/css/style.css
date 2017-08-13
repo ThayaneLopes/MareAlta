@@ -64,7 +64,7 @@ h3, h4 {
 
 .btn {
 	padding: 10px 20px;
-	background-color: #333;
+/* 	background-color: #333; */
 	color: #f1f1f1;
 	border-radius: 0;
 	transition: .2s;
@@ -207,4 +207,15 @@ textarea {
 	text-decoration:none;
 	
 }
+.cadastro{
+	border-radius:12px;
+	border-style: solid;
+	border-color: #1E90FF;
+	margin: 5px;
+	width: 45%;
+	margin: 25px 25px 25px 35%;	
+	text-align:center;
+	color:#008B8B;
+}
+
 
