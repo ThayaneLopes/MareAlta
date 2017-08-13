@@ -18,32 +18,12 @@ import br.com.ifpe.projeto.model.ElementoJaExistenteException;
 public class CidadeRiscoController {
 
 	@RequestMapping("/cadastroCidadeRisco")
-<<<<<<< HEAD
-	public String cadastroCidadeRisco(Model model) {
-			
-=======
-	public String cadastroCidadeRisco(@Valid CidadeRisco cidadeRisco, BindingResult result, Model model) {
-
-		if (cidadeRisco.getNome() == null || cidadeRisco.getNome().equals("")) {
-			return "cidadeRisco/cadastroCidadeRisco";
-		}
-		if (cidadeRisco.getRegiao() == null || cidadeRisco.getRegiao().equals("")) {
-			return "cidadeRisco/cadastroCidadeRisco";
-		}
-		if (cidadeRisco.getSituacaoRisco() == null || cidadeRisco.getSituacaoRisco().equals("")) {
-			return "cidadeRisco/cadastroCidadeRisco";
-		}
-
-		if (result.hasErrors()) {
-			return "forward:cadastroCidadeRisco";
-		}
->>>>>>> branch 'master' of https://github.com/ThayaneLopes/MareAlta
+	public String cadastroCidadeRisco() {
 
 		return "formularios/cadastroCidadeRisco";
 	}
 
 	@RequestMapping("/cadastroComSucessoCidadeRisco")
-<<<<<<< HEAD
 	public String cadastroComSucessoCidadeRisco(@Valid CidadeRisco cidaderisco, BindingResult result, Model model) {
 		
 		if (result.hasErrors()) {
@@ -55,27 +35,10 @@ public class CidadeRiscoController {
 			dao.inserirCidadeRisco(cidaderisco);
 			return "formularios/sucesso";
 		} catch (ElementoJaExistenteException e) {
-			model.addAttribute("mensagem", "Cidade já existente");
-=======
-	public String cadastroComSucessoCidadeRisco(CidadeRisco cidaderisco, Model model) {
-		if (cidaderisco.getNome() != null) {
-			CidadeRiscoDAO dao = new CidadeRiscoDAO();
-
-			try {
-				dao.inserirCidadeRisco(cidaderisco);
-				return "formularios/sucesso";
-			} catch (ElementoJaExistenteException e) {
-				model.addAttribute("mensagem", "Cidade já existente");
-				return "formularios/cadastroCidadeRisco";
-			}
-		} else {
-			model.addAttribute("mensagem", "Dados não informados");
->>>>>>> branch 'master' of https://github.com/ThayaneLopes/MareAlta
-			return "formularios/cadastroCidadeRisco";
-		}
-
+			model.addAttribute("mensagem", "Cidade já existente");}
+		return "formularios/cadastroCidadeRisco";
 	}
-
+	
 	@RequestMapping("/buscarcidades")
 	public String buscarCidades() {
 		return "buscas/buscarCidade";

@@ -38,7 +38,6 @@ public class VoluntarioController {
 	}
 
 	@RequestMapping("/cadastroVoluntario")
-<<<<<<< HEAD
 	public String cadastroVoluntario(Model model) {
 
 		PontoApoioDAO pontoapoiodao = new PontoApoioDAO();
@@ -65,7 +64,6 @@ public class VoluntarioController {
 		return "formularios/cadastroVoluntario";
 	}
 
-=======
 	public String cadastroVoluntario(@Valid Voluntario voluntario, BindingResult result,Model model) {
 		
 		if (voluntario.getNome() == null || voluntario.getNome().equals("")) { 
@@ -97,8 +95,7 @@ public class VoluntarioController {
 
 		return "formularios/cadastroVoluntario";
 	}
-	
->>>>>>> branch 'master' of https://github.com/ThayaneLopes/MareAlta
+
 	@RequestMapping("/buscarVoluntario")
 	public String buscarVoluntarios() {
 		return "buscas/buscarVoluntario";
