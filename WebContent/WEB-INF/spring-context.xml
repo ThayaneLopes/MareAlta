@@ -29,6 +29,8 @@ class="org.springframework.context.support.ConversionServiceFactoryBean">
 <property name="converters">
 <list>
 <bean class="br.com.ifpe.projeto.controller.CidadeRiscoConverter"/>
+<bean class="br.com.ifpe.projeto.controller.LocalAbrigoConverter"/>
+<bean class="br.com.ifpe.projeto.controller.PontoApoioConverter"/>
 </list>
 </property>
 </bean>
