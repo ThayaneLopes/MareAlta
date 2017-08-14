@@ -9,11 +9,9 @@ public class CidadeRisco {
 	private int id;
 	
 	@NotEmpty(message="O nome deve ser preenchido") 
-	@Size(min = 10, max = 150, message="O nome deve deve ter no minimo 10 caracteres")
+	@Size(min = 4, max = 150, message="O nome deve deve ter no minimo 4 caracteres")
 	private String nome;
 	
-	@NotEmpty(message="A regiao deve ser preenchida") 
-	@Size(min = 10, max = 100, message="A regiao deve deve ter no minimo 10 caracteres")
 	private String regiao;
 	
 	private String situacaoRisco;
@@ -40,7 +38,7 @@ public class CidadeRisco {
 		return situacaoRisco;
 	}
 	public void setSituacaoRisco(String situacaoRisco) {
-		this.situacaoRisco= situacaoRisco;//
+		this.situacaoRisco= situacaoRisco;
 	}
 }
 	

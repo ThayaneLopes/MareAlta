@@ -28,8 +28,9 @@
 		
 	<div class="cadastro">
 		<div class="form-group">
+		<input type="hidden" name="id" value="">
 			<label for="nome">Nome da Cidade</label> 
-			<input type="text"	style="width: 400px;" class="form-control" id="nome" name="nome" onkeyup="validar(this,'text');"><br> 
+			<input type="text"	style="width: 400px;" class="form-control" id="nome" name="nome" onkeyup="validar(this,'text');" required><br> 
 			
 			<label for="regiao">Região</label> 
 			<select style="width: 400px;" class="form-control" id="regiao" name="regiao">

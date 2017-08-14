@@ -8,26 +8,26 @@ public class LocalAbrigo {
 	
 	private int id;
 	@NotEmpty(message="O nome deve ser preenchido") 
-	@Size(min = 10, max = 150, message="Nome deve ter no mÌnimo 10 caracteres")
+	@Size(min = 10, max = 150, message="Nome deve ter no m√≠nimo 10 caracteres")
 	private String nome;
-	@NotEmpty(message="O respons·vel deve ser preenchido") 
-	@Size(min = 10, max = 150, message="Respons·vel deve ter no mÌnimo 10 caracteres")
+	@NotEmpty(message="O respons√°vel deve ser preenchido") 
+	@Size(min = 10, max = 150, message="Respons√°vel deve ter no m√≠nimo 10 caracteres")
 	private String responsavel;
 	@NotEmpty(message="O telefone deve ser preenchido") 
-	@Size(min = 11, max = 15, message="Telefone deve ter no mÌnimo 11 caracteres")
+	@Size(min = 11, max = 15, message="Telefone deve ter no m√≠nimo 11 caracteres")
 	private String telefone1;
 	private String telefone2;
 	private String estado;
 	@NotEmpty(message="O bairro deve ser preenchido") 
-	@Size(min = 10, max = 50, message="Bairro deve ter no mÌnimo 10 caracteres")
+	@Size(min = 10, max = 50, message="Bairro deve ter no m√≠nimo 10 caracteres")
 	private String bairro;
-	@NotEmpty(message="O endereÁo deve ser preenchido") 
-	@Size(min = 10, max = 150, message="EndereÁo deve ter no mÌnimo 10 caracteres")
+	@NotEmpty(message="O endere√ßo deve ser preenchido") 
+	@Size(min = 10, max = 150, message="Endere√ßo deve ter no m√≠nimo 10 caracteres")
 	private String ruaAvenida;
 	private String complemento;
 	private CidadeRisco cidadeRisco;
 	@NotEmpty(message="O CEP deve ser preenchido") 
-	@Size(min = 8, max = 10, message="CEP deve ter no mÌnimo 8 caracteres")
+	@Size(min = 8, max = 10, message="CEP deve ter no m√≠nimo 8 caracteres")
 	private String cep;
 	private boolean precisaVoluntarios;
 	@NotEmpty(message="O campo quantidade de familias deve ser preenchido") 

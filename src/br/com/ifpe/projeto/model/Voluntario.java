@@ -8,17 +8,17 @@ public class Voluntario {
 	
 	private int id;
 	@NotEmpty(message="O CPF deve ser preenchido") 
-	@Size(min = 11, max = 14, message="CPF deve ter no mínimo 11 caracteres")
+	@Size(min = 11, max = 14, message="CPF deve ter no mÃ­nimo 11 caracteres")
 	private String cpf;
 	@NotEmpty(message="O nome deve ser preenchido") 
-	@Size(min = 10, max = 150, message="Nome deve ter no mínimo 10 caracteres")
+	@Size(min = 10, max = 150, message="Nome deve ter no mÃ­nimo 10 caracteres")
 	private String nome;
 	private String orgao_publico;
 	@NotEmpty(message="O e-mail deve ser preenchido") 
 	@Size(min = 10, max = 150, message="E-mail deve ser preenchido corretamente")
 	private String email;
 	@NotEmpty(message="O telefone deve ser preenchido") 
-	@Size(min = 11, max = 15, message="Telefone deve ter no mínimo 11 caracteres")
+	@Size(min = 11, max = 15, message="Telefone deve ter no mÃ­nimo 11 caracteres")
 	private String telefone;
 	private PontoApoio pontoApoio;
 	private LocalAbrigo localAbrigo;

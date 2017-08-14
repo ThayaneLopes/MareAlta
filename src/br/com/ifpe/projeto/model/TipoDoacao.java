@@ -8,7 +8,7 @@ public class TipoDoacao {
 	
 	private int id;
 	@NotEmpty(message="O nome deve ser preenchido") 
-	@Size(min = 10, max = 150, message="Nome deve ter no mínimo 10 caracteres")
+	@Size(min = 10, max = 150, message="Nome deve ter no mÃ­nimo 10 caracteres")
 	private String nome;
 	private boolean ativo;
 	
