@@ -20,7 +20,7 @@
   <c:import url="menu.jsp" />
  
  <img src="view/img/inicio.png" class="inicio">
- <br><br>
+ <br><br><br>
   
    <div  class="container text-center">
       <h3>Sobre </h3>

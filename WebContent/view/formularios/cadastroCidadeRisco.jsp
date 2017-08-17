@@ -30,16 +30,16 @@
 		<div class="form-group">
 		<input type="hidden" name="id" value="">
 			<label for="nome">Nome da Cidade</label> 
-			<input type="text"	style="width: 400px;" class="form-control" id="nome" name="nome" onkeyup="validar(this,'text');" required><br> 
+			<input type="text"	style="width: 400px;" id="nome" name="nome" onkeyup="validar(this,'text');" required><br> 
 			
 			<label for="regiao">Região</label> 
-			<select style="width: 400px;" class="form-control" id="regiao" name="regiao">
+			<select style="width: 400px;" id="regiao" name="regiao">
 				<option value="urbana">Urbana</option>
 				<option value="rural">Rural</option>
 			</select> <br> 
 			
 			<label for="situacaoRisco">Situação de Risco</label> 
-			<select	style="width: 400px;" class="form-control" id="situacaoRisco" name="situacaoRisco">
+			<select	style="width: 400px;" id="situacaoRisco" name="situacaoRisco">
 				<option value="baixa">Baixa</option>
 				<option value="media">Média</option>
 				<option value="alta">Alta</option>

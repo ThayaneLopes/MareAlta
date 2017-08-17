@@ -211,11 +211,13 @@ textarea {
 	border-radius:12px;
 	border-style: solid;
 	border-color: #1E90FF;
-	margin: 5px;
+	padding: 10px;
 	width: 45%;
 	margin: 25px 25px 25px 35%;	
-	text-align:center;
+	text-align: left;
 	color:#008B8B;
+
 }
+
 
 

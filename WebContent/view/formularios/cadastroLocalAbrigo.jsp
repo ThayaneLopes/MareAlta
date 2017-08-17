@@ -27,26 +27,25 @@
 		<form:errors path="localAbrigo.responsavel" cssStyle="color:red" /> 
 		<form:errors path="localAbrigo.telefone1" cssStyle="color:red" />
 		<form:errors path="localAbrigo.bairro" cssStyle="color:red" /> 
-		<form:errors path="localAbrigo.endereco" cssStyle="color:red" /> 
-		<form:errors path="localAbrigo.cidade" cssStyle="color:red" /> 
+		<form:errors path="localAbrigo.ruaAvenida" cssStyle="color:red" /> 
 		<form:errors path="localAbrigo.cep" cssStyle="color:red" />  
 
 <div class="cadastro">
 
 		<label for="nome">Nome do Local de Abrigo: </label>	
-		<input type="text" style="width: 400px;" class="form-control" id="nome" name="nome" > <br>	
+		<input type="text" style="width: 400px;" id="nome" name="nome" > <br>	
 
 		<label for="responsavel">Responsável: </label> 	
-		<input type="text" style="width: 400px;" class="form-control" id="responsavel" name="responsavel" > <br>	
+		<input type="text" style="width: 400px;" id="responsavel" name="responsavel" > <br>	
 
 		<label for="telefone1">Celular: </label>		
-		<input type="tel" style="width: 200px;" class="form-control" id="telefone1" name="telefone1" placeholder="(DDD) + Telefone" onkeyup="validar(this,'num');"> <br>
+		<input maxlength="11" required minlength="10" type="tel" style="width: 200px;" id="telefone1" name="telefone1" placeholder="(DDD) + Telefone" onkeyup="validar(this,'num');"> <br>
 
 		<label for="telefone2">Telefone: </label>		
-		<input type="tel" style="width: 200px;" class="form-control" id="telefone2" name="telefone2" placeholder="(DDD) + Telefone" onkeyup="validar(this,'num');"> <br>
+		<input maxlength="10"  required minlength="10" type="tel" style="width: 200px;" id="telefone2" name="telefone2" placeholder="(DDD) + Telefone" onkeyup="validar(this,'num');"> <br>
 
 		<label for="estado">Estado: </label> 
-		<select style="width: 400px;" class="form-control" id="estado" name="estado">
+		<select style="width: 400px;" id="estado" name="estado">
 			<option value="AC">Acre</option>
 			<option value="AL">Alagoas</option>
 			<option value="AP">Amapá</option>
@@ -76,15 +75,15 @@
 		</select>	
 
 		<label for="bairro">Bairro: </label>	
-		<input type="text" style="width: 200px;" class="form-control" id="bairro" name="bairro" > <br>	
+		<input type="text" style="width: 200px;" id="bairro" name="bairro" > <br>	
 
-		<label for="endereco">Endereço: </label>	
-		<input type="text" style="width: 400px;"  class="form-control" id="endereco" name="ruaAvenida" > <br>	
+		<label for="ruaAvenida">Endereço: </label>	
+		<input type="text" style="width: 400px;"  id="ruaAvenida" name="ruaAvenida" > <br>	
 
 		<label for="complemento">Complemento: </label>		
-		<input type="text" style="width: 400px;"  class="form-control" id="complemento" name="complemento" > <br>
+		<input type="text" style="width: 400px;"  id="complemento" name="complemento" > <br>
 
-		<label for="cidade">Cidade: </label>	
+		<label for="cidade">Cidade: </label>	<br>
 		<select name="cidadeRisco">
 			<option value=""> Selecione </option>
 			<c:forEach items="${listaCidadeRisco}" var="obj">
@@ -93,20 +92,20 @@
 		</select> <br>
 	
 		<label for="cep">CEP: </label>		
-		<input type="text" style="width: 200px;" class="form-control" id="cep" name="cep" onkeyup="validar(this,'num');"> <br>
+		<input type="text" style="width: 200px;" id="cep" name="cep" onkeyup="validar(this,'num');"> <br>
 
 		<div type="radio">
-		<label for="precisaVoluntario">Precisa de Voluntario</label>		
+		<label for="precisaVoluntario">Precisa de Voluntario</label><br>		
 		<input type="radio" name="precisaVoluntarios" value="1" checked> Sim
 		<input type="radio" name="precisaVoluntarios" value="0"> Não <br>
 		</div> 
 
-		<label for="quantidadeFamilia">Quantidade de Familias: </label>		
-		<input type="number" id="quantidadeFamilia" name="quantidadeFamilia" > <br>
-		
+		<label for="quantidadeFamilia">Quantidade de Familias: </label>		<br>
+		<input type="number" id="quantidadeFamilia" name="quantidadeFamilia" > 
+		<br>
 
-	
 		<input type="submit" class="btn btn-primary"> <input type="reset" class="btn btn-warning">
+
 </div>
 	</form>
 

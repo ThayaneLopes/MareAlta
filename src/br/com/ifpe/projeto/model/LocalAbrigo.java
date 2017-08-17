@@ -1,5 +1,6 @@
 package br.com.ifpe.projeto.model;
 
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.NotEmpty;
@@ -30,8 +31,8 @@ public class LocalAbrigo {
 	@Size(min = 8, max = 10, message="CEP deve ter no mínimo 8 caracteres")
 	private String cep;
 	private boolean precisaVoluntarios;
-	@NotEmpty(message="O campo quantidade de familias deve ser preenchido") 
-	private int quantidadeFamilia;
+	@NotNull(message="O campo quantidade de familias deve ser preenchido") 
+	private Integer quantidadeFamilia;
 	public int getId() {
 		return id;
 	}
@@ -75,7 +76,7 @@ public class LocalAbrigo {
 		this.bairro = bairro;
 	}
 	public String getRuaAvenida() {
-		return ruaAvenida;
+		return this.ruaAvenida;
 	}
 	public void setRuaAvenida(String ruaAvenida) {
 		this.ruaAvenida = ruaAvenida;
@@ -104,10 +105,10 @@ public class LocalAbrigo {
 	public void setPrecisaVoluntarios(boolean precisaVoluntarios) {
 		this.precisaVoluntarios = precisaVoluntarios;
 	}
-	public int getQuantidadeFamilia() {
+	public Integer getQuantidadeFamilia() {
 		return quantidadeFamilia;
 	}
-	public void setQuantidadeFamilia(int quantidadeFamilia) {
+	public void setQuantidadeFamilia(Integer quantidadeFamilia) {
 		this.quantidadeFamilia = quantidadeFamilia;
 	}
 }

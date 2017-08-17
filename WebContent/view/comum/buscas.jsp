@@ -16,7 +16,7 @@
   <title>Buscar :: Maré Alta</title>
 </head>
 <body>
-  <c:import url="menu.jsp" />
+  <c:import url="logout.jsp" />
   <br><br><br><br>
   <div class="temporario">
 <a href="buscarlocalabrigo">Buscar Local de Abrigo</a><br/>

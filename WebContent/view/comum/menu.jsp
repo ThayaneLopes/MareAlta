@@ -22,7 +22,7 @@
         <li><a href="colabore">Colabore Conosco</a></li>
         <li><a href="logout">Logout</a></li>
           <li><div id="wrap">
-      <h2><a href="#" id="loginform">Login</a> | <a href="menuCadastro">Registre-se</a></h2>
+      <a href="#" id="loginform">Login</a> | <a href="menuCadastro">Registre-se</a>
     <div class="login">
       <div class="arrow-up"></div>
       <div class="formholder">
@@ -47,6 +47,6 @@
       </div>
     </div>
   </nav>
-
+<br><br><br>
 </body>
 </html>

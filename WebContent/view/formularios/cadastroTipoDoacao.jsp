@@ -25,16 +25,17 @@
 	<form action="cadastroComSucessoTipoDoacao" method="post" onSubmit="return enviardados();">
 		<form:errors path="tipoDoacao.nome" cssStyle="color:red" /> 
 <div class="cadastro">
-		<label for="nome">Nome da Doação: </label> 
-		<input type="text" style="width: 400px;" class="form-control" id="nome" name="nome" ><br>
+		<label for="nome">Nome da Doação: </label> <br>
+		<input type="text" style="width: 400px;" id="nome" name="nome" ><br>
 
 		<div type="radio">
-		<label for="ativo">Pode ser escolhida por Locais de Abrigo?</label>
-		<input type="radio" name="ativo" value="true" checked>Sim<br>
+		<label for="ativo">Pode ser escolhida por Locais de Abrigo?</label><br>
+		<input type="radio" name="ativo" value="true" checked>Sim
 		<input type="radio" name="ativo" value="false"> Não<br>
 		</div>
-</div>
 		<input type="submit" class="btn btn-primary" value="Cadastrar"> <input type="reset" class="btn btn-warning" value="Limpar">
+</div>
+		
 
 	</form>
 		
