@@ -39,13 +39,13 @@
 		<input type="text" style="width: 400px;" id="responsavel" name="responsavel" > <br>	
 
 		<label for="telefone1">Celular: </label>		
-		<input maxlength="11" required minlength="10" type="tel" style="width: 200px;" id="telefone1" name="telefone1" placeholder="(DDD) + Telefone" onkeyup="validar(this,'num');"> <br>
+		<input minlength="11" maxlength="11" type="tel" style="width: 200px;" id="telefone1" name="telefone1" placeholder="(DDD) + Telefone" onkeyup="validar(this,'num');" required> <br>
 
 		<label for="telefone2">Telefone: </label>		
-		<input maxlength="10"  required minlength="10" type="tel" style="width: 200px;" id="telefone2" name="telefone2" placeholder="(DDD) + Telefone" onkeyup="validar(this,'num');"> <br>
+		<input maxlength="10" minlength="10" type="tel" style="width: 200px;" id="telefone2" name="telefone2" placeholder="(DDD) + Telefone" onkeyup="validar(this,'num');" required> <br>
 
 		<label for="estado">Estado: </label> 
-		<select style="width: 400px;" id="estado" name="estado">
+		<select style="width: 100px;" id="estado" name="estado">
 			<option value="AC">Acre</option>
 			<option value="AL">Alagoas</option>
 			<option value="AP">Amapá</option>
@@ -56,7 +56,7 @@
 			<option value="GO">Goiás</option>
 			<option value="MA">Maranhão</option>
 			<option value="MT">Mato Grosso</option>
-			<option value="MS">MAto Grosso do Sul</option>
+			<option value="MS">Mato Grosso do Sul</option>
 			<option value="MG">Minas Gerais</option>
 			<option value="PA">Pará</option>
 			<option value="PB">Paraíba</option>

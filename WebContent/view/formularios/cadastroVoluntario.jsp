@@ -40,23 +40,21 @@
 		<input type="email" style="width: 400px;" id="email" name="email" ><br>	
 		
 		<label for="telefone1">Telefone:</label> 	
-		<input type="tel" style="width: 200px;" id="telefone1" name="telefone" placeholder="(DDD) + Telefone" onkeyup="validar(this,'num');"><br>	
+		<input maxlength="11" type="tel" style="width: 200px;" id="telefone1" name="telefone" placeholder="(DDD) + Telefone" onkeyup="validar(this,'num');"><br>	
 		
 		<label for="pontoApoio">Ponto de Apoio:</label> <br>
 		<select name="pontoApoio" >
-			<option value=""> Selecione </option>
 			<c:forEach items="${listaPontoApoio}" var="obj">
 				<option value="${obj.id}"> ${obj.nome} </option>
 			</c:forEach>
-		</select></br> 
+		</select><br> 
 		
 		<label for="localAbrigo">Local Abrigo:</label> <br>
 		<select name="localAbrigo" >
-			<option value=""> Selecione </option>
 			<c:forEach items="${listaLocalAbrigo}" var="obj">
 				<option value="${obj.id}"> ${obj.nome} </option>
 			</c:forEach>
-		</select> </br>
+		</select><br>
 		
 	
 		

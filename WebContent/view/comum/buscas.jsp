@@ -23,7 +23,7 @@
 <a href="buscarpontoapoio">Busca Ponto de Apoio</a><br/>
 <a href="buscarVoluntario">Buscar Voluntário</a><br/>
 <a href="buscarcidades">Buscar Cidades em Risco</a><br/>
-<a href="buscartipotoacao">Buscar Tipo de Doação</a><br/>
+<a href="buscartipodedoacao">Buscar Tipo de Doação</a><br/>
 </div>
 
 </body>

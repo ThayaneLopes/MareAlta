@@ -31,10 +31,9 @@ public class TipoDoacaoDAO {
 			stmt.execute();
 			stmt.close();
 			connection.close();
-		}catch (SQLIntegrityConstraintViolationException e) {
+		} catch (SQLIntegrityConstraintViolationException e) {
 			throw new ElementoJaExistenteException();
-		} 
-		catch (SQLException e) {
+		} catch (SQLException e) {
 			throw new RuntimeException(e);
 		}
 	}
@@ -124,6 +123,34 @@ public class TipoDoacaoDAO {
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
 		}
-		
+
+	}
+
+	public List<TipoDoacao> listarativos() {
+		try {
+			List<TipoDoacao> listatiposdoacao = new ArrayList<TipoDoacao>();
+			PreparedStatement stmt = this.connection.prepareStatement("SELECT * FROM tipo_doacao WHERE ativo = 1");
+			ResultSet rs = stmt.executeQuery();
+
+			while (rs.next()) {
+
+				TipoDoacao tiposdoacoes = new TipoDoacao();
+
+				tiposdoacoes.setId(rs.getInt("id"));
+				tiposdoacoes.setNome(rs.getString("nome"));
+				tiposdoacoes.setAtivo(rs.getBoolean("ativo"));
+
+				listatiposdoacao.add(tiposdoacoes);
+			}
+
+			rs.close();
+			stmt.close();
+			connection.close();
+
+			return listatiposdoacao;
+
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
 	}
 }

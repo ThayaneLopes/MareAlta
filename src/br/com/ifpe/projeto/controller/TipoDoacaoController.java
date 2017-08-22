@@ -8,6 +8,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import br.com.ifpe.projeto.model.ElementoJaExistenteException;
 import br.com.ifpe.projeto.model.TipoDoacao;
@@ -21,11 +24,6 @@ public class TipoDoacaoController {
 
 		if (result.hasErrors()) {
 			return "forward:cadastroTipoDoacao";
-		}
-
-		if (tipoDoacao.getNome() == null) {
-			model.addAttribute("mensagem", "O campo nome não pode ser deixado em branco");
-			return "formularios/cadastroTipoDoacao";
 		} else {
 			TipoDoacaoDAO dao = new TipoDoacaoDAO();
 			try {
@@ -72,10 +70,10 @@ public class TipoDoacaoController {
 	}
 
 	@RequestMapping("/atualizarTipoDoacao")
-	public String atualizarTipoDoacao(TipoDoacao tipoDoacao) {
+	public String atualizarTipoDoacao(TipoDoacao tipoDoacao, Model model) {
 		TipoDoacaoDAO dao = new TipoDoacaoDAO();
 		dao.atualizarTipoDoacao(tipoDoacao);
-
+		model.addAttribute("mensagem", "Tipo de Doaçlão Alterado com Sucesso!");
 		return "forward:listartipodoacao?busca=";
 	}
 
@@ -84,5 +82,26 @@ public class TipoDoacaoController {
 		TipoDoacaoDAO dao = new TipoDoacaoDAO();
 		dao.removertipodoacao(id);
 		return "forward:listartipodoacao?busca=";
+	}
+
+	@RequestMapping("/listainputsdoacao")
+	public String listainputsdoacao(Model model) {
+		TipoDoacaoDAO dao = new TipoDoacaoDAO();
+		List<TipoDoacao> listatipodoacao = dao.listarativos();
+		model.addAttribute("listatipodoacao", listatipodoacao);
+
+		return "buscas/listartipodoacaoativa";
+	}
+
+	@RequestMapping("/selectinput")
+	public String selec(List<TipoDoacao> lista) {
+		return null;
+
+	}
+
+	@RequestMapping(value = "/selectinput", method = RequestMethod.POST)
+	@ResponseBody
+	public void teste(@RequestParam("tiposdoacao[]") List<String> tiposdoacao) {
+		System.out.println(tiposdoacao);
 	}
 }

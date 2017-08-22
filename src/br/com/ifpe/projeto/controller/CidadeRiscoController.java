@@ -26,11 +26,11 @@ public class CidadeRiscoController {
 	@RequestMapping("/cadastroComSucessoCidadeRisco")
 	public String cadastroComSucessoCidadeRisco(@Valid CidadeRisco cidaderisco, BindingResult result, Model model) {
 		
-//		//if (!result.hasErrors()) {
-//			return "forward:cadastroCidadeRisco";
-//		}
-//		else
-//		{
+		if (!result.hasErrors()) {
+			return "forward:cadastroCidadeRisco";
+		}
+		else
+		{
 		CidadeRiscoDAO dao = new CidadeRiscoDAO();
 		try {
 			dao.inserirCidadeRisco(cidaderisco);
@@ -39,7 +39,7 @@ public class CidadeRiscoController {
 			model.addAttribute("mensagem", "Cidade já existente");}
 		return "formularios/cadastroCidadeRisco";
 		}
-	//}
+	}
 	
 	@RequestMapping("/buscarcidades")
 	public String buscarCidades() {

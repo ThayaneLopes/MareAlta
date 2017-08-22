@@ -4,7 +4,7 @@ pageEncoding="ISO-8859-1"%>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-	<title>Buscar Cidade</title>
+	<title>Buscar Tipo de doação</title>
 </head>
 <body>
 	<form action="listartipodoacao" method="post">

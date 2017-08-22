@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Buscar Cidade</title>
+<title>Buscar Local Abrigo</title>
 </head>
 <body>
 <form action="listarlocalabrigo" method="post">

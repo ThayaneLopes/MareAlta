@@ -34,18 +34,18 @@
 
 <div class="cadastro">
 		<label for="nome">Nome do Ponto de Apoio: </label> 
-		<input type="text" style="width: 400px;" id="nome"name="nome" > <br> 
+		<input type="text" id="nome"name="nome" > <br> 
 		
 		<label for="responsavel">Responsável:</label> 
-		<input type="text" style="width: 400px;" id="responsavel" name="responsavel"> <br>
+		<input type="text" id="responsavel" name="responsavel"> <br>
 
 		<label for="telefone1">Celular: </label> 
-		<input type="tex" style="width: 200px;" id="telefone1" name="telefone1" placeholder="(DDD) + Telefone" onkeyup="validar(this,'num');"><br> 
+		<input type="tex" id="telefone1" name="telefone1" placeholder="(DDD) + Telefone" onkeyup="validar(this,'num');" maxlength="11" required="on"><br> 
 		
 		<label for="telefone2">Telefone: </label> 
-		<input type="text" style="width: 200px;" id="telefone2" name="telefone2"	placeholder="(DDD) + Telefone" onkeyup="validar(this,'num');"> <br>
+		<input type="text" id="telefone2" name="telefone2"	placeholder="(DDD) + Telefone" onkeyup="validar(this,'num');" minlength="10" maxlength="10" required="on"> <br>
 		
-		<label for="estado">Estado: </label> <select style="width: 400px;"	id="estado" name="estado">
+		<label for="estado">Estado: </label> <select id="estado" name="estado">
 			<option>Selecione uma opção</option>
 			<option value="AC">Acre</option>
 			<option value="AL">Alagoas</option>
@@ -76,19 +76,19 @@
 		</select> 
 		
 		<label for="bairro">Bairro: </label> 
-		<input type="text"	style="width: 200px;" id="bairro"	name="bairro"> <br> 
+		<input type="text" id="bairro"	name="bairro"> <br> 
 		
 		<label for="endereco">Endereço:	</label> 
-		<input type="text" style="width: 400px;" maxlength="150" id="endereco" name="endereco"> <br>
+		<input type="text" maxlength="150" id="endereco" name="endereco"> <br>
 
 		<label for="complemento">Complemento: </label> 
-		<input type="text"	style="width: 400px;" id="complemento" name="complemento"> <br> 
+		<input type="text" id="complemento" name="complemento"> <br> 
 		
 		<label for="cidade">Cidade: </label> 
-		<input type="text"	style="width: 300px;" id="cidade"	name="cidade"> <br> 
+		<input type="text" id="cidade"	name="cidade"> <br> 
 		
 		<label for="cep">CEP: </label> 
-		<input type="text" style="width: 200px;" id="cep" name="cep"	onkeyup="validar(this,'num');"> <br>
+		<input type="text" id="cep" name="cep"	onkeyup="validar(this,'num');"> <br>
 
 		<div type="radio">
 			<label for="ativo">Está Ativo? </label> <br> 
@@ -97,7 +97,7 @@
 		</div>
 
 		<label for="horarioFuncionamento">Horário de Funcionamento: </label> 
-		<input type="text" style="width: 400px;" id="horarioFuncionamento" name="horarioFuncionamento"	placeholder="Ex.: Das 08:00 as 17:00"> <br>
+		<input type="text" id="horarioFuncionamento" name="horarioFuncionamento"	placeholder="Ex.: Das 08:00 as 17:00"> <br>
 
 		<div type="radio">
 			<label for="fazColeta">Faz Coleta?: </label> <br>

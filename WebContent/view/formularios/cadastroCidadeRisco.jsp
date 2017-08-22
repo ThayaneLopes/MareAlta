@@ -29,7 +29,7 @@
 	<div class="cadastro">
 		<div class="form-group">
 		<input type="hidden" name="id" value="">
-			<label for="nome">Nome da Cidade</label> 
+			<label for="nome">Nome da Cidade:</label> 
 			<input type="text"	style="width: 400px;" id="nome" name="nome" onkeyup="validar(this,'text');" required><br> 
 			
 			<label for="regiao">Região</label> 

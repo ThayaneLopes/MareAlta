@@ -9,7 +9,7 @@
 	href="view/css/bootstrap-3.3.7-dist/css/bootstrap.min.css" />
 <script type="text/javascript"
 	src="view/css/bootstrap-3.3.7-dis/js/bootstrap.min.js"></script>
-<title>Cadastro de Local de Abrigo</title>
+<title>Alterar de Local de Abrigo</title>
 </head>
 <body>
 

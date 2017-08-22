@@ -13,34 +13,22 @@
 </head>
 <body>
 	<strong>Lista de Tipos Doação</strong>
-	<div style="text-align: center; color: red;"> ${mensagem} </div>
 	<div class="container">
-		<table class="table table-striped table-bordered">
+	<form action="selectinput" method="post">
+		<table class="table table-striped table-bordered opcoes">
 			<tr>
-				<td>Id</td>
-				<td>Nome</td>
-				<td>Ativo</td>
-				<td>Açôes</td>
+				<th>Tipos de Doações</th>
 			</tr>
+	
 			<c:forEach var="listatipodoacao" items="${listatipodoacao}">
 				<tr>
-					<td>${listatipodoacao.id}</td>
-					<td>${listatipodoacao.nome}</td>
-					<c:choose>
-						<c:when test="${listatipodoacao.ativo == true}">
-							<td>SIM</td>
-						</c:when>
-						<c:otherwise>
-							<td>NÃO</td>
-						</c:otherwise>
-					</c:choose>
-					<td><a href="alterartipodoacaoform?id=${listatipodoacao.id}">Alterar</a>
-						<a href="removertipodoacao?id=${listatipodoacao.id}">Remover</a>
+					<td><input type="checkbox" name="tiposdoacao[]" value=${listatipodoacao.id}><label>${listatipodoacao.nome}</label></td>
 				</tr>
+				
 			</c:forEach>
-
-
 		</table>
+		<input type="submit" name="Enviar">
+		</form>
 	</div>
 </body>
 </html>
