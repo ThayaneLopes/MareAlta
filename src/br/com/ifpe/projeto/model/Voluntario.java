@@ -22,6 +22,13 @@ public class Voluntario {
 	private String telefone;
 	private PontoApoio pontoApoio;
 	private LocalAbrigo localAbrigo;
+	private String senha;
+	public String getSenha() {
+		return senha;
+	}
+	public void setSenha(String senha) {
+		this.senha = senha;
+	}
 	public int getId() {
 		return id;
 	}

@@ -9,6 +9,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.com.ifpe.projeto.util.ConnectionFactory;
+import br.com.ifpe.projeto.util.PasswordStorage;
+import br.com.ifpe.projeto.util.PasswordStorage.CannotPerformOperationException;
 
 public class VoluntarioDAO {
 
@@ -22,9 +24,10 @@ public class VoluntarioDAO {
 		}
 	}
 
-	public void inserirVoluntario(Voluntario voluntario) throws ElementoJaExistenteException {
+	public void inserirVoluntario(Voluntario voluntario)
+			throws ElementoJaExistenteException, CannotPerformOperationException {
 		try {
-			String sql = "INSERT INTO voluntario (cpf, nome, orgao_publico, email,telefone,id_ponto_apoio,id_local_abrigo) VALUES (?,?,?,?,?,?,?)";
+			String sql = "INSERT INTO voluntario (cpf, nome, orgao_publico, email,telefone,id_ponto_apoio,id_local_abrigo,senha) VALUES (?,?,?,?,?,?,?,?)";
 			PreparedStatement stmt = connection.prepareStatement(sql);
 			stmt.setString(1, voluntario.getCpf());
 			stmt.setString(2, voluntario.getNome());
@@ -33,18 +36,19 @@ public class VoluntarioDAO {
 			stmt.setString(5, voluntario.getTelefone());
 			stmt.setObject(6, voluntario.getPontoApoio().getId());
 			stmt.setObject(7, voluntario.getLocalAbrigo().getId());
+			new PasswordStorage();
+			String hash = PasswordStorage.createHash(voluntario.getSenha());
+			stmt.setString(8, hash);
+
 			stmt.execute();
 			stmt.close();
 			connection.close();
-		}catch (SQLIntegrityConstraintViolationException e) {
+		} catch (SQLIntegrityConstraintViolationException e) {
 			throw new ElementoJaExistenteException();
-		}
-		catch (SQLException e) {
+		} catch (SQLException e) {
 			throw new RuntimeException(e);
 		}
 	}
-
-
 
 	public List<Voluntario> listar(String busca) {
 
@@ -64,7 +68,6 @@ public class VoluntarioDAO {
 				voluntario.setOrgao_publico(rs.getString("orgao_publico"));
 				voluntario.setEmail(rs.getString("email"));
 				voluntario.setTelefone(rs.getString("telefone"));
-				
 
 				listaVoluntarios.add(voluntario);
 			}
@@ -79,42 +82,43 @@ public class VoluntarioDAO {
 			throw new RuntimeException(e);
 		}
 	}
-	public Voluntario buscarVoluntarioId(int id)
-		{
+
+	public Voluntario buscarVoluntarioId(int id) {
 		try {
-		    
-		    PreparedStatement stmt = this.connection.prepareStatement("SELECT * FROM voluntario WHERE id = ?");
-		    stmt.setInt(1, id);
-		    ResultSet rs = stmt.executeQuery();
-		    
-		    Voluntario voluntario = new Voluntario();
-		    
-		    while (rs.next()) {
 
-		    voluntario.setId(rs.getInt("id"));
-		    voluntario.setCpf(rs.getString("cpf"));
-		    voluntario.setNome(rs.getString("nome"));
-		    voluntario.setOrgao_publico(rs.getString("orgao_publico"));
-		    voluntario.setEmail(rs.getString("email"));
-		    voluntario.setTelefone(rs.getString("telefone"));
-		    }
+			PreparedStatement stmt = this.connection.prepareStatement("SELECT * FROM voluntario WHERE id = ?");
+			stmt.setInt(1, id);
+			ResultSet rs = stmt.executeQuery();
 
-		    rs.close();
-		    stmt.close();
-		    connection.close();
+			Voluntario voluntario = new Voluntario();
 
-		    return voluntario;
+			while (rs.next()) {
+
+				voluntario.setId(rs.getInt("id"));
+				voluntario.setCpf(rs.getString("cpf"));
+				voluntario.setNome(rs.getString("nome"));
+				voluntario.setOrgao_publico(rs.getString("orgao_publico"));
+				voluntario.setEmail(rs.getString("email"));
+				voluntario.setTelefone(rs.getString("telefone"));
+			}
+
+			rs.close();
+			stmt.close();
+			connection.close();
+
+			return voluntario;
 
 		} catch (SQLException e) {
-		    throw new RuntimeException(e);
+			throw new RuntimeException(e);
 		}
-		
+
 	}
+
 	public void atualizarVoluntario(Voluntario voluntario) {
 		try {
 			String sql = "UPDATE voluntario SET cpf=?, nome=?, orgao_publico=?, email=?,telefone=? WHERE id=?";
 			PreparedStatement stmt = connection.prepareStatement(sql);
-			
+
 			stmt.setString(1, voluntario.getCpf());
 			stmt.setString(2, voluntario.getNome());
 			stmt.setString(3, voluntario.getOrgao_publico());
@@ -128,22 +132,21 @@ public class VoluntarioDAO {
 			throw new RuntimeException(e);
 		}
 	}
-	
+
 	public void remover(Integer id) {
 
 		try {
 
-		    String sql = "DELETE FROM voluntario WHERE id = ?";
-		    PreparedStatement stmt = connection.prepareStatement(sql);
-		    stmt.setInt(1, id);
-
-		    stmt.execute();
-		    connection.close();
+			String sql = "DELETE FROM voluntario WHERE id = ?";
+			PreparedStatement stmt = connection.prepareStatement(sql);
+			stmt.setInt(1, id);
+			stmt.execute();
+			stmt.close();
+			connection.close();
 
 		} catch (SQLException e) {
-		    throw new RuntimeException(e);
+			throw new RuntimeException(e);
 		}
-	    }
-	
-	
+	}
+
 }

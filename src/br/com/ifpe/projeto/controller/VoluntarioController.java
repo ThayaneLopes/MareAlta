@@ -16,12 +16,13 @@ import br.com.ifpe.projeto.model.PontoApoio;
 import br.com.ifpe.projeto.model.PontoApoioDAO;
 import br.com.ifpe.projeto.model.Voluntario;
 import br.com.ifpe.projeto.model.VoluntarioDAO;
+import br.com.ifpe.projeto.util.PasswordStorage.CannotPerformOperationException;
 
 @Controller
 public class VoluntarioController {
 
 	@RequestMapping("/cadastroComSucessoVoluntario")
-	public String cadastroComSucessoVoluntario(@Valid Voluntario voluntario, BindingResult result, Model model) {
+	public String cadastroComSucessoVoluntario(@Valid Voluntario voluntario, BindingResult result, Model model) throws CannotPerformOperationException {
 
 		if (result.hasErrors()) {
 			return "forward:cadastroVoluntario";
