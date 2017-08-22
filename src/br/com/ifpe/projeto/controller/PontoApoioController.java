@@ -1,5 +1,6 @@
 package br.com.ifpe.projeto.controller;
 
+import java.sql.SQLException;
 import java.util.List;
 
 import javax.validation.Valid;
@@ -45,7 +46,6 @@ public class PontoApoioController {
 		PontoApoioDAO dao = new PontoApoioDAO();
 		List<PontoApoio> listadePontos = dao.listarcidades();
 		model.addAttribute("listapoio",listadePontos);
-
 		return "buscas/buscarPontoApoio";
 	}
 	
@@ -77,5 +77,15 @@ public class PontoApoioController {
 		dao.atualizarPontoapoio(pontoApoio);
 		model.addAttribute("mensagem", "Ponto de Apoio alterado com sucesso");
 		return "forward:listapontosapoio?busca=";
+	}
+	
+	@RequestMapping("/removerPontoApoio")
+	public String removerPontoApoio(int id, Model model) throws SQLException
+	{
+		PontoApoioDAO dao = new PontoApoioDAO();
+		dao.removerpontoApoio(id);
+		model.addAttribute("mensagem", "Ponto de Apoio Removido com Sucesso");
+		return "forward:listapontosapoio?busca=";
+		
 	}
 }

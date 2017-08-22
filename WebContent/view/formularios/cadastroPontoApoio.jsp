@@ -88,7 +88,7 @@
 		<input type="text" id="cidade"	name="cidade"> <br> 
 		
 		<label for="cep">CEP: </label> 
-		<input type="text" id="cep" name="cep"	onkeyup="validar(this,'num');"> <br>
+		<input type="text" id="cep" name="cep"	onkeyup="validar(this,'num');" minlength="8" maxlength="10"> <br>
 
 		<div type="radio">
 			<label for="ativo">Está Ativo? </label> <br> 

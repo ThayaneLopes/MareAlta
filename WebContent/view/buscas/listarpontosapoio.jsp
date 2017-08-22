@@ -86,6 +86,7 @@
 				</c:choose>
 				<td>
 					<a href="alterarpontoapoio?id=${apoio.id}">Alterar</a> 
+					<a href="removerPontoApoio?id=${apoio.id}">Remover</a>
 				</td>
 				
 	</tr>

@@ -16,7 +16,7 @@
 		<select name="cidade">
 			<option value=""> Não Filtrar </option>
 			<c:forEach var="obj" items="${listapoio}" >
-			<option value=${obj.cidade}>${obj.cidade}</option>
+			<option value="${obj.cidade}">${obj.cidade}</option>
 			</c:forEach>
 		</select> <br>
 		<input type="submit" name="enviar" value="Buscar">

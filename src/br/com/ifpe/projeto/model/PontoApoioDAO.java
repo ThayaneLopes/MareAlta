@@ -93,13 +93,15 @@ public class PontoApoioDAO {
 			throw new RuntimeException(e);
 		}
 	}
+
 	public List<PontoApoio> listarcomfiltro(String busca, String cidade) {
 
 		try {
 			List<PontoApoio> listapoio = new ArrayList<PontoApoio>();
-			PreparedStatement stmt = connection.prepareStatement("SELECT * FROM ponto_apoio WHERE nome like ? AND cidade like ?");
+			PreparedStatement stmt = connection
+					.prepareStatement("SELECT * FROM ponto_apoio WHERE nome like ? AND cidade like ?");
 			stmt.setString(1, '%' + busca + '%');
-			stmt.setString(2, '%'+cidade+'%');
+			stmt.setString(2, '%' + cidade + '%');
 			ResultSet rs = stmt.executeQuery();
 
 			while (rs.next()) {
@@ -204,9 +206,8 @@ public class PontoApoioDAO {
 			throw new RuntimeException(e);
 		}
 	}
-	
-	public void atualizarPontoapoio(PontoApoio pontoapoio)
-	{
+
+	public void atualizarPontoapoio(PontoApoio pontoapoio) {
 		try {
 			String sql = "UPDATE ponto_apoio SET nome = ?,responsavel = ?,telefone_1 = ?,telefone_2 = ?,estado = ?,bairro = ?,rua_avenida = ?,complemento = ?,cidade = ?,cep = ?,ativo = ?,horario_funcionamento = ?,faz_coleta = ?,faz_triagem = ?,precisa_voluntario = ? WHERE id =?";
 			PreparedStatement stmt = connection.prepareStatement(sql);
@@ -229,10 +230,22 @@ public class PontoApoioDAO {
 			stmt.execute();
 			stmt.close();
 			connection.close();
-		}  catch (SQLException e) {
+		} catch (SQLException e) {
 			throw new RuntimeException(e);
 		}
 	}
-	}
-	
 
+	public void removerpontoApoio(int id) throws SQLException {
+		try {
+			String sql = "DELETE FROM ponto_apoio where id = ?";
+			PreparedStatement stmt = connection.prepareStatement(sql);
+			stmt.setInt(1, id);
+			stmt.execute();
+			stmt.close();
+			connection.close();
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+	}
+
+}
