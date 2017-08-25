@@ -148,5 +148,36 @@ public class VoluntarioDAO {
 			throw new RuntimeException(e);
 		}
 	}
+	public Voluntario buscarVoluntarioCpf(String cpf) {
+		try {
+
+			PreparedStatement stmt = this.connection.prepareStatement("SELECT * FROM voluntario WHERE cpf = ?");
+			stmt.setString(1, cpf);
+			ResultSet rs = stmt.executeQuery();
+
+			Voluntario voluntario = new Voluntario();
+
+			while (rs.next()) {
+
+				voluntario.setId(rs.getInt("id"));
+				voluntario.setCpf(rs.getString("cpf"));
+				voluntario.setNome(rs.getString("nome"));
+				voluntario.setOrgao_publico(rs.getString("orgao_publico"));
+				voluntario.setEmail(rs.getString("email"));
+				voluntario.setTelefone(rs.getString("telefone"));
+				voluntario.setSenha(rs.getString("senha"));
+			}
+
+			rs.close();
+			stmt.close();
+			connection.close();
+
+			return voluntario;
+
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+
+	}
 
 }

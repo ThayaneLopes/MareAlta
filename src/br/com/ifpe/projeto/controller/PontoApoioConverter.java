@@ -9,15 +9,12 @@ public class PontoApoioConverter implements Converter<String, PontoApoio> {
 
 	@Override
 	public PontoApoio convert(String pontoApoio) {
-		if(pontoApoio != null && !pontoApoio.isEmpty())
-		{
-		PontoApoioDAO dao = new PontoApoioDAO();
-		 return dao.buscarPontoApoioPorID((Integer.parseInt(pontoApoio)));
-		}
-		else	
-		{
+		if (pontoApoio != null && !pontoApoio.isEmpty()) {
+			PontoApoioDAO dao = new PontoApoioDAO();
+			return dao.buscarPontoApoioPorID((Integer.parseInt(pontoApoio)));
+		} else {
 			return null;
 		}
-				}
+	}
 
 }

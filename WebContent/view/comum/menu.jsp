@@ -28,12 +28,13 @@
       <div class="formholder">
         <div class="randompad">
            <fieldset>
-             <label name="email">Email</label>
-             <input type="email" placeholder="example@example.com" />
-             <label name="password">Password</label>
-             <input type="password" />
+           <form action="login" method="POST">
+             <label for="cpf">CPF</label>
+             <input type="text" placeholder="Digite seu CPF" name="cpf" required/>
+             <label for="senha">Password</label>
+             <input type="password" placeholder="Digite sua Senha" name="senha" required/>
              <input type="submit" value="Login" />
- 
+            </form>
            </fieldset>
         </div>
       </div>

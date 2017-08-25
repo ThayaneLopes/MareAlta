@@ -9,14 +9,16 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import br.com.ifpe.projeto.model.ElementoJaExistenteException;
 import br.com.ifpe.projeto.model.LocalAbrigo;
 import br.com.ifpe.projeto.model.LocalAbrigoDAO;
-import br.com.ifpe.projeto.model.ElementoJaExistenteException;
 import br.com.ifpe.projeto.model.PontoApoio;
 import br.com.ifpe.projeto.model.PontoApoioDAO;
 import br.com.ifpe.projeto.model.Voluntario;
 import br.com.ifpe.projeto.model.VoluntarioDAO;
+import br.com.ifpe.projeto.util.PasswordStorage;
 import br.com.ifpe.projeto.util.PasswordStorage.CannotPerformOperationException;
+import br.com.ifpe.projeto.util.PasswordStorage.InvalidHashException;
 
 @Controller
 public class VoluntarioController {
@@ -87,11 +89,26 @@ public class VoluntarioController {
 		return "forward:listarVoluntarios?busca=";
 	}
 
-	@RequestMapping("removerVoluntario")
+	@RequestMapping("/removerVoluntario")
 	public String removerVoluntario(Integer voluntario, Model model) {
 		VoluntarioDAO dao = new VoluntarioDAO();
 		dao.remover(voluntario);
 		model.addAttribute("mensagem", "Voluntário Removido com Sucesso");
 		return "forward:listarVoluntarios?busca=";
+	}
+	@RequestMapping("/login")
+	public void login(String cpf, String senha) throws CannotPerformOperationException, InvalidHashException
+	{
+		Voluntario voluntario;
+		VoluntarioDAO dao = new VoluntarioDAO();
+		voluntario = dao.buscarVoluntarioCpf(cpf);
+		if(PasswordStorage.verifyPassword(senha, voluntario.getSenha()))
+		{
+			System.out.println("senha correta");
+		}
+		else
+		{
+			System.out.println("senha incorreta");
+		}
 	}
 }

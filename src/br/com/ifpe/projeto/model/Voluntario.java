@@ -23,6 +23,7 @@ public class Voluntario {
 	private PontoApoio pontoApoio;
 	private LocalAbrigo localAbrigo;
 	private String senha;
+
 	public String getSenha() {
 		return senha;
 	}
