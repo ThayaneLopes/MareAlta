@@ -23,7 +23,7 @@ public class Voluntario {
 	private PontoApoio pontoApoio;
 	private LocalAbrigo localAbrigo;
 	private String senha;
-
+	private String perfil;
 	public String getSenha() {
 		return senha;
 	}
@@ -77,6 +77,12 @@ public class Voluntario {
 	}
 	public void setLocalAbrigo(LocalAbrigo localAbrigo) {
 		this.localAbrigo = localAbrigo;
+	}
+	public String getPerfil() {
+		return perfil;
+	}
+	public void setPerfil(String perfil) {
+		this.perfil = perfil;
 	}
 
 }

@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import br.com.ifpe.projeto.model.ElementoJaExistenteException;
 import br.com.ifpe.projeto.model.LocalAbrigo;
 import br.com.ifpe.projeto.model.LocalAbrigoDAO;
+import br.com.ifpe.projeto.model.Perfis;
 import br.com.ifpe.projeto.model.PontoApoio;
 import br.com.ifpe.projeto.model.PontoApoioDAO;
 import br.com.ifpe.projeto.model.Voluntario;
@@ -32,6 +33,9 @@ public class VoluntarioController {
 
 		VoluntarioDAO dao = new VoluntarioDAO();
 		try {
+			Perfis perfil = Perfis.VOLUNTARIO;
+			System.out.println(perfil.getvalor());
+			voluntario.setPerfil(perfil.toString());
 			dao.inserirVoluntario(voluntario);
 		} catch (ElementoJaExistenteException e) {
 
@@ -83,10 +87,17 @@ public class VoluntarioController {
 
 	@RequestMapping("/atualizarVoluntario")
 	public String atualizarVoluntario(Voluntario voluntario, Model model) {
+		if(voluntario.getId()==0)
+		{
+			return "forward:buscarVoluntario";
+		}
+		else
+		{
 		VoluntarioDAO dao = new VoluntarioDAO();
 		dao.atualizarVoluntario(voluntario);
 		model.addAttribute("mensagem", "Dados Alterados com Sucesso!");
 		return "forward:listarVoluntarios?busca=";
+		}
 	}
 
 	@RequestMapping("/removerVoluntario")

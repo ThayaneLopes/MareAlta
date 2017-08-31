@@ -31,7 +31,8 @@
 		
 		<label for="telefone1">Telefone:</label> 	
 		<input type="tel" style="width: 200px;" maxlength="11" minlength="11" class="form-control"  id="telefone1" name="telefone" required placeholder="DD+N° Telefone" value="${voluntario.telefone}"><br>	
-		
+		<label for="pefil">Perfil</label>
+		<input type="text" name="perfil" value="${voluntario.perfil}" required>
 		
 		<input type="submit" class="btn btn-primary" value="Atualizar">
 		</form>

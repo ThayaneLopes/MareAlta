@@ -30,7 +30,7 @@
 		<label for="cpf">CPF:</label> 	
 		<input type="text" style="width: 200px;" id="cpf" name="cpf" placeholder="000.000.000-00" onkeyup="validar(this,'num');" minlength="11" maxlength="11"><br>	
 		<label for="senha">Senha</label>
-		<input type="password" name="senha" placeholder="Digite a Sua senha" id="senha" minlength="8">
+		<input type="password" name="senha" placeholder="Digite a Sua senha" id="senha" minlength="8" required>
 		<br>
 		<label for="nome">Nome:</label>		
 		<input type="text" style="width: 400px;" id="nome" name="nome" onkeyup="validar(this,'text');"> <br>

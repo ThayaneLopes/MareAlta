@@ -27,7 +27,7 @@ public class VoluntarioDAO {
 	public void inserirVoluntario(Voluntario voluntario)
 			throws ElementoJaExistenteException, CannotPerformOperationException {
 		try {
-			String sql = "INSERT INTO voluntario (cpf, nome, orgao_publico, email,telefone,id_ponto_apoio,id_local_abrigo,senha) VALUES (?,?,?,?,?,?,?,?)";
+			String sql = "INSERT INTO voluntario (cpf, nome, orgao_publico, email,telefone,id_ponto_apoio,id_local_abrigo,senha, perfil) VALUES (?,?,?,?,?,?,?,?,?)";
 			PreparedStatement stmt = connection.prepareStatement(sql);
 			stmt.setString(1, voluntario.getCpf());
 			stmt.setString(2, voluntario.getNome());
@@ -39,6 +39,7 @@ public class VoluntarioDAO {
 			new PasswordStorage();
 			String hash = PasswordStorage.createHash(voluntario.getSenha());
 			stmt.setString(8, hash);
+			stmt.setObject(9, voluntario.getPerfil());
 
 			stmt.execute();
 			stmt.close();
@@ -68,6 +69,7 @@ public class VoluntarioDAO {
 				voluntario.setOrgao_publico(rs.getString("orgao_publico"));
 				voluntario.setEmail(rs.getString("email"));
 				voluntario.setTelefone(rs.getString("telefone"));
+				voluntario.setPerfil(rs.getString("perfil"));
 
 				listaVoluntarios.add(voluntario);
 			}
@@ -100,6 +102,7 @@ public class VoluntarioDAO {
 				voluntario.setOrgao_publico(rs.getString("orgao_publico"));
 				voluntario.setEmail(rs.getString("email"));
 				voluntario.setTelefone(rs.getString("telefone"));
+				voluntario.setPerfil(rs.getString("perfil"));
 			}
 
 			rs.close();
@@ -116,7 +119,7 @@ public class VoluntarioDAO {
 
 	public void atualizarVoluntario(Voluntario voluntario) {
 		try {
-			String sql = "UPDATE voluntario SET cpf=?, nome=?, orgao_publico=?, email=?,telefone=? WHERE id=?";
+			String sql = "UPDATE voluntario SET cpf=?, nome=?, orgao_publico=?, email=?,telefone=?, perfil=? WHERE id=?";
 			PreparedStatement stmt = connection.prepareStatement(sql);
 
 			stmt.setString(1, voluntario.getCpf());
@@ -124,7 +127,9 @@ public class VoluntarioDAO {
 			stmt.setString(3, voluntario.getOrgao_publico());
 			stmt.setString(4, voluntario.getEmail());
 			stmt.setString(5, voluntario.getTelefone());
-			stmt.setInt(6, voluntario.getId());
+			stmt.setString(6, voluntario.getPerfil());
+			stmt.setInt(7, voluntario.getId());
+			
 			stmt.execute();
 			stmt.close();
 			connection.close();
@@ -166,6 +171,7 @@ public class VoluntarioDAO {
 				voluntario.setEmail(rs.getString("email"));
 				voluntario.setTelefone(rs.getString("telefone"));
 				voluntario.setSenha(rs.getString("senha"));
+				voluntario.setPerfil(rs.getString("perfil"));
 			}
 
 			rs.close();
