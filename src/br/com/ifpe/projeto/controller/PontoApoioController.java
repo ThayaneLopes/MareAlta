@@ -10,6 +10,8 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import br.com.ifpe.projeto.model.CidadeRisco;
+import br.com.ifpe.projeto.model.CidadeRiscoDAO;
 import br.com.ifpe.projeto.model.ElementoJaExistenteException;
 import br.com.ifpe.projeto.model.PontoApoio;
 import br.com.ifpe.projeto.model.PontoApoioDAO;
@@ -36,7 +38,11 @@ public class PontoApoioController {
 	}
 
 	@RequestMapping("/cadastroPontoApoio")
-	public String cadastroPontoApoio() {
+	public String cadastroPontoApoio(Model model) {
+		
+		CidadeRiscoDAO dao = new CidadeRiscoDAO();
+		List<CidadeRisco> listaCidadeRisco = dao.listar("", "");
+		model.addAttribute("listaCidadeRisco", listaCidadeRisco);
 
 		return "formularios/cadastroPontoApoio";
 	}

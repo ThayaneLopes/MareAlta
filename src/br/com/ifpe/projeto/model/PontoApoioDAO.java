@@ -34,7 +34,7 @@ public class PontoApoioDAO {
 			stmt.setString(6, pontoapoio.getBairro());
 			stmt.setString(7, pontoapoio.getEndereco());
 			stmt.setString(8, pontoapoio.getComplemento());
-			stmt.setString(9, pontoapoio.getCidade());
+			stmt.setInt(9, pontoapoio.getCidadeRisco().getId());
 			stmt.setString(10, pontoapoio.getCep());
 			stmt.setBoolean(11, pontoapoio.isAtivo());
 			stmt.setString(12, pontoapoio.getHorarioFuncionamento());
@@ -72,7 +72,7 @@ public class PontoApoioDAO {
 				apoio.setBairro(rs.getString("bairro"));
 				apoio.setEndereco(rs.getString("rua_avenida"));
 				apoio.setComplemento(rs.getString("complemento"));
-				apoio.setCidade(rs.getString("cidade"));
+				apoio.setCidadeRisco(buscarCidadePorID(rs.getInt("cidade")));
 				apoio.setCep(rs.getString("cep"));
 				apoio.setAtivo(rs.getBoolean("ativo"));
 				apoio.setHorarioFuncionamento(rs.getString("horario_funcionamento"));
@@ -92,6 +92,12 @@ public class PontoApoioDAO {
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
 		}
+	}
+	private CidadeRisco buscarCidadePorID(int id) {
+		CidadeRiscoDAO cidade = new CidadeRiscoDAO();
+
+		return cidade.buscarPorId(id);
+
 	}
 
 	public List<PontoApoio> listarcomfiltro(String busca, String cidade) {
@@ -117,7 +123,7 @@ public class PontoApoioDAO {
 				apoio.setBairro(rs.getString("bairro"));
 				apoio.setEndereco(rs.getString("rua_avenida"));
 				apoio.setComplemento(rs.getString("complemento"));
-				apoio.setCidade(rs.getString("cidade"));
+				apoio.setCidadeRisco(buscarCidadePorID(rs.getInt("cidade")));
 				apoio.setCep(rs.getString("cep"));
 				apoio.setAtivo(rs.getBoolean("ativo"));
 				apoio.setHorarioFuncionamento(rs.getString("horario_funcionamento"));
@@ -159,7 +165,7 @@ public class PontoApoioDAO {
 				apoio.setBairro(rs.getString("bairro"));
 				apoio.setEndereco(rs.getString("rua_avenida"));
 				apoio.setComplemento(rs.getString("complemento"));
-				apoio.setCidade(rs.getString("cidade"));
+				apoio.setCidadeRisco(buscarCidadePorID(rs.getInt("cidade")));
 				apoio.setCep(rs.getString("cep"));
 				apoio.setAtivo(rs.getBoolean("ativo"));
 				apoio.setHorarioFuncionamento(rs.getString("horario_funcionamento"));
@@ -192,7 +198,7 @@ public class PontoApoioDAO {
 
 				PontoApoio apoio = new PontoApoio();
 
-				apoio.setCidade(rs.getString("cidade"));
+				apoio.setCidadeRisco(buscarCidadePorID(rs.getInt("cidade")));
 
 				listapoio.add(apoio);
 			}
@@ -219,7 +225,7 @@ public class PontoApoioDAO {
 			stmt.setString(6, pontoapoio.getBairro());
 			stmt.setString(7, pontoapoio.getEndereco());
 			stmt.setString(8, pontoapoio.getComplemento());
-			stmt.setString(9, pontoapoio.getCidade());
+			stmt.setInt(9, pontoapoio.getCidadeRisco().getId());
 			stmt.setString(10, pontoapoio.getCep());
 			stmt.setBoolean(11, pontoapoio.isAtivo());
 			stmt.setString(12, pontoapoio.getHorarioFuncionamento());

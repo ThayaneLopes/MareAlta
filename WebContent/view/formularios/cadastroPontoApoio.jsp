@@ -35,6 +35,15 @@
 		<form:errors path="pontoApoio.cep" cssStyle="color:red" />
 
 <div class="cadastro">
+
+		<label for="cidade">Cidade: </label>	<br>
+		<select name="cidadeRisco">
+			<option value=""> Selecione </option>
+			<c:forEach items="${listaCidadeRisco}" var="obj">
+			<option value="${obj.id}">${obj.nome}</option>
+			</c:forEach>
+		</select> <br>  
+		
 		<label for="nome">Nome do Ponto de Apoio: </label> 
 		<input type="text" id="nome"name="nome" minlength="5" maxlength="100" required> <br> 
 		
@@ -86,8 +95,7 @@
 		<label for="complemento">Complemento: </label> 
 		<input type="text" id="complemento" name="complemento"> <br> 
 		
-		<label for="cidade">Cidade: </label> 
-		<input type="text" id="cidade"	name="cidade" maxlength="30" minlength="5" required> <br> 
+		
 		
 		<label for="cep">CEP: </label> 
 		<input type="text" onkeyup="maskIt(this,event,'#####-###')"  id="cep" name="cep"	onkeyup="validar(this,'num');" minlength="8" maxlength="10" required> <br>

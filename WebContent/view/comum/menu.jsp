@@ -2,6 +2,7 @@
 <html>
 <head>
   <title></title>
+  <script language="JavaScript" type="text/javascript" src="view/js/mascara.js"></script> 
 </head>
 
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
@@ -20,9 +21,8 @@
       <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav navbar-right">
         <li><a href="colabore">Colabore Conosco</a></li>
-        <li><a href="logout">Logout</a></li>
           <li><div id="wrap">
-      <a href="#" id="loginform">Login</a> | <a href="menuCadastro">Registre-se</a>
+      <a href="#" id="loginform">Login</a> | <a href="cadastroVoluntario">Registre-se</a>
     <div class="login">
       <div class="arrow-up"></div>
       <div class="formholder">
@@ -30,7 +30,7 @@
            <fieldset>
            <form action="login" method="POST">
              <label for="cpf">CPF</label>
-             <input type="text" placeholder="Digite seu CPF" name="cpf" required/>
+             <input type="text" placeholder="Digite seu CPF" name="cpf" onkeyup="maskIt(this,event,'###.###.###-##')" required/>
              <label for="senha">Password</label>
              <input type="password" placeholder="Digite sua Senha" name="senha" required/>
              <input type="submit" value="Login" />

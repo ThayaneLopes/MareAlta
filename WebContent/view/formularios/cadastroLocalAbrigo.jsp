@@ -35,6 +35,14 @@
 
 <div class="cadastro">
 
+	<label for="cidade">Cidade: </label>	<br>
+		<select name="cidadeRisco">
+			<option value=""> Selecione </option>
+			<c:forEach items="${listaCidadeRisco}" var="obj">
+			<option value="${obj.id}">${obj.nome}</option>
+			</c:forEach>
+		</select> <br>
+
 		<label for="nome">Nome do Local de Abrigo: </label>	
 		<input type="text" style="width: 400px;" id="nome" name="nome" maxlength="30" minlength="5" required> <br>	
 
@@ -85,15 +93,7 @@
 
 		<label for="complemento">Complemento:(Opcional) </label>		
 		<input type="text" style="width: 400px;"  id="complemento" name="complemento" > <br>
-
-		<label for="cidade">Cidade: </label>	<br>
-		<select name="cidadeRisco">
-			<option value=""> Selecione </option>
-			<c:forEach items="${listaCidadeRisco}" var="obj">
-			<option value="${obj.id}">${obj.nome}</option>
-			</c:forEach>
-		</select> <br>
-	
+		
 		<label for="cep">CEP: </label>		
 		<input type="text" onkeyup="maskIt(this,event,'#####-###')" style="width: 200px;" id="cep" name="cep" onkeyup="validar(this,'num');" required> <br>
 
