@@ -2,6 +2,7 @@ package br.com.ifpe.projeto.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.springframework.stereotype.Controller;
@@ -25,7 +26,8 @@ import br.com.ifpe.projeto.util.PasswordStorage.InvalidHashException;
 public class VoluntarioController {
 
 	@RequestMapping("/cadastroComSucessoVoluntario")
-	public String cadastroComSucessoVoluntario(@Valid Voluntario voluntario, BindingResult result, Model model) throws CannotPerformOperationException {
+	public String cadastroComSucessoVoluntario(@Valid Voluntario voluntario, BindingResult result, Model model)
+			throws CannotPerformOperationException {
 
 		if (result.hasErrors()) {
 			return "forward:cadastroVoluntario";
@@ -88,16 +90,13 @@ public class VoluntarioController {
 
 	@RequestMapping("/atualizarVoluntario")
 	public String atualizarVoluntario(Voluntario voluntario, Model model) {
-		if(voluntario.getId()==0)
-		{
+		if (voluntario.getId() == 0) {
 			return "forward:buscarVoluntario";
-		}
-		else
-		{
-		VoluntarioDAO dao = new VoluntarioDAO();
-		dao.atualizarVoluntario(voluntario);
-		model.addAttribute("mensagem", "Dados Alterados com Sucesso!");
-		return "forward:listarVoluntarios?busca=";
+		} else {
+			VoluntarioDAO dao = new VoluntarioDAO();
+			dao.atualizarVoluntario(voluntario);
+			model.addAttribute("mensagem", "Dados Alterados com Sucesso!");
+			return "forward:listarVoluntarios?busca=";
 		}
 	}
 
@@ -108,19 +107,34 @@ public class VoluntarioController {
 		model.addAttribute("mensagem", "Volunt√°rio Removido com Sucesso");
 		return "forward:listarVoluntarios?busca=";
 	}
+
 	@RequestMapping("/login")
-	public void login(String cpf, String senha) throws CannotPerformOperationException, InvalidHashException
-	{
+	public void login(String cpf, String senha) throws CannotPerformOperationException, InvalidHashException {
 		Voluntario voluntario;
 		VoluntarioDAO dao = new VoluntarioDAO();
 		voluntario = dao.buscarVoluntarioCpf(cpf);
-		if(PasswordStorage.verifyPassword(senha, voluntario.getSenha()))
-		{
+		if (PasswordStorage.verifyPassword(senha, voluntario.getSenha())) {
 			System.out.println("senha correta");
-		}
-		else
-		{
+		} else {
 			System.out.println("senha incorreta");
 		}
+	}
+
+	@RequestMapping("efetuarLogin")
+	public String efetuarLogin(Voluntario voluntario, HttpSession session, Model model) {
+		VoluntarioDAO dao = new VoluntarioDAO();
+		Voluntario usuarioLogado = dao.buscarVoluntario(voluntario);
+		if (usuarioLogado != null) {
+			session.setAttribute("usuarioLogado", usuarioLogado);
+			return "principal/home";
+		}
+		model.addAttribute("msg", "N„o foi encontrado um usu·rio com o login e senha informados.");
+		return "index";
+	}
+
+	@RequestMapping("efetuarLogout")
+	public String logout(HttpSession session) {
+		session.invalidate();
+		return "index";
 	}
 }

@@ -129,7 +129,7 @@ public class VoluntarioDAO {
 			stmt.setString(5, voluntario.getTelefone());
 			stmt.setString(6, voluntario.getPerfil());
 			stmt.setInt(7, voluntario.getId());
-			
+
 			stmt.execute();
 			stmt.close();
 			connection.close();
@@ -153,6 +153,7 @@ public class VoluntarioDAO {
 			throw new RuntimeException(e);
 		}
 	}
+
 	public Voluntario buscarVoluntarioCpf(String cpf) {
 		try {
 
@@ -185,5 +186,34 @@ public class VoluntarioDAO {
 		}
 
 	}
+
+	public Voluntario buscarVoluntario(Voluntario voluntario) {
+		try {
+			Voluntario usuarioConsultado = null;
+			PreparedStatement stmt = this.connection
+					.prepareStatement("select * from usuario where cpf = ? and senha = ?");
+			stmt.setString(1, voluntario.getCpf());
+			stmt.setString(2, voluntario.getSenha());
+			ResultSet rs = stmt.executeQuery();
+			if (rs.next()) {
+				usuarioConsultado = montarObjeto(rs);
+			}
+			rs.close();
+			stmt.close();
+			return usuarioConsultado;
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+	}
+	
+	 private Voluntario montarObjeto(ResultSet rs) throws SQLException {
+
+		 	Voluntario categoriaProduto = new Voluntario();
+			categoriaProduto.setId(rs.getInt("id"));
+			categoriaProduto.setCpf(rs.getString("cpf"));
+			categoriaProduto.setSenha(rs.getString("senha"));
+
+			return categoriaProduto;
+		    }
 
 }

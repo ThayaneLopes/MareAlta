@@ -31,7 +31,7 @@
       <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav navbar-right">
         <li><a href="menuBusca"><img src="view/img/lupa.png" style="width:15px;"></a></li>
-          <li><a href="#">Logout</a></li>
+          <li><a href="efetuarLogout">Logout</a></li>
         </ul>
       </div>
     </div>

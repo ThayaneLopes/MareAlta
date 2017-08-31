@@ -28,7 +28,7 @@
       <div class="formholder">
         <div class="randompad">
            <fieldset>
-           <form action="login" method="POST">
+           <form action="efetuarLogin" method="POST">
              <label for="cpf">CPF</label>
              <input type="text" placeholder="Digite seu CPF" name="cpf" onkeyup="maskIt(this,event,'###.###.###-##')" required/>
              <label for="senha">Password</label>
