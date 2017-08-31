@@ -16,12 +16,15 @@
   <link rel="stylesheet" type="text/css" href="view/css/style.css">
   <script href="view/js/main.js"></script>
   <link rel="stylesheet" type="text/css" href="view/css/login-css.css">
+    <script language="JavaScript" type="text/javascript" src="view/js/mascara.js"></script> 
 <title>Cadastro de Ponto de Apoio</title>
 </head>
 <body>
 <br><br><br><br><br>
 <c:import url="../comum/menu.jsp" />
-	<div style="color: red;">${mensagem}</div>
+	<div style="text-align: center; color: red;">${mensagem}</div>
+	<div style="text-align: center; color: red;"> ${msg} </div>
+	
 	<form action="cadastroComSucessoPontoApoio" method="post">
 		<form:errors path="pontoApoio.nome" cssStyle="color:red" />
 		<form:errors path="pontoApoio.responsavel" cssStyle="color:red" />
@@ -30,20 +33,19 @@
 		<form:errors path="pontoApoio.endereco" cssStyle="color:red" />
 		<form:errors path="pontoApoio.cidade" cssStyle="color:red" />
 		<form:errors path="pontoApoio.cep" cssStyle="color:red" />
-		<form:errors path="pontoApoio.horarioFuncionamento"		cssStyle="color:red" />
 
 <div class="cadastro">
 		<label for="nome">Nome do Ponto de Apoio: </label> 
-		<input type="text" id="nome"name="nome" > <br> 
+		<input type="text" id="nome"name="nome" minlength="5" maxlength="100" required> <br> 
 		
 		<label for="responsavel">Responsável:</label> 
-		<input type="text" id="responsavel" name="responsavel"> <br>
+		<input type="text" id="responsavel" name="responsavel" maxlength="100" minlength="5" required> <br>
 
 		<label for="telefone1">Celular: </label> 
-		<input type="tex" id="telefone1" name="telefone1" placeholder="(DDD) + Telefone" onkeyup="validar(this,'num');" maxlength="11" required="on"><br> 
+		<input type="tex" id="telefone1" onkeyup="maskIt(this,event,'(##)####-####')" name="telefone1" placeholder="(DDD) + Telefone" onkeyup="validar(this,'num');" maxlength="11" required="on"><br> 
 		
 		<label for="telefone2">Telefone: </label> 
-		<input type="text" id="telefone2" name="telefone2"	placeholder="(DDD) + Telefone" onkeyup="validar(this,'num');" minlength="10" maxlength="10" required="on"> <br>
+		<input type="text" id="telefone2" onkeyup="maskIt(this,event,'(##)####-####')" name="telefone2"	placeholder="(DDD) + Telefone" onkeyup="validar(this,'num');" minlength="11" maxlength="10" > <br>
 		
 		<label for="estado">Estado: </label> <select id="estado" name="estado">
 			<option>Selecione uma opção</option>
@@ -76,19 +78,19 @@
 		</select> 
 		
 		<label for="bairro">Bairro: </label> 
-		<input type="text" id="bairro"	name="bairro"> <br> 
+		<input type="text" id="bairro"	name="bairro" maxlength="30" minlength="5" required> <br> 
 		
 		<label for="endereco">Endereço:	</label> 
-		<input type="text" maxlength="150" id="endereco" name="endereco"> <br>
+		<input type="text" maxlength="150" id="endereco" name="endereco" minlength="5" placeholder="Rua xxxx, nº xx" required > <br>
 
 		<label for="complemento">Complemento: </label> 
 		<input type="text" id="complemento" name="complemento"> <br> 
 		
 		<label for="cidade">Cidade: </label> 
-		<input type="text" id="cidade"	name="cidade"> <br> 
+		<input type="text" id="cidade"	name="cidade" maxlength="30" minlength="5" required> <br> 
 		
 		<label for="cep">CEP: </label> 
-		<input type="text" id="cep" name="cep"	onkeyup="validar(this,'num');" minlength="8" maxlength="10"> <br>
+		<input type="text" onkeyup="maskIt(this,event,'#####-###')"  id="cep" name="cep"	onkeyup="validar(this,'num');" minlength="8" maxlength="10" required> <br>
 
 		<div type="radio">
 			<label for="ativo">Está Ativo? </label> <br> 
@@ -97,7 +99,7 @@
 		</div>
 
 		<label for="horarioFuncionamento">Horário de Funcionamento: </label> 
-		<input type="text" id="horarioFuncionamento" name="horarioFuncionamento"	placeholder="Ex.: Das 08:00 as 17:00"> <br>
+		<input type="text" id="horarioFuncionamento" name="horarioFuncionamento" placeholder="Ex.: Das 08:00 as 17:00"> <br>
 
 		<div type="radio">
 			<label for="fazColeta">Faz Coleta?: </label> <br>

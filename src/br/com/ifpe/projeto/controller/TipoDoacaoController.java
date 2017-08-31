@@ -28,8 +28,9 @@ public class TipoDoacaoController {
 			TipoDoacaoDAO dao = new TipoDoacaoDAO();
 			try {
 				dao.inserirTipoDoacao(tipoDoacao);
+				model.addAttribute("msg", "Tipo de Doação incluido com Sucesso!");
 			} catch (ElementoJaExistenteException e) {
-				model.addAttribute("mensagem", "JÃ¡ Existe este tipo de doaÃ§Ã£o");
+				model.addAttribute("mensagem", "Já Existe este tipo de doação");
 				return "formularios/cadastroTipoDoacao";
 			}
 		}

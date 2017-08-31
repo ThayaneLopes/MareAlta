@@ -21,7 +21,7 @@ public class LocalAbrigoDAO {
 		}
 	}
 
-	public void inserirLocalAbrigo(LocalAbrigo localabrigo) {
+	public void inserirLocalAbrigo(LocalAbrigo localabrigo) throws ElementoJaExistenteException{
 		try {
 			String sql = "INSERT INTO local_abrigo (nome,responsavel,telefone_1,telefone_2,estado,bairro,rua_avenida,complemento,cidade,cep,precisa_voluntario,quant_de_familias) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)";
 			PreparedStatement stmt = this.connection.prepareStatement(sql);

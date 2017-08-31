@@ -20,7 +20,8 @@
 <body>
 <c:import url="../comum/menu.jsp" />
 <br><br><br><br><br>
-	<div style="color: red;">${mensagem}</div>
+	<div style="text-align: center; color: red;">${mensagem}</div>
+	<div style="text-align: center; color: red;"> ${msg} </div>
 	
 	<form action="cadastroComSucessoCidadeRisco" method="post">
 		<form:errors path="cidadeRisco.nome" cssStyle="color:red" />
@@ -30,7 +31,7 @@
 		<div class="form-group">
 		<input type="hidden" name="id" value="">
 			<label for="nome">Nome da Cidade:</label> 
-			<input type="text"	style="width: 400px;" id="nome" name="nome" onkeyup="validar(this,'text');" required><br> 
+			<input type="text"	style="width: 400px;" id="nome" name="nome" onkeyup="validar(this,'text');" placeholder="Ex.: Barreiros"  minlength="5" maxlength="50" required><br> 
 			
 			<label for="regiao">Região</label> 
 			<select style="width: 400px;" id="regiao" name="regiao">

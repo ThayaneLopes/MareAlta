@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import br.com.ifpe.projeto.model.CidadeRisco;
 import br.com.ifpe.projeto.model.CidadeRiscoDAO;
+import br.com.ifpe.projeto.model.ElementoJaExistenteException;
 import br.com.ifpe.projeto.model.LocalAbrigo;
 import br.com.ifpe.projeto.model.LocalAbrigoDAO;
 
@@ -20,20 +21,25 @@ public class LocalAbrigoController {
 	@RequestMapping("/cadastroComSucessoLocalAbrigo")
 	public String cadastroComSucessoLocalAbrigo(@Valid LocalAbrigo localabrigo,BindingResult result, Model model) {
 		
-		if (result.hasErrors()) {    
-			return "forward:cadastroLocalAbrigo"; 
+		if (!result.hasErrors()) {
+			return "forward:cadastroLocalAbrigo";
 		}
-		
-		LocalAbrigoDAO dao = new LocalAbrigoDAO();
-		dao.inserirLocalAbrigo(localabrigo);
-		return "formularios/sucesso";
+		else{
+			LocalAbrigoDAO dao = new LocalAbrigoDAO();
+		try {
+			dao.inserirLocalAbrigo(localabrigo);
+			model.addAttribute("msg", "Local de Abrigo incluido com Sucesso!");
+			
+		}catch (ElementoJaExistenteException e){
+			
+		}
+		}
+		return "formularios/cadastroLocalAbrigo";
 	}
-	
-	
+
 	@RequestMapping("/cadastroLocalAbrigo")
-	public String cadastroLocalAbrigo( Model model) {
-		
-				
+	public String cadastroLocalAbrigo(Model model) {
+
 		CidadeRiscoDAO dao = new CidadeRiscoDAO();
 		List<CidadeRisco> listaCidadeRisco = dao.listar("", "");
 		model.addAttribute("listaCidadeRisco", listaCidadeRisco);
@@ -78,6 +84,7 @@ public class LocalAbrigoController {
 
 		return "alterar/alterarLocalAbrigo";
 	}
+
 	@RequestMapping("/atualizarLocalAbrigo")
 	public String atualizarLocalAbrigo(LocalAbrigo localAbrigo, Model model) {
 		LocalAbrigoDAO dao = new LocalAbrigoDAO();

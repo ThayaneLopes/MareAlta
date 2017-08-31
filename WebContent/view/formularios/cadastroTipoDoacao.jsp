@@ -21,12 +21,14 @@
 <body>
 <br><br><br><br><br>
 <c:import url="../comum/menu.jsp" />
-	<div style="color: red;"> ${mensagem} </div>
+	<div style="text-align: center; color: red;">${mensagem}</div>
+	<div style="text-align: center; color: red;"> ${msg} </div>
+	
 	<form action="cadastroComSucessoTipoDoacao" method="post" onSubmit="return enviardados();">
 		<form:errors path="tipoDoacao.nome" cssStyle="color:red" /> 
 <div class="cadastro">
 		<label for="nome">Nome da Doação: </label> <br>
-		<input type="text" style="width: 400px;" id="nome" name="nome" ><br>
+		<input type="text" style="width: 400px;" id="nome" name="nome" maxlength="30" minlength="5" required><br>
 
 		<div type="radio">
 		<label for="ativo">Pode ser escolhida por Locais de Abrigo?</label><br>

@@ -15,12 +15,15 @@
   <link rel="stylesheet" type="text/css" href="view/css/style.css">
   <script href="view/js/main.js"></script>
   <link rel="stylesheet" type="text/css" href="view/css/login-css.css">
+  <script language="JavaScript" type="text/javascript" src="view/js/mascara.js"></script> 
 <title>Cadastro de Voluntário</title>
 </head>
 <body>
 <br><br><br><br><br>
 <c:import url="../comum/menu.jsp" />
-	<div style="color: red;">${mensagem}</div>
+	<div style="text-align: center; color: red;">${mensagem}</div>
+	<div style="text-align: center; color: red;"> ${msg} </div>
+	
 	 <form action="cadastroComSucessoVoluntario" method="post" id="Form">
 	 		<form:errors path="voluntario.nome" cssStyle="color:red" /> 
 	 		<form:errors path="voluntario.cpf" cssStyle="color:red" /> 
@@ -28,21 +31,21 @@
 	 		<form:errors path="voluntario.telefone" cssStyle="color:red" /> 
 <div class="cadastro">
 		<label for="cpf">CPF:</label> 	
-		<input type="text" style="width: 200px;" id="cpf" name="cpf" placeholder="000.000.000-00" onkeyup="validar(this,'num');" minlength="11" maxlength="11"><br>	
+		<input type="text" onkeyup="maskIt(this,event,'###.###.###-##')"  style="width: 200px;" id="cpf" name="cpf" placeholder="000.000.000-00" onkeyup="validar(this,'num');" minlength="11" maxlength="11"><br>	
 		<label for="senha">Senha</label>
 		<input type="password" name="senha" placeholder="Digite a Sua senha" id="senha" minlength="8" required>
 		<br>
 		<label for="nome">Nome:</label>		
-		<input type="text" style="width: 400px;" id="nome" name="nome" onkeyup="validar(this,'text');"> <br>
+		<input type="text" style="width: 400px;" id="nome" name="nome" onkeyup="validar(this,'text');" required > <br>
 
 		<label for="orgaoPublico">Orgão Publico:</label> 		
 		<input type="text" style="width: 200px;" id="orgao_publico" name="orgao_publico" placeholder="Se sim, favor insira a sigla"><br>
 
 		<label for="email">E-mail:</label> 	
-		<input type="email" style="width: 400px;" id="email" name="email" ><br>	
+		<input type="email" style="width: 400px;" id="email" name="email" maxlength="50" required><br>	
 		
 		<label for="telefone1">Telefone:</label> 	
-		<input maxlength="11" type="tel" style="width: 200px;" id="telefone1" name="telefone" placeholder="(DDD) + Telefone" onkeyup="validar(this,'num');"><br>	
+		<input onkeyup="maskIt(this,event,'(##)####-####')" minlength="11" maxlength="11" type="tel" style="width: 200px;" id="telefone1" name="telefone" placeholder="(DDD) + Telefone" onkeyup="validar(this,'num');" required><br>	
 		
 		<label for="pontoApoio">Ponto de Apoio:</label> <br>
 		<select name="pontoApoio" >

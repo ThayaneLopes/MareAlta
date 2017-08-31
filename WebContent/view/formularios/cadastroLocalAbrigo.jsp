@@ -16,12 +16,15 @@
   <link rel="stylesheet" type="text/css" href="view/css/style.css">
   <script href="view/js/main.js"></script>
   <link rel="stylesheet" type="text/css" href="view/css/login-css.css">
+  <script language="JavaScript" type="text/javascript" src="/view/js/mascara.js"></script> 
 <title>Cadastro de Local de Abrigo</title>
 </head>
 <body>
 <br><br><br><br><br>
 <c:import url="../comum/menu.jsp" />
-	<div style="color: red;">${mensagem}</div>
+	<div style="text-align: center; color: red;">${mensagem}</div>
+	<div style="text-align: center; color: red;"> ${msg} </div>
+	
 	<form action="cadastroComSucessoLocalAbrigo" method="post">	
 		<form:errors path="localAbrigo.nome" cssStyle="color:red" /> 
 		<form:errors path="localAbrigo.responsavel" cssStyle="color:red" /> 
@@ -33,16 +36,16 @@
 <div class="cadastro">
 
 		<label for="nome">Nome do Local de Abrigo: </label>	
-		<input type="text" style="width: 400px;" id="nome" name="nome" > <br>	
+		<input type="text" style="width: 400px;" id="nome" name="nome" maxlength="30" minlength="5" required> <br>	
 
 		<label for="responsavel">Responsável: </label> 	
-		<input type="text" style="width: 400px;" id="responsavel" name="responsavel" > <br>	
+		<input type="text" style="width: 400px;" id="responsavel" name="responsavel" maxlength="100" minlength="5" required> <br>	
 
 		<label for="telefone1">Celular: </label>		
-		<input minlength="11" maxlength="11" type="tel" style="width: 200px;" id="telefone1" name="telefone1" placeholder="(DDD) + Telefone" onkeyup="validar(this,'num');" required> <br>
+		<input onkeyup="maskIt(this,event,'(##)####-####')" minlength="11" maxlength="11" type="tel" style="width: 200px;" id="telefone1" name="telefone1" placeholder="(DDD) + Telefone" onkeyup="validar(this,'num');" required> <br>
 
-		<label for="telefone2">Telefone: </label>		
-		<input maxlength="10" minlength="10" type="tel" style="width: 200px;" id="telefone2" name="telefone2" placeholder="(DDD) + Telefone" onkeyup="validar(this,'num');" required> <br>
+		<label for="telefone2">Telefone:(Opcional) </label>		
+		<input onkeyup="maskIt(this,event,'(##)####-####')" maxlength="10" minlength="10" type="tel" style="width: 200px;" id="telefone2" name="telefone2" placeholder="(DDD) + Telefone" onkeyup="validar(this,'num');"> <br>
 
 		<label for="estado">Estado: </label> 
 		<select style="width: 100px;" id="estado" name="estado">
@@ -75,12 +78,12 @@
 		</select>	
 
 		<label for="bairro">Bairro: </label>	
-		<input type="text" style="width: 200px;" id="bairro" name="bairro" > <br>	
+		<input type="text" style="width: 200px;" id="bairro" name="bairro" maxlength="30" minlength="5" required> <br>	
 
 		<label for="ruaAvenida">Endereço: </label>	
-		<input type="text" style="width: 400px;"  id="ruaAvenida" name="ruaAvenida" > <br>	
+		<input type="text" style="width: 400px;"  id="ruaAvenida" name="ruaAvenida" maxlength="50" minlength="5" required > <br>	
 
-		<label for="complemento">Complemento: </label>		
+		<label for="complemento">Complemento:(Opcional) </label>		
 		<input type="text" style="width: 400px;"  id="complemento" name="complemento" > <br>
 
 		<label for="cidade">Cidade: </label>	<br>
@@ -92,7 +95,7 @@
 		</select> <br>
 	
 		<label for="cep">CEP: </label>		
-		<input type="text" style="width: 200px;" id="cep" name="cep" onkeyup="validar(this,'num');"> <br>
+		<input type="text" onkeyup="maskIt(this,event,'#####-###')" style="width: 200px;" id="cep" name="cep" onkeyup="validar(this,'num');" required> <br>
 
 		<div type="radio">
 		<label for="precisaVoluntario">Precisa de Voluntario</label><br>		

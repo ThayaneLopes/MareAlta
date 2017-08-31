@@ -22,17 +22,17 @@ public class PontoApoioController {
 
 		if (result.hasErrors()) {
 			return "forward:cadastroPontoApoio";
-		}
+		} else {
+			PontoApoioDAO dao = new PontoApoioDAO();
+			try {
+				dao.inserirPontoApoio(pontoapoio);
+				model.addAttribute("msg", "Ponto de Apoio incluido com Sucesso!");
+			} catch (ElementoJaExistenteException e) {
+				model.addAttribute("mensagem", "Ponto de Apoio Já existente");
+			}
 
-		PontoApoioDAO dao = new PontoApoioDAO();
-		try {
-			dao.inserirPontoApoio(pontoapoio);
-		} catch (ElementoJaExistenteException e) {
-			model.addAttribute("mensagem", "Ponto de Apoio ja existente");
-			return "formularios/cadastroPontoApoio";
+			return "formularios/sucesso";
 		}
-
-		return "formularios/sucesso";
 	}
 
 	@RequestMapping("/cadastroPontoApoio")
@@ -45,47 +45,45 @@ public class PontoApoioController {
 	public String buscarPontoApoio(Model model) {
 		PontoApoioDAO dao = new PontoApoioDAO();
 		List<PontoApoio> listadePontos = dao.listarcidades();
-		model.addAttribute("listapoio",listadePontos);
+		model.addAttribute("listapoio", listadePontos);
 		return "buscas/buscarPontoApoio";
 	}
-	
+
 	@RequestMapping("/listapontosapoio")
-	public String listarpontosdeapoio(String busca, String cidade, Model model)
-	{
+	public String listarpontosdeapoio(String busca, String cidade, Model model) {
 		if (busca == null) {
 			return "buscas/buscarPontoApoio";
 		} else {
-		PontoApoioDAO dao = new PontoApoioDAO();
-		List<PontoApoio> listadePontos = dao.listarcomfiltro(busca, cidade);
-		model.addAttribute("listapoio",listadePontos);
-		return "buscas/listarpontosapoio";
+			PontoApoioDAO dao = new PontoApoioDAO();
+			List<PontoApoio> listadePontos = dao.listarcomfiltro(busca, cidade);
+			model.addAttribute("listapoio", listadePontos);
+			return "buscas/listarpontosapoio";
 		}
-		
+
 	}
+
 	@RequestMapping("/alterarpontoapoio")
-	public String alterarpontoapoio(int id, Model model)
-	{
+	public String alterarpontoapoio(int id, Model model) {
 		PontoApoioDAO dao = new PontoApoioDAO();
 		PontoApoio pontoapoio = dao.buscarPontoApoioPorID(id);
 		model.addAttribute("pontoapoio", pontoapoio);
 		return "alterar/alterarPontoApoio";
 	}
+
 	@RequestMapping("/atualizarpontoapoio")
-	public String atualizarPontoApoio(PontoApoio pontoApoio, Model model)
-	{
+	public String atualizarPontoApoio(PontoApoio pontoApoio, Model model) {
 		PontoApoioDAO dao = new PontoApoioDAO();
 		dao.atualizarPontoapoio(pontoApoio);
 		model.addAttribute("mensagem", "Ponto de Apoio alterado com sucesso");
 		return "forward:listapontosapoio?busca=";
 	}
-	
+
 	@RequestMapping("/removerPontoApoio")
-	public String removerPontoApoio(int id, Model model) throws SQLException
-	{
+	public String removerPontoApoio(int id, Model model) throws SQLException {
 		PontoApoioDAO dao = new PontoApoioDAO();
 		dao.removerpontoApoio(id);
 		model.addAttribute("mensagem", "Ponto de Apoio Removido com Sucesso");
 		return "forward:listapontosapoio?busca=";
-		
+
 	}
 }
