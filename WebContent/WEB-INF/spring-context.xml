@@ -25,8 +25,7 @@
 	</bean>
 
 	<mvc:default-servlet-handler />
-	<bean id="conversionService"
-		class="org.springframework.context.support.ConversionServiceFactoryBean">
+	<bean id="conversionService" class="org.springframework.context.support.ConversionServiceFactoryBean">
 		<property name="converters">
 			<list>
 				<bean class="br.com.ifpe.projeto.controller.CidadeRiscoConverter" />
@@ -36,7 +35,7 @@
 		</property>
 	</bean>
 	
-	<mvc:interceptors>
-		<bean class="br.com.ifpe.estoque.util.AutorizadorInterceptor" />
-	</mvc:interceptors>
+<!-- 	<mvc:interceptors> -->
+<!-- 		<bean class="br.com.ifpe.projeto.util.AutorizadorInterceptor" /> -->
+<!-- 	</mvc:interceptors> -->
 </beans>

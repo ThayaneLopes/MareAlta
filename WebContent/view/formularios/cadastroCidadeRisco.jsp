@@ -29,7 +29,7 @@
 		
 	<div class="cadastro">
 		<div class="form-group">
-		<input type="hidden" name="id" value="">
+<!-- 		<input type="hidden" name="id" value=""> -->
 			<label for="nome">Nome da Cidade:</label> 
 			<input type="text"	style="width: 400px;" id="nome" name="nome" onkeyup="validar(this,'text');" placeholder="Ex.: Barreiros"  minlength="5" maxlength="50" required><br> 
 			

@@ -16,12 +16,12 @@
   <script src="view/css/bootstrap/js/bootstrap.min.js"></script>
   <link rel="stylesheet" type="text/css" href="view/css/style.css">
   <script href="view/js/main.js"></script>
-  <link rel="stylesheet" type="text/css" href="view/css/login-css.css">
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Lista de Locais de Abrigo</title>
 </head>
-<body>
-<c:import url="logout" />
+<body class="fundo">
+<c:import url="../comum/logout.jsp"" />
+	<div class="colabore">
 <hr>
 	<h3>Lista Locais de Abrigo</h3>
 	<hr>

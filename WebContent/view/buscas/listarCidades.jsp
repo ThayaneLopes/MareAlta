@@ -13,12 +13,12 @@
   <script src="view/css/bootstrap/js/bootstrap.min.js"></script>
   <link rel="stylesheet" type="text/css" href="view/css/style.css">
   <script href="view/js/main.js"></script>
-  <link rel="stylesheet" type="text/css" href="view/css/login-css.css">
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Listar de cidades</title>
 </head>
-<body>
-<c:import url="logout" />
+<body class="fundo">
+<c:import url="../comum/logout.jsp" />
+	<div class="colabore">
 	<hr>
 	<h3>Listar Cidades em Risco</h3>
 	<hr>
@@ -31,6 +31,7 @@
 				<td>Região</td>
 				<td>Situação de Risco</td>
 				<td>AÇÕES</td>
+				<td>Cadastrar</td>
 			</tr>
 
 			<c:forEach var="cidade" items="${listacidades}">
@@ -41,7 +42,10 @@
 					<td>${cidade.situacaoRisco}</td>
 					<td><a href="exibirAlterarCidadeRisco?id=${cidade.id}">Alterar</a>
 					<a href="removerCidade?id=${cidade.id}">Remover</a></td>
-					
+					<td>
+						<a href="cadastroLocalAbrigo">Cadastrar um Local de Abrigo</a> |
+						<a href="cadastroPontoApoio">Cadastrar um Ponto de Apoio</a>
+					</td>	
 				</tr>
 			</c:forEach>
 

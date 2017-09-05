@@ -15,14 +15,14 @@
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
   <script src="view/js/jquery/jquery.min.js"></script>
   <script src="view/css/bootstrap/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="view/css/style.css">
   <script href="view/js/main.js"></script>
   <link rel="stylesheet" type="text/css" href="view/css/login-css.css">
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Listar Tipo Doação</title>
 </head>
-<body>
-<c:import url="logout" />
+<body class="fundo">
+<c:import url="../comum/logout.jsp" />
+	<div class="colabore">
 	<strong>Lista de Tipos Doação</strong>
 	<div class="container">
 	<form action="selectinput" method="post">

@@ -21,7 +21,7 @@ public class AutorizadorInterceptor extends HandlerInterceptorAdapter {
 			return true;
 		}
 
-		response.sendRedirect("/projeto");
+		response.sendRedirect("/MareAlta");
 		return false;
 	}
 }

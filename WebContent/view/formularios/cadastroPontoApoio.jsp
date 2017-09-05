@@ -31,7 +31,6 @@
 		<form:errors path="pontoApoio.telefone1" cssStyle="color:red" />
 		<form:errors path="pontoApoio.bairro" cssStyle="color:red" />
 		<form:errors path="pontoApoio.endereco" cssStyle="color:red" />
-		<form:errors path="pontoApoio.cidade" cssStyle="color:red" />
 		<form:errors path="pontoApoio.cep" cssStyle="color:red" />
 
 <div class="cadastro">
@@ -51,10 +50,10 @@
 		<input type="text" id="responsavel" name="responsavel" maxlength="100" minlength="5" required> <br>
 
 		<label for="telefone1">Celular: </label> 
-		<input type="tex" id="telefone1" onkeyup="maskIt(this,event,'(##)####-####')" name="telefone1" placeholder="(DDD) + Telefone" onkeyup="validar(this,'num');" maxlength="11" required="on"><br> 
+		<input type="tex" id="telefone1" onkeyup="maskIt(this,event,'(##)#####-####')" name="telefone1" placeholder="(DDD) + Telefone" onkeyup="validar(this,'num');" minlength="14" maxlength="15" required="on"><br> 
 		
-		<label for="telefone2">Telefone: </label> 
-		<input type="text" id="telefone2" onkeyup="maskIt(this,event,'(##)####-####')" name="telefone2"	placeholder="(DDD) + Telefone" onkeyup="validar(this,'num');" minlength="11" maxlength="10" > <br>
+		<label for="telefone2">Telefone:(Opcional) </label> 
+		<input type="text" id="telefone2" onkeyup="maskIt(this,event,'(##)#####-####')" name="telefone2"	placeholder="(DDD) + Telefone" onkeyup="validar(this,'num');" minlength="14" maxlength="15" > <br>
 		
 		<label for="estado">Estado: </label> <select id="estado" name="estado">
 			<option>Selecione uma opção</option>
@@ -96,10 +95,9 @@
 		<input type="text" id="complemento" name="complemento"> <br> 
 		
 		
-		
 		<label for="cep">CEP: </label> 
-		<input type="text" onkeyup="maskIt(this,event,'#####-###')"  id="cep" name="cep"	onkeyup="validar(this,'num');" minlength="8" maxlength="10" required> <br>
-
+		<input type="text"   id="cep" name="cep"	onkeyup="validar(this,'num');" minlength="8" maxlength="10" required> <br>
+<!-- onkeyup="maskIt(this,event,'#####-###')" -->
 		<div type="radio">
 			<label for="ativo">Está Ativo? </label> <br> 
 			<input type="radio"	name="ativo" value="true" checked> Sim 

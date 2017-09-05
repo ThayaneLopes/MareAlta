@@ -25,10 +25,8 @@ public class MenuController {
 	public String colabore(){
 		return "comum/colabore";
 	}
-	@RequestMapping("/logout")
-	public String logout(){
-		return "comum/logout";
-	}
-	
-	
+	@RequestMapping("/menuLogout")
+	public String menuLogout(){
+		return "comum/menuLogout";
+	}	
 }

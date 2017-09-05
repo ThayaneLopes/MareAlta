@@ -26,7 +26,7 @@ public class CidadeRiscoController {
 	@RequestMapping("/cadastroComSucessoCidadeRisco")
 	public String cadastroComSucessoCidadeRisco(@Valid CidadeRisco cidaderisco, BindingResult result, Model model) {
 
-		if (!result.hasErrors()) {
+		if (result.hasErrors()) {
 			return "forward:cadastroCidadeRisco";
 		} else {
 			CidadeRiscoDAO dao = new CidadeRiscoDAO();
@@ -34,7 +34,7 @@ public class CidadeRiscoController {
 				dao.inserirCidadeRisco(cidaderisco);
 				model.addAttribute("msg", "Cidade de Risco incluida com Sucesso!");
 			} catch (ElementoJaExistenteException e) {
-				model.addAttribute("mensagem", "Cidade Já existente");
+				model.addAttribute("mensagem", "Cidade Jï¿½ existente");
 			}
 
 			return "formularios/cadastroCidadeRisco";

@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import br.com.ifpe.projeto.model.ElementoJaExistenteException;
 import br.com.ifpe.projeto.model.LocalAbrigo;
 import br.com.ifpe.projeto.model.LocalAbrigoDAO;
-import br.com.ifpe.projeto.model.Perfis;
+import br.com.ifpe.projeto.model.Perfil;
 import br.com.ifpe.projeto.model.PontoApoio;
 import br.com.ifpe.projeto.model.PontoApoioDAO;
 import br.com.ifpe.projeto.model.Voluntario;
@@ -35,14 +35,14 @@ public class VoluntarioController {
 
 		VoluntarioDAO dao = new VoluntarioDAO();
 		try {
-			Perfis perfil = Perfis.VOLUNTARIO;
+			Perfil perfil = Perfil.VOLUNTARIO;
 			System.out.println(perfil.getvalor());
-			voluntario.setPerfil(perfil.toString());
+			voluntario.setPerfil(perfil);
 			dao.inserirVoluntario(voluntario);
-			model.addAttribute("msg", "Voluntário incluido com Sucesso!");
+			model.addAttribute("msg", "Voluntï¿½rio incluido com Sucesso!");
 		} catch (ElementoJaExistenteException e) {
 
-			model.addAttribute("mensagem", "Voluntario já existente");
+			model.addAttribute("mensagem", "Voluntario jï¿½ existente");
 		}
 		return "formularios/sucesso";
 	}
@@ -50,13 +50,13 @@ public class VoluntarioController {
 	@RequestMapping("/cadastroVoluntario")
 	public String cadastroVoluntario(Model model) {
 
-		PontoApoioDAO pontoapoiodao = new PontoApoioDAO();
-		List<PontoApoio> listaPontoApoio = pontoapoiodao.listar("");
-		model.addAttribute("listaPontoApoio", listaPontoApoio);
-
-		LocalAbrigoDAO localabrigodao = new LocalAbrigoDAO();
-		List<LocalAbrigo> listaLocalAbrigo = localabrigodao.listar("");
-		model.addAttribute("listaLocalAbrigo", listaLocalAbrigo);
+		// PontoApoioDAO pontoapoiodao = new PontoApoioDAO();
+		// List<PontoApoio> listaPontoApoio = pontoapoiodao.listar("");
+		// model.addAttribute("listaPontoApoio", listaPontoApoio);
+		//
+		// LocalAbrigoDAO localabrigodao = new LocalAbrigoDAO();
+		// List<LocalAbrigo> listaLocalAbrigo = localabrigodao.listar("");
+		// model.addAttribute("listaLocalAbrigo", listaLocalAbrigo);
 
 		return "formularios/cadastroVoluntario";
 	}
@@ -120,17 +120,20 @@ public class VoluntarioController {
 		}
 	}
 
-	@RequestMapping("efetuarLogin")
-	public String efetuarLogin(Voluntario voluntario, HttpSession session, Model model) {
-		VoluntarioDAO dao = new VoluntarioDAO();
-		Voluntario usuarioLogado = dao.buscarVoluntario(voluntario);
-		if (usuarioLogado != null) {
-			session.setAttribute("usuarioLogado", usuarioLogado);
-			return "principal/home";
-		}
-		model.addAttribute("msg", "Não foi encontrado um usuário com o login e senha informados.");
-		return "index";
-	}
+//	@RequestMapping("efetuarLogin")
+//	public String efetuarLogin(String cpf, String senha, HttpSession session, Model model) {
+//		Voluntario voluntario;
+//		VoluntarioDAO dao = new VoluntarioDAO();
+//		voluntario = dao.buscarVoluntarioCpf(cpf);
+//		if (!voluntario.equals(null) && PasswordStorage.verifyPassword(senha, voluntario.getSenha())) {
+//			session.setAttribute("usuarioLogado", UsuarioLogado);
+//			return "principal/home";
+//		} else {
+//			model.addAttribute("msg", "Nao foi encontrado um usuario com o login e senha informados.");
+//			return "index";
+//		}
+//
+//	}
 
 	@RequestMapping("efetuarLogout")
 	public String logout(HttpSession session) {

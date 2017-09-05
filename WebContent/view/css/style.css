@@ -2,6 +2,16 @@
 	margin: 0;
 	padding: 0;
 }
+.busca{
+	border-radius:12px;
+	border-style: solid;
+	border-color: #1E90FF;
+	padding: 10px;
+	width: 45%;
+	margin: 25px 25px 25px 35%;	
+	text-align: left;
+	color:#008B8B;
+}
 
 body {
 	font: 400 15px/1.8 Lato, sans-serif;
@@ -119,6 +129,16 @@ h3, h4 {
 .navbar-default .navbar-toggle {
 	border-color: transparent;
 	
+}
+.open .dropdown-toggle {
+  color: #fff;
+  background-color: #555 !important;
+}
+.dropdown-menu li a {
+  color: #000 !important;
+}
+.dropdown-menu li a:hover {
+  background-color: red !important;
 }
 
 footer { 

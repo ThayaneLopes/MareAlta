@@ -21,7 +21,7 @@ public class LocalAbrigoController {
 	@RequestMapping("/cadastroComSucessoLocalAbrigo")
 	public String cadastroComSucessoLocalAbrigo(@Valid LocalAbrigo localabrigo,BindingResult result, Model model) {
 		
-		if (!result.hasErrors()) {
+		if (result.hasErrors()) {
 			return "forward:cadastroLocalAbrigo";
 		}
 		else{

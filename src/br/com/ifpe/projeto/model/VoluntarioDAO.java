@@ -34,12 +34,11 @@ public class VoluntarioDAO {
 			stmt.setString(3, voluntario.getOrgao_publico());
 			stmt.setString(4, voluntario.getEmail());
 			stmt.setString(5, voluntario.getTelefone());
-			stmt.setObject(6, voluntario.getPontoApoio().getId());
-			stmt.setObject(7, voluntario.getLocalAbrigo().getId());
-			new PasswordStorage();
+			stmt.setInt(6, voluntario.getPontoApoio().getId());
+			stmt.setInt(7, voluntario.getLocalAbrigo().getId());
 			String hash = PasswordStorage.createHash(voluntario.getSenha());
 			stmt.setString(8, hash);
-			stmt.setObject(9, voluntario.getPerfil());
+			stmt.setString(9, voluntario.getPerfil().toString());
 
 			stmt.execute();
 			stmt.close();
@@ -69,7 +68,7 @@ public class VoluntarioDAO {
 				voluntario.setOrgao_publico(rs.getString("orgao_publico"));
 				voluntario.setEmail(rs.getString("email"));
 				voluntario.setTelefone(rs.getString("telefone"));
-				voluntario.setPerfil(rs.getString("perfil"));
+				voluntario.setPerfil(Perfil.valueOf(rs.getString("perfil")));
 
 				listaVoluntarios.add(voluntario);
 			}
@@ -94,15 +93,9 @@ public class VoluntarioDAO {
 
 			Voluntario voluntario = new Voluntario();
 
-			while (rs.next()) {
+			if (rs.next()) {
 
-				voluntario.setId(rs.getInt("id"));
-				voluntario.setCpf(rs.getString("cpf"));
-				voluntario.setNome(rs.getString("nome"));
-				voluntario.setOrgao_publico(rs.getString("orgao_publico"));
-				voluntario.setEmail(rs.getString("email"));
-				voluntario.setTelefone(rs.getString("telefone"));
-				voluntario.setPerfil(rs.getString("perfil"));
+				voluntario = montarVoluntario(rs);
 			}
 
 			rs.close();
@@ -127,7 +120,7 @@ public class VoluntarioDAO {
 			stmt.setString(3, voluntario.getOrgao_publico());
 			stmt.setString(4, voluntario.getEmail());
 			stmt.setString(5, voluntario.getTelefone());
-			stmt.setString(6, voluntario.getPerfil());
+			stmt.setString(6, voluntario.getPerfil().toString());
 			stmt.setInt(7, voluntario.getId());
 
 			stmt.execute();
@@ -161,18 +154,10 @@ public class VoluntarioDAO {
 			stmt.setString(1, cpf);
 			ResultSet rs = stmt.executeQuery();
 
-			Voluntario voluntario = new Voluntario();
+			Voluntario voluntario = null;
 
-			while (rs.next()) {
-
-				voluntario.setId(rs.getInt("id"));
-				voluntario.setCpf(rs.getString("cpf"));
-				voluntario.setNome(rs.getString("nome"));
-				voluntario.setOrgao_publico(rs.getString("orgao_publico"));
-				voluntario.setEmail(rs.getString("email"));
-				voluntario.setTelefone(rs.getString("telefone"));
-				voluntario.setSenha(rs.getString("senha"));
-				voluntario.setPerfil(rs.getString("perfil"));
+			if (rs.next()) {
+				voluntario = montarVoluntario(rs);
 			}
 
 			rs.close();
@@ -187,6 +172,20 @@ public class VoluntarioDAO {
 
 	}
 
+	private Voluntario montarVoluntario(ResultSet rs) throws SQLException {
+		Voluntario voluntario;
+		voluntario = new Voluntario();
+		voluntario.setId(rs.getInt("id"));
+		voluntario.setCpf(rs.getString("cpf"));
+		voluntario.setNome(rs.getString("nome"));
+		voluntario.setOrgao_publico(rs.getString("orgao_publico"));
+		voluntario.setEmail(rs.getString("email"));
+		voluntario.setTelefone(rs.getString("telefone"));
+		voluntario.setSenha(rs.getString("senha"));
+		voluntario.setPerfil(Perfil.valueOf(rs.getString("perfil")));
+		return voluntario;
+	}
+
 	public Voluntario buscarVoluntario(Voluntario voluntario) {
 		try {
 			Voluntario usuarioConsultado = null;
@@ -196,7 +195,7 @@ public class VoluntarioDAO {
 			stmt.setString(2, voluntario.getSenha());
 			ResultSet rs = stmt.executeQuery();
 			if (rs.next()) {
-				usuarioConsultado = montarObjeto(rs);
+				usuarioConsultado = montarVoluntario(rs);
 			}
 			rs.close();
 			stmt.close();
@@ -205,15 +204,5 @@ public class VoluntarioDAO {
 			throw new RuntimeException(e);
 		}
 	}
-	
-	 private Voluntario montarObjeto(ResultSet rs) throws SQLException {
-
-		 	Voluntario categoriaProduto = new Voluntario();
-			categoriaProduto.setId(rs.getInt("id"));
-			categoriaProduto.setCpf(rs.getString("cpf"));
-			categoriaProduto.setSenha(rs.getString("senha"));
-
-			return categoriaProduto;
-		    }
 
 }

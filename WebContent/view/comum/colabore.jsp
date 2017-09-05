@@ -13,7 +13,7 @@
   <link rel="stylesheet" type="text/css" href="view/css/style.css">
   <script href="view/js/main.js"></script>
   <link rel="stylesheet" type="text/css" href="view/css/login-css.css">
-    <title>Home :: Maré Alta</title>
+    <title>Colabore | Maré Alta</title>
 </head>
 
 <body class="fundo">
@@ -22,6 +22,8 @@
    <div  class="colabore">
       <h2>Participe desse projeto e também seja um voluntário!</h2>
       <p>Se deseja colaborar conosco, registre-se e faça parte.</p>
-      <button><a href="menuCadastro"> Registre-se</a></button>
+      <button><a href="cadastroVoluntario"> Registre-se</a></button>
+<!--       <p>Já possue um registro?</p> <button>Login</button> -->
+      
     </div>
  

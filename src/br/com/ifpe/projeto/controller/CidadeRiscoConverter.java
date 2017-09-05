@@ -8,10 +8,11 @@ import br.com.ifpe.projeto.model.CidadeRiscoDAO;
 public class CidadeRiscoConverter implements Converter<String, CidadeRisco> {
 
 	@Override
-	public CidadeRisco convert(String id) {
+	public CidadeRisco convert(String id) 
+	{
 
 		CidadeRiscoDAO dao = new CidadeRiscoDAO();
 		return dao.buscarPorId(Integer.parseInt(id));
-				}
+	}
 
 }

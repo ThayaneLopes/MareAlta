@@ -13,7 +13,7 @@
   <link rel="stylesheet" type="text/css" href="view/css/style.css">
   <script href="view/js/main.js"></script>
   <link rel="stylesheet" type="text/css" href="view/css/login-css.css">
-  <title>Home :: Maré Alta</title>
+  <title>Home | Maré Alta</title>
 </head>
 
 <body>
