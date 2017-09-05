@@ -23,7 +23,7 @@ cep varchar(8),precisa_voluntario tinyint(1),quant_de_familias int,
 foreign key(cidade) references cidade_risco(id));
 
 create table voluntario(id int auto_increment primary key,
-cpf varchar(11) unique,nome varchar(100),orgao_publico varchar(30),
+cpf varchar(14) unique,nome varchar(100),orgao_publico varchar(30),
 email varchar(50),telefone varchar(15), id_ponto_apoio int,id_local_abrigo int,senha varchar(255),
 perfil enum('ADMINISTRADOR','VOLUNTARIO','RESPONSAVELLA','RESPONSAVELPA'),
 foreign key(id_ponto_apoio) references ponto_apoio(id),

@@ -37,32 +37,45 @@
 		<form:errors path="voluntario.email" cssStyle="color:red" />
 		<form:errors path="voluntario.telefone" cssStyle="color:red" />
 		<div class="cadastro">
-			<label for="cpf">CPF:</label> <input type="text"
-				onkeyup="maskIt(this,event,'###.###.###-##')" style="width: 200px;"
+			<label for="cpf">CPF:</label> 
+			<input type="text"onkeyup="maskIt(this,event,'###.###.###-##')" style="width: 200px;"
 				id="cpf" name="cpf" placeholder="000.000.000-00"
-				onkeyup="validar(this,'num');"  maxlength="14"><br> <label
-				for="senha">Senha</label> <input type="password" name="senha"
-				placeholder="Digite a Sua senha" id="senha" minlength="8" maxlength="14" required> <br> <label for="nome">Nome:</label> <input type="text" style="width: 400px;" id="nome" name="nome"
-				onkeyup="validar(this,'text');" required> <br> <label
-				for="orgaoPublico">Orgão Publico:</label> <input type="text"
+				onkeyup="validar(this,'num');"  maxlength="14">
+				<br>
+				<label for="nome">Nome:</label> 
+				<input type="text" style="width: 400px;" id="nome" name="nome"
+				onkeyup="validar(this,'text');" required>
+				<br>
+				<label for="orgaoPublico">Orgão Publico:</label> 
+				<input type="text"
 				style="width: 200px;" id="orgao_publico" name="orgao_publico"
-				placeholder="Se sim, favor insira a sigla"><br> <label for="email">E-mail:</label> <input type="email" style="width: 400px;" id="email" name="email"
-				maxlength="50" required><br> <label for="telefone1">Telefone:</label> <input onkeyup="maskIt(this,event,'(##)#####-####')" minlength="11"
+				placeholder="Se sim, favor insira a sigla">
+				<br>
+				<label for="email">E-mail:</label>
+				<input type="email" style="width: 400px;" id="email" name="email"
+				maxlength="50" required>
+				<br> <label for="telefone1">Telefone:</label> <input onkeyup="maskIt(this,event,'(##)#####-####')" minlength="11"
 				maxlength="14" type="tel" style="width: 200px;" id="telefone1"
 				name="telefone" placeholder="(DDD) + Telefone"
-				onkeyup="validar(this,'num');" required><br> <label
-				for="pontoApoio">Ponto de Apoio:</label> <br> <select
-				name="pontoApoio">
-				<c:forEach items="${listaPontoApoio}" var="obj">
-					<option value="${obj.id}">${obj.nome}</option>
-				</c:forEach>
-			</select><br> <label for="localAbrigo">Local Abrigo:</label> <br> <select
-				name="localAbrigo">
-				<c:forEach items="${listaLocalAbrigo}" var="obj">
-					<option value="${obj.id}">${obj.nome}</option>
-				</c:forEach>
+				onkeyup="validar(this,'num');" required><br> 
+				<label for="senha">Senha</label> 
+				<input type="password" name="senha"
+				placeholder="Digite a Sua senha" id="senha" minlength="8" required> <br>
+				<input type="password" name="confsenha"
+				placeholder="Confirme a Sua senha" id="confsenha" minlength="8" required> <br>
+<!--				<label for="pontoApoio">Ponto de Apoio:</label> <br> -->
+<!-- 				<select name="pontoApoio"> -->
+<!-- 				<option value="indefinido">selecione</option> -->
+<%-- 				<c:forEach items="${listaPontoApoio}" var="obj"> --%>
+<%-- 					<option value="${obj.id}">${obj.nome}</option> --%>
+<%-- 				</c:forEach> --%>
+<!-- 			</select><br> <label for="localAbrigo">Local Abrigo:</label> <br>  -->
+<!-- 			<select name="localAbrigo"> -->
+<%-- 				<c:forEach items="${listaLocalAbrigo}" var="obj"> --%>
+<%-- 					<option value="${obj.id}">${obj.nome}</option> --%>
+<%-- 				</c:forEach> --%>
 			</select><br> <input type="submit" class="btn btn-primary"
-				value="Cadastrar"> <input type="reset" class="btn btn-warning"
+				value="Cadastrar" > <input type="reset" class="btn btn-warning"
 				value="Limpar">
 		</div>
 	</form>
@@ -75,6 +88,14 @@ function validar(dom,tipo){
 	}
 	dom.value=dom.value.replace(regex,'');
 }
+
+$('form').on('submit', function () {
+    if ($('#senha').val() != $('#confsenha').val()) {
+        alert('Atenção As senha devem ser iguais');
+        return false;
+    }
+});
+
 
 </script>
 </body>

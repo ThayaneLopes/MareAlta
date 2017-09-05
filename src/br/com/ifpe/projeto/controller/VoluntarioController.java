@@ -11,11 +11,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import br.com.ifpe.projeto.model.ElementoJaExistenteException;
-import br.com.ifpe.projeto.model.LocalAbrigo;
-import br.com.ifpe.projeto.model.LocalAbrigoDAO;
 import br.com.ifpe.projeto.model.Perfil;
-import br.com.ifpe.projeto.model.PontoApoio;
-import br.com.ifpe.projeto.model.PontoApoioDAO;
 import br.com.ifpe.projeto.model.Voluntario;
 import br.com.ifpe.projeto.model.VoluntarioDAO;
 import br.com.ifpe.projeto.util.PasswordStorage;
@@ -39,10 +35,10 @@ public class VoluntarioController {
 			System.out.println(perfil.getvalor());
 			voluntario.setPerfil(perfil);
 			dao.inserirVoluntario(voluntario);
-			model.addAttribute("msg", "Volunt�rio incluido com Sucesso!");
+			model.addAttribute("msg", "Voluntário incluido com Sucesso!");
 		} catch (ElementoJaExistenteException e) {
 
-			model.addAttribute("mensagem", "Voluntario j� existente");
+			model.addAttribute("mensagem", "Voluntario já existente");
 		}
 		return "formularios/sucesso";
 	}

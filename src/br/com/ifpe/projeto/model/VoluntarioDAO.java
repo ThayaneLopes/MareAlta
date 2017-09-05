@@ -34,8 +34,8 @@ public class VoluntarioDAO {
 			stmt.setString(3, voluntario.getOrgao_publico());
 			stmt.setString(4, voluntario.getEmail());
 			stmt.setString(5, voluntario.getTelefone());
-			stmt.setInt(6, voluntario.getPontoApoio().getId());
-			stmt.setInt(7, voluntario.getLocalAbrigo().getId());
+			stmt.setString(6, null);
+			stmt.setString(7, null);
 			String hash = PasswordStorage.createHash(voluntario.getSenha());
 			stmt.setString(8, hash);
 			stmt.setString(9, voluntario.getPerfil().toString());
