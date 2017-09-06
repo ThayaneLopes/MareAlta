@@ -20,7 +20,7 @@
 <title>Lista de Locais de Abrigo</title>
 </head>
 <body class="fundo">
-<c:import url="../comum/logout.jsp"" />
+<c:import url="../comum/logout.jsp"/>
 	<div class="colabore">
 <hr>
 	<h3>Lista Locais de Abrigo</h3>
@@ -62,6 +62,7 @@
 				<td>${abrigo.quantidadeFamilia}</td>
 				<td>
 					<a href="alterarLocalAbrigo?id=${abrigo.id}">Alterar</a> 
+					<a href="removerLocalAbrigo?id=${abrigo.id}">Remover</a>
 				</td>
 				
 	</tr>

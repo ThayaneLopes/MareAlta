@@ -77,7 +77,7 @@ public class TipoDoacaoDAO {
 
 			TipoDoacao tipodoacao = new TipoDoacao();
 
-			while (rs.next()) {
+			if (rs.next()) {
 
 				tipodoacao.setId(rs.getInt("id"));
 				tipodoacao.setNome(rs.getString("nome"));

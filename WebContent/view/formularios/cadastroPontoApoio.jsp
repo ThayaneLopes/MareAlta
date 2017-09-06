@@ -23,7 +23,6 @@
 <br><br><br><br><br>
 <c:import url="../comum/menu.jsp" />
 	<div style="text-align: center; color: red;">${mensagem}</div>
-	<div style="text-align: center; color: red;"> ${msg} </div>
 	
 	<form action="cadastroComSucessoPontoApoio" method="post">
 		<form:errors path="pontoApoio.nome" cssStyle="color:red" />
@@ -33,18 +32,10 @@
 		<form:errors path="pontoApoio.endereco" cssStyle="color:red" />
 		<form:errors path="pontoApoio.cep" cssStyle="color:red" />
 
-<div class="cadastro">
-
-		<label for="cidade">Cidade: </label>	<br>
-		<select name="cidadeRisco">
-			<option value=""> Selecione </option>
-			<c:forEach items="${listaCidadeRisco}" var="obj">
-			<option value="${obj.id}">${obj.nome}</option>
-			</c:forEach>
-		</select> <br>  
+<div class="cadastro"> 
 		
 		<label for="nome">Nome do Ponto de Apoio: </label> 
-		<input type="text" id="nome"name="nome" minlength="5" maxlength="100" required> <br> 
+		<input type="text" id="nome" name="nome" minlength="5" maxlength="100" required> <br> 
 		
 		<label for="responsavel">Responsável:</label> 
 		<input type="text" id="responsavel" name="responsavel" maxlength="100" minlength="5" required> <br>
@@ -84,7 +75,11 @@
 			<option value="SE">Sergipe</option>
 			<option value="TO">Tocantins</option>
 		</select> 
-		
+		<br>
+		<label for="cidade">Cidade: </label>	
+		<br>
+		<input type="text" name="cidade" placeholder="Digite o nome da cidade" onchange="validar(this,'text');">
+		<br> 
 		<label for="bairro">Bairro: </label> 
 		<input type="text" id="bairro"	name="bairro" maxlength="30" minlength="5" required> <br> 
 		
@@ -96,8 +91,8 @@
 		
 		
 		<label for="cep">CEP: </label> 
-		<input type="text"   id="cep" name="cep"	onkeyup="validar(this,'num');" minlength="8" maxlength="10" required> <br>
-<!-- onkeyup="maskIt(this,event,'#####-###')" -->
+		<input type="text"   id="cep" name="cep" onchange="validar(this,'num');" onkeyup="maskIt(this,event,'#####-###')" minlength="8" maxlength="10" required> <br>
+<!--  -->
 		<div type="radio">
 			<label for="ativo">Está Ativo? </label> <br> 
 			<input type="radio"	name="ativo" value="true" checked> Sim 

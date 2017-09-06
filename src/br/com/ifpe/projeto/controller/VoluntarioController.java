@@ -40,7 +40,7 @@ public class VoluntarioController {
 
 			model.addAttribute("mensagem", "Voluntario já existente");
 		}
-		return "formularios/sucesso";
+		return "formularios/cadastroVoluntario";
 	}
 
 	@RequestMapping("/cadastroVoluntario")
@@ -97,9 +97,9 @@ public class VoluntarioController {
 	}
 
 	@RequestMapping("/removerVoluntario")
-	public String removerVoluntario(Integer voluntario, Model model) {
+	public String removerVoluntario(Integer id, Model model) {
 		VoluntarioDAO dao = new VoluntarioDAO();
-		dao.remover(voluntario);
+		dao.remover(id);
 		model.addAttribute("mensagem", "Voluntário Removido com Sucesso");
 		return "forward:listarVoluntarios?busca=";
 	}
@@ -115,21 +115,6 @@ public class VoluntarioController {
 			System.out.println("senha incorreta");
 		}
 	}
-
-//	@RequestMapping("efetuarLogin")
-//	public String efetuarLogin(String cpf, String senha, HttpSession session, Model model) {
-//		Voluntario voluntario;
-//		VoluntarioDAO dao = new VoluntarioDAO();
-//		voluntario = dao.buscarVoluntarioCpf(cpf);
-//		if (!voluntario.equals(null) && PasswordStorage.verifyPassword(senha, voluntario.getSenha())) {
-//			session.setAttribute("usuarioLogado", UsuarioLogado);
-//			return "principal/home";
-//		} else {
-//			model.addAttribute("msg", "Nao foi encontrado um usuario com o login e senha informados.");
-//			return "index";
-//		}
-//
-//	}
 
 	@RequestMapping("efetuarLogout")
 	public String logout(HttpSession session) {

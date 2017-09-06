@@ -65,12 +65,12 @@ public class LocalAbrigoController {
 		}
 	}
 
-	@RequestMapping("removerLocalAbrigo")
-	public String removerLocalAbrigo(Integer localabrigo, Model model) {
+	@RequestMapping("/removerLocalAbrigo")
+	public String removerLocalAbrigo(Integer id, Model model) {
 		LocalAbrigoDAO dao = new LocalAbrigoDAO();
-		dao.remover(localabrigo);
+		dao.remover(id);
 		model.addAttribute("mensagem", "Local Removido com Sucesso");
-		return "forward:listarLocalAbrigo?busca=";
+		return "forward:listarlocalabrigo?busca=";
 	}
 
 	@RequestMapping("/alterarLocalAbrigo")

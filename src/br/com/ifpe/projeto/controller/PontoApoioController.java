@@ -28,21 +28,17 @@ public class PontoApoioController {
 			PontoApoioDAO dao = new PontoApoioDAO();
 			try {
 				dao.inserirPontoApoio(pontoapoio);
-				model.addAttribute("msg", "Ponto de Apoio incluido com Sucesso!");
+				model.addAttribute("mensagem", "Ponto de Apoio incluido com Sucesso!");
 			} catch (ElementoJaExistenteException e) {
-				model.addAttribute("mensagem", "Ponto de Apoio Já existente");
+				model.addAttribute("mensagem", "Ponto de Apoio JÃ¡ existente");
 			}
 
-			return "formularios/sucesso";
+			return "formularios/cadastroPontoApoio";
 		}
 	}
 
 	@RequestMapping("/cadastroPontoApoio")
-	public String cadastroPontoApoio(Model model) {
-		
-		CidadeRiscoDAO dao = new CidadeRiscoDAO();
-		List<CidadeRisco> listaCidadeRisco = dao.listar("", "");
-		model.addAttribute("listaCidadeRisco", listaCidadeRisco);
+	public String cadastroPontoApoio() {
 
 		return "formularios/cadastroPontoApoio";
 	}
@@ -81,7 +77,7 @@ public class PontoApoioController {
 		PontoApoioDAO dao = new PontoApoioDAO();
 		dao.atualizarPontoapoio(pontoApoio);
 		model.addAttribute("mensagem", "Ponto de Apoio alterado com sucesso");
-		return "forward:listapontosapoio?busca=";
+		return "forward:listapontosapoio?busca=&cidade=";
 	}
 
 	@RequestMapping("/removerPontoApoio")
@@ -89,7 +85,7 @@ public class PontoApoioController {
 		PontoApoioDAO dao = new PontoApoioDAO();
 		dao.removerpontoApoio(id);
 		model.addAttribute("mensagem", "Ponto de Apoio Removido com Sucesso");
-		return "forward:listapontosapoio?busca=";
+		return "forward:listapontosapoio?busca=&cidade=";
 
 	}
 }

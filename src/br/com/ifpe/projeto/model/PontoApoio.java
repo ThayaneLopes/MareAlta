@@ -25,7 +25,7 @@ public class PontoApoio {
 	@Size(min = 10, max = 150, message="endereco deve ter no maximo 10 caracteres")
 	private String endereco;
 	private String complemento;
-	private CidadeRisco cidadeRisco;
+	private String cidade;
 	@NotEmpty(message="O CEP deve ser preenchido") 
 	@Size(min = 8, max = 10, message="CEP deve ter no mnimo 8 caracteres")
 	private String cep;
@@ -90,12 +90,11 @@ public class PontoApoio {
 	public void setComplemento(String complemento) {
 		this.complemento = complemento;
 	}
-
-	public CidadeRisco getCidadeRisco() {
-		return cidadeRisco;
+	public String getCidade() {
+		return cidade;
 	}
-	public void setCidadeRisco(CidadeRisco cidadeRisco) {
-		this.cidadeRisco = cidadeRisco;
+	public void setCidade(String cidade) {
+		this.cidade = cidade;
 	}
 	public String getCep() {
 		return cep;

@@ -8,9 +8,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import br.com.ifpe.projeto.model.ElementoJaExistenteException;
 import br.com.ifpe.projeto.model.TipoDoacao;
@@ -28,9 +25,9 @@ public class TipoDoacaoController {
 			TipoDoacaoDAO dao = new TipoDoacaoDAO();
 			try {
 				dao.inserirTipoDoacao(tipoDoacao);
-				model.addAttribute("msg", "Tipo de Doa��o incluido com Sucesso!");
+				model.addAttribute("msg", "Tipo de Doação incluido com Sucesso!");
 			} catch (ElementoJaExistenteException e) {
-				model.addAttribute("mensagem", "J� Existe este tipo de doa��o");
+				model.addAttribute("mensagem", "Já Existe este tipo de doa��o");
 				return "formularios/cadastroTipoDoacao";
 			}
 		}
@@ -93,16 +90,23 @@ public class TipoDoacaoController {
 
 		return "buscas/listartipodoacaoativa";
 	}
-
-	@RequestMapping("/selectinput")
-	public String selec(List<TipoDoacao> lista) {
-		return null;
-
+	
+	@RequestMapping("atribuirtipodoacao")
+	public String atribuirtipodoacao(Model model)
+	{
+		listainputsdoacao(model);
+		return "formularios/atribuirtipodoacaopo";
 	}
-
-	@RequestMapping(value = "/selectinput", method = RequestMethod.POST)
-	@ResponseBody
-	public void teste(@RequestParam("tiposdoacao[]") List<String> tiposdoacao) {
-		System.out.println(tiposdoacao);
+	
+	@RequestMapping("/atribuiapontoapoio")
+	public String atribuiapontoapoio(int[] tipodoacao)
+	{
+		TipoDoacaoDAO dao = new TipoDoacaoDAO();
+		int tam = tipodoacao.length;
+		for(int x = 0;x < tam;x++)
+		{
+		System.out.println(tipodoacao[x]);
+		}
+		return null;
 	}
 }

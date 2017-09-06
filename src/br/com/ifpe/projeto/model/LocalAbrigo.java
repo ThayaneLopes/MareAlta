@@ -20,10 +20,10 @@ public class LocalAbrigo {
 	private String telefone2;
 	private String estado;
 	@NotEmpty(message="O bairro deve ser preenchido") 
-	@Size(min = 10, max = 50, message="Bairro deve ter no mínimo 10 caracteres")
+	@Size(min = 3, max = 50, message="Bairro deve ter no mínimo 3 caracteres")
 	private String bairro;
 	@NotEmpty(message="O endereço deve ser preenchido") 
-	@Size(min = 10, max = 150, message="Endereço deve ter no mínimo 10 caracteres")
+	@Size(min = 5, max = 150, message="Endereço deve ter no mínimo 10 caracteres")
 	private String ruaAvenida;
 	private String complemento;
 	private CidadeRisco cidadeRisco;

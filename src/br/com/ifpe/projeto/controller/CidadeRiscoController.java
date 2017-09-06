@@ -34,7 +34,7 @@ public class CidadeRiscoController {
 				dao.inserirCidadeRisco(cidaderisco);
 				model.addAttribute("msg", "Cidade de Risco incluida com Sucesso!");
 			} catch (ElementoJaExistenteException e) {
-				model.addAttribute("mensagem", "Cidade J� existente");
+				model.addAttribute("mensagem", "Cidade Já existente");
 			}
 
 			return "formularios/cadastroCidadeRisco";

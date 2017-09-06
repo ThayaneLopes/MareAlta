@@ -35,14 +35,6 @@
 
 <div class="cadastro">
 
-	<label for="cidade">Cidade: </label>	<br>
-		<select name="cidadeRisco">
-			<option value=""> Selecione </option>
-			<c:forEach items="${listaCidadeRisco}" var="obj">
-			<option value="${obj.id}">${obj.nome}</option>
-			</c:forEach>
-		</select> <br>
-
 		<label for="nome">Nome do Local de Abrigo: </label>	
 		<input type="text" style="width: 400px;" id="nome" name="nome" maxlength="30" minlength="5" required> <br>	
 
@@ -84,7 +76,15 @@
 			<option value="SE">Sergipe</option>
 			<option value="TO">Tocantins</option>
 		</select>	
-
+		<br>
+	<label for="cidade">Cidade: </label>
+	<br>
+		<select name="cidadeRisco">
+			<option value=""> Selecione </option>
+			<c:forEach items="${listaCidadeRisco}" var="obj">
+			<option value="${obj.id}">${obj.nome}</option>
+			</c:forEach>
+		</select> <br>
 		<label for="bairro">Bairro: </label>	
 		<input type="text" style="width: 200px;" id="bairro" name="bairro" maxlength="30" minlength="5" required> <br>	
 
@@ -95,8 +95,8 @@
 		<input type="text" style="width: 400px;"  id="complemento" name="complemento" > 
 		
 		<label for="cep">CEP: </label>		
-		<input type="text"  style="width: 200px;" id="cep" name="cep" onkeyup="validar(this,'num');" required> <br>
-<!-- onkeyup="maskIt(this,event,'#####-###')" -->
+		<input type="text"  style="width: 200px;" id="cep" name="cep" onchange="validar(this,'num')" onkeyup="maskIt(this,event,'#####-###')" required maxlength="9" minlength="9"> <br>
+<!--  -->
 		<div type="radio">
 		<label for="precisaVoluntario">Precisa de Voluntario</label><br>		
 		<input type="radio" name="precisaVoluntarios" value="1" checked> Sim
