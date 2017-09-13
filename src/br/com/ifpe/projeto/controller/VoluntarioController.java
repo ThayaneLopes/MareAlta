@@ -105,20 +105,23 @@ public class VoluntarioController {
 	}
 
 	@RequestMapping("/login")
-	public void login(String cpf, String senha) throws CannotPerformOperationException, InvalidHashException {
+	public String login(String cpf, String senha,HttpSession session) throws CannotPerformOperationException, InvalidHashException {
 		Voluntario voluntario;
 		VoluntarioDAO dao = new VoluntarioDAO();
 		voluntario = dao.buscarVoluntarioCpf(cpf);
 		if (PasswordStorage.verifyPassword(senha, voluntario.getSenha())) {
-			System.out.println("senha correta");
-		} else {
-			System.out.println("senha incorreta");
+			session.setAttribute("usuarioLogado", voluntario);
+			return "forward:menuLogout";
+		}
+		else
+		{
+			return "forward:index";
 		}
 	}
 
 	@RequestMapping("efetuarLogout")
 	public String logout(HttpSession session) {
 		session.invalidate();
-		return "index";
+		return "forward:index";
 	}
 }

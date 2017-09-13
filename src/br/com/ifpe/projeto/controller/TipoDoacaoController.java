@@ -27,7 +27,7 @@ public class TipoDoacaoController {
 				dao.inserirTipoDoacao(tipoDoacao);
 				model.addAttribute("msg", "Tipo de Doação incluido com Sucesso!");
 			} catch (ElementoJaExistenteException e) {
-				model.addAttribute("mensagem", "Já Existe este tipo de doa��o");
+				model.addAttribute("mensagem", "Já Existe este tipo de doação");
 				return "formularios/cadastroTipoDoacao";
 			}
 		}
@@ -91,22 +91,24 @@ public class TipoDoacaoController {
 		return "buscas/listartipodoacaoativa";
 	}
 	
-	@RequestMapping("atribuirtipodoacao")
-	public String atribuirtipodoacao(Model model)
+	@RequestMapping("/atribuirtipodoacao")
+	public String atribuirtipodoacao(int id,Model model)
 	{
-		listainputsdoacao(model);
+		TipoDoacaoDAO dao = new TipoDoacaoDAO();
+		List<TipoDoacao> listatipodoacao = dao.listarativos();
+		model.addAttribute("listatipodoacao", listatipodoacao);
+		model.addAttribute("id", id);
 		return "formularios/atribuirtipodoacaopo";
 	}
 	
 	@RequestMapping("/atribuiapontoapoio")
-	public String atribuiapontoapoio(int[] tipodoacao)
+	public String atribuiapontoapoio(int[] tipodoacao , int idpontoapoio ,Model model) throws ElementoJaExistenteException
 	{
-		TipoDoacaoDAO dao = new TipoDoacaoDAO();
-		int tam = tipodoacao.length;
-		for(int x = 0;x < tam;x++)
-		{
-		System.out.println(tipodoacao[x]);
-		}
-		return null;
+		TipoDoacaoDAO dao = new TipoDoacaoDAO();	
+		dao.atribuirItensAceitosPontoapoio(tipodoacao,idpontoapoio);
+		
+		return atribuirtipodoacao(idpontoapoio ,model);
+		
 	}
+	
 }

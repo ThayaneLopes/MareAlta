@@ -153,4 +153,44 @@ public class TipoDoacaoDAO {
 			throw new RuntimeException(e);
 		}
 	}
+	
+	public void atribuirItensAceitosPontoapoio(int[] idTipoDoacao, int idPontoColeta) throws ElementoJaExistenteException {
+		try {
+			int tam = idTipoDoacao.length;
+			for(int x = 0;x < tam;x++)
+			{
+			
+			if(buscarexistente(idPontoColeta, idTipoDoacao[x]))
+			{
+			String sql = "INSERT INTO itens_aceitos_ponto_coleta(id_ponto_apoio,id_tipo_doacao) VALUES (?,?)";
+			PreparedStatement stmt = (PreparedStatement) connection.prepareStatement(sql);
+			stmt.setInt(1, idPontoColeta);
+			stmt.setInt(2, idTipoDoacao[x]);
+			stmt.execute();
+			stmt.close();
+			}
+			}
+			connection.close();
+		} catch (SQLIntegrityConstraintViolationException e) {
+			throw new ElementoJaExistenteException();
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+	}
+	
+	public boolean buscarexistente(int idPontoColeta, int idTipoDoacao) throws SQLException {
+			String sql="select id from itens_aceitos_ponto_coleta where id_ponto_apoio = ? AND id_tipo_doacao = ?";
+			PreparedStatement stmt = (PreparedStatement) connection.prepareStatement(sql);
+			stmt.setInt(1, idPontoColeta);
+			stmt.setInt(2, idTipoDoacao);
+			ResultSet rs = stmt.executeQuery();
+			if(!rs.next())
+			{
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+	}
 }

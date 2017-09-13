@@ -28,7 +28,7 @@
       <div class="formholder">
         <div class="randompad">
            <fieldset>
-           <form action="efetuarLogin" method="POST">
+           <form action="login" method="POST">
              <label for="cpf">CPF</label>
              <input type="text" placeholder="Digite seu CPF" name="cpf" onkeyup="maskIt(this,event,'###.###.###-##')" required/>
              <label for="senha">Password</label>
@@ -40,7 +40,7 @@
       </div>
   </div>
 </div>
-  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+  <script src="view/js/jquery/jquery.min.js"></script>
 
     <script src="view/js/main.js"></script>
     </li>

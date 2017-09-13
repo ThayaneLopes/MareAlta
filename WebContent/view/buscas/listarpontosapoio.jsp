@@ -96,7 +96,8 @@
 						</c:otherwise>
 					</c:choose>
 					<td><a href="alterarpontoapoio?id=${apoio.id}">Alterar</a> <a
-						href="removerPontoApoio?id=${apoio.id}">Remover</a></td>
+						href="removerPontoApoio?id=${apoio.id}">Remover</a>
+						<a href="atribuirtipodoacao?id=${apoio.id}">Atribuir Tipo Doação</a></td>
 
 				</tr>
 			</c:forEach>

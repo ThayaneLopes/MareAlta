@@ -25,15 +25,14 @@
 	<div class="colabore">
 	<strong>Lista de Tipos Doação</strong>
 	<div class="container">
-	<form action="selectinput" method="post">
+	<form action="atribuiapontoapoio" method="post">
 		<table class="table table-striped table-bordered opcoes">
 			<tr>
 				<th>Tipos de Doações</th>
 			</tr>
-	
 			<c:forEach var="listatipodoacao" items="${listatipodoacao}">
 				<tr>
-					<td><input type="checkbox" name="tiposdoacao[]" value=${listatipodoacao.id}><label>${listatipodoacao.nome}</label></td>
+					<td><input type="checkbox" name="tipodoacao" value=${listatipodoacao.id}><label>${listatipodoacao.nome}</label></td>
 				</tr>
 				
 			</c:forEach>

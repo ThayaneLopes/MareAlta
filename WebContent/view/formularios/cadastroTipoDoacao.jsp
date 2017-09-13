@@ -28,7 +28,7 @@
 		<form:errors path="tipoDoacao.nome" cssStyle="color:red" /> 
 <div class="cadastro">
 		<label for="nome">Nome da Doação: </label> <br>
-		<input type="text" style="width: 400px;" id="nome" name="nome" maxlength="30" minlength="5" required><br>
+		<input type="text" style="width: 400px;" id="nome" name="nome" maxlength="30" minlength="3" required><br>
 
 		<div type="radio">
 		<label for="ativo">Pode ser escolhida por Locais de Abrigo?</label><br>

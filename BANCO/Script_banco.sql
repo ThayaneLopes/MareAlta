@@ -38,6 +38,3 @@ create table itens_necessarios_local_abrigo(id int auto_increment primary key,
 id_local_abrigo int, id_tipo_doacao int,
 foreign key(id_local_abrigo) references local_abrigo(id),
 foreign key(id_tipo_doacao) references tipo_doacao(id));
-
-insert into local_abrigo(nome) values("A Definir");
-insert into ponto_apoio(nome) values("A Definir");

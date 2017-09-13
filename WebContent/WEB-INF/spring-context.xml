@@ -35,7 +35,7 @@
 		</property>
 	</bean>
 	
-<!-- 	<mvc:interceptors> -->
-<!-- 		<bean class="br.com.ifpe.projeto.util.AutorizadorInterceptor" /> -->
-<!-- 	</mvc:interceptors> -->
+	<mvc:interceptors>
+		<bean class="br.com.ifpe.projeto.util.AutorizadorInterceptor" />
+	</mvc:interceptors>
 </beans>

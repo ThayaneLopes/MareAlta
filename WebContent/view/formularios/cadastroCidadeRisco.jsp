@@ -55,8 +55,9 @@
 	<script type="text/javascript">
 		function validar(dom, tipo) {
 			switch (tipo) {
+				
 			case 'num':
-				var regex = /[A-Za-z]/g;
+				var regex = /[a-zA-Z]/g;
 				break;
 			case 'text':
 				var regex = /\d/g;
