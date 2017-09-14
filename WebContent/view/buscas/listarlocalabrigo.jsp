@@ -21,7 +21,7 @@
 </head>
 <body class="fundo">
 <c:import url="../comum/logout.jsp"/>
-	<div class="colabore">
+	<div class="buscas">
 <hr>
 	<h3>Lista Locais de Abrigo</h3>
 	<hr>

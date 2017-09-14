@@ -21,7 +21,7 @@ pageEncoding="ISO-8859-1"%>
 </head>
 <body class="fundo">
 <c:import url="../comum/logout.jsp" />
-	<div class="colabore">
+	<div class="buscas">
 	<strong>Lista de Voluntarios</strong>
 	<div style="text-align: center; color: red;"> ${mensagem} </div>
 <div class="container">

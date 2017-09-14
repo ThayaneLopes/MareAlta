@@ -27,7 +27,7 @@
 	<br>
 	<br>
 	<br>
-	<c:import url="../comum/menu.jsp" />
+<c:import url="../comum/menu.jsp"/>
 	<div style="text-align: center; color: red;">${mensagem}</div>
 
 	<form action="cadastroComSucessoVoluntario" method="post" id="Form">
@@ -50,17 +50,17 @@
 				style="width: 200px;" id="orgao_publico" name="orgao_publico"
 				placeholder="Se sim, favor insira a sigla">
 				<br>
-				<label for="email">E-mail:</label>
+				<label for="email">E-mail:</label><br>
 				<input type="email" style="width: 400px;" id="email" name="email"
 				maxlength="50" required>
-				<br> <label for="telefone1">Telefone:</label> <input onkeyup="maskIt(this,event,'(##)#####-####')" minlength="11"
+				<br> <label for="telefone1">Telefone:</label> <br><input onkeyup="maskIt(this,event,'(##)#####-####')" minlength="11"
 				maxlength="14" type="tel" style="width: 200px;" id="telefone1"
 				name="telefone" placeholder="(DDD) + Telefone"
 				onkeyup="validar(this,'num');" required><br> 
 				<label for="senha">Senha</label> 
 				<input type="password" name="senha"
 				placeholder="Digite a Sua senha" id="senha" minlength="8" required> <br>
-				<input type="password" name="confsenha"
+				Confirmar Senha: <input type="password" name="confsenha"
 				placeholder="Confirme a Sua senha" id="confsenha" minlength="8" required> <br>
 <!--				<label for="pontoApoio">Ponto de Apoio:</label> <br> -->
 <!-- 				<select name="pontoApoio"> -->

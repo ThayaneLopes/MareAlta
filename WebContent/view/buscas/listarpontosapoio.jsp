@@ -21,7 +21,7 @@
 </head>
 <body class="fundo">
 	<c:import url="../comum/logout.jsp" />
-		<div class="colabore">
+		<div class="buscas">
 	<h3>Lista Pontos de Apoio</h3>
 	<div style="text-align: center; color: red;">${mensagem}</div>
 	<div class="container">
@@ -96,7 +96,7 @@
 						</c:otherwise>
 					</c:choose>
 					<td><a href="alterarpontoapoio?id=${apoio.id}">Alterar</a> <a
-						href="removerPontoApoio?id=${apoio.id}">Remover</a>
+						href="removerPontoApoio?id=${apoio.id}">Remover</a></td>
 						<a href="atribuirtipodoacao?id=${apoio.id}">Atribuir Tipo Doação</a></td>
 
 				</tr>

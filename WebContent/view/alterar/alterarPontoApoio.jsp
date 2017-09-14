@@ -7,21 +7,24 @@
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="view/css/bootstrap/css/bootstrap.min.css">
-  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
-  <script src="view/js/jquery/jquery.min.js"></script>
-  <script src="view/css/bootstrap/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="view/css/style.css">
-  <script href="view/js/main.js"></script>
-  <link rel="stylesheet" type="text/css" href="view/css/login-css.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="view/css/bootstrap/css/bootstrap.min.css">
+<link href="https://fonts.googleapis.com/css?family=Lato"
+	rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Montserrat"
+	rel="stylesheet" type="text/css">
+<script src="view/js/jquery/jquery.min.js"></script>
+<script src="view/css/bootstrap/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="view/css/style.css">
+<script href="view/js/main.js"></script>
+<link rel="stylesheet" type="text/css" href="view/css/login-css.css">
 <title>alterar Ponto de Apoio</title>
 </head>
 <body>
 <br><br><br><br><br>
-<c:import url="../comum/menu.jsp" />
+<c:import url="../comum/logout.jsp"/>
 	<div style="color: red;">${mensagem}</div>
+	
 	<form action="atualizarpontoapoio" method="post">
 		<form:errors path="pontoApoio.nome" cssStyle="color:red" />
 		<form:errors path="pontoApoio.responsavel" cssStyle="color:red" />

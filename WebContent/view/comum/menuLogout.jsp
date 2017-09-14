@@ -23,14 +23,7 @@
 
 	<div class="colabore">
 		<h2>SEJA BEM VINDO!</h2>
-		<p>Se você deseja cadastrar alguma cidade em risco, algum local de
-			abrigo, algum tipo de doação que sei local de abrigo está recebendo
-			ou algum ponto de apoio, selecione a opção desejada abaixo:</p>
-		<button>
-			<a href="cadastroLocalAbrigo">Cadastrar Local Abrigo</a>
-		</button>
-		<button>
-			<a href="cadastroPontoApoio">Cadastrar Ponto de Apoio</a>
+		<p>Selecione uma opção abaixo</p>
 		</button>
 		<button>
 			<a href="cadastroCidadeRisco">Cadastrar Cidade em Risco</a>
@@ -38,5 +31,10 @@
 		<button>
 			<a href="cadastroTipoDoacao">Cadastrar Tipo de Doação</a>
 		</button>
+		<button>
+			<a href="cadastroLocalAbrigo">Cadastrar Local Abrigo</a>
+		</button>
+		<button>
+			<a href="cadastroPontoApoio">Cadastrar Ponto de Apoio</a>
 </body>
 </html>

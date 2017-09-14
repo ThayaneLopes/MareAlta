@@ -19,7 +19,7 @@
 </head>
 <body class="fundo">
 <c:import url="../comum/logout.jsp" />
-	<div class="colabore">
+	<div class="buscas">
 	<strong>Lista de Tipos Doação</strong>
 	<div style="text-align: center; color: red;"> ${mensagem} </div>
 	<div class="container">

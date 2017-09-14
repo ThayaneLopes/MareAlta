@@ -20,10 +20,10 @@
   <c:import url="menu.jsp" />
   <br><br>
    <div  class="colabore">
-      <h2>Participe desse projeto e também seja um voluntário!</h2>
-      <p>Se deseja colaborar conosco, registre-se e faça parte.</p>
+      <p>Participe desse projeto e também seja um voluntário!</p>
+      <h5>Se deseja colaborar conosco, registre-se e faça parte.</h5>
       <button><a href="cadastroVoluntario"> Registre-se</a></button>
-<!--       <p>Já possue um registro?</p> <button>Login</button> -->
+	<p>Já possue um registro? Acesse sua conta através do login localizado no menu da página</p>
       
     </div>
  

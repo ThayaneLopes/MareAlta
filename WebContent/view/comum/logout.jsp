@@ -13,7 +13,15 @@
 			</div>
 			<div class="collapse navbar-collapse" id="myNavbar">
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href=""><img src="view/img/lupa.png"style="width: 15px;"></a> </li>
+					<li class="dropdown"><a class="dropdown-toggle"
+						data-toggle="dropdown" href="#">Buscas <span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="buscarlocalabrigo">Local de Abrigo</a></li>
+							<li><a href="buscarpontoapoio">Ponto de Apoio</a></li>
+							<li><a href="buscarcidades">Cidades em Risco</a></li>
+							<li><a href="buscartipodedoacao">Tipos de Doação</a></li>
+							<li><a href="buscarvoluntario">Voluntário</a></li>
+						</ul></li>
 					<li><a href="efetuarLogout">Logout</a></li>
 				</ul>
 			</div>
@@ -22,4 +30,3 @@
 	<br />
 	<br />
 	<br />
-	

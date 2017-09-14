@@ -22,7 +22,7 @@
 </head>
 <body class="fundo">
 <c:import url="../comum/logout.jsp" />
-	<div class="colabore">
+	<div class="buscas">
 	<strong>Lista de Tipos Doação</strong>
 	<div class="container">
 	<form action="atribuiapontoapoio" method="post">

@@ -18,7 +18,7 @@
 </head>
 <body class="fundo">
 <c:import url="../comum/logout.jsp" />
-	<div class="colabore">
+	<div class="buscas">
 	<hr>
 	<h3>Listar Cidades em Risco</h3>
 	<hr>
@@ -30,8 +30,8 @@
 				<td>Nome</td>
 				<td>Região</td>
 				<td>Situação de Risco</td>
-				<td>AÇÕES</td>
-				<td>Cadastrar</td>
+				<td>Ações</td>
+				<td>Cadastro</td>
 			</tr>
 
 			<c:forEach var="cidade" items="${listacidades}">
