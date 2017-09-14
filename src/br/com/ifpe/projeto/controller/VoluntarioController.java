@@ -40,7 +40,7 @@ public class VoluntarioController {
 
 			model.addAttribute("mensagem", "Voluntario já existente");
 		}
-		return "formularios/cadastroVoluntario";
+		return "forward:cadastroVoluntario";
 	}
 
 	@RequestMapping("/cadastroVoluntario")

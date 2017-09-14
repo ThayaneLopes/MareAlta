@@ -73,7 +73,8 @@
 <%-- 				<c:forEach items="${listaLocalAbrigo}" var="obj"> --%>
 <%-- 					<option value="${obj.id}">${obj.nome}</option> --%>
 <%-- 				</c:forEach> --%>
-			</select><br> <input type="submit" class="btn btn-primary"	value="Cadastrar" > <input type="reset" class="btn btn-warning"
+<!-- 			</select> -->
+			<br> <input type="submit" class="btn btn-primary"	value="Cadastrar" > <input type="reset" class="btn btn-warning"
 				value="Limpar">
 		</div>
 	</form>
