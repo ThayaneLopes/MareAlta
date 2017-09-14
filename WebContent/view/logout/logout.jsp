@@ -20,7 +20,7 @@
 							<li><a href="buscarpontoapoio">Ponto de Apoio</a></li>
 							<li><a href="buscarcidades">Cidades em Risco</a></li>
 							<li><a href="buscartipodedoacao">Tipos de Doação</a></li>
-							<li><a href="buscarvoluntario">Voluntário</a></li>
+							<li><a href="buscarVoluntario">Voluntário</a></li>
 						</ul></li>
 					<li><a href="efetuarLogout">Logout</a></li>
 				</ul>
