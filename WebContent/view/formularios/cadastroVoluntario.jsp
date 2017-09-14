@@ -27,7 +27,7 @@
 	<br>
 	<br>
 	<br>
-<c:import url="../logout/logout.jsp"/>
+<c:import url="../comum/menu.jsp"/>
 	<div style="text-align: center; color: red;">${mensagem}</div>
 
 	<form action="cadastroComSucessoVoluntario" method="post" id="Form">
