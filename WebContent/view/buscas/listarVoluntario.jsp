@@ -27,8 +27,6 @@ pageEncoding="ISO-8859-1"%>
 <div class="container">
 	<table class="table table-striped table-bordered">
 		<tr>
-			<td>Id</td>
-			<td>CPF</td>
 			<td>Nome</td>
 			<td>Orgão Público</td>
 			<td>E-mail</td>
@@ -38,8 +36,6 @@ pageEncoding="ISO-8859-1"%>
 		</tr>
 		<c:forEach var="voluntario" items="${listaVoluntarios}">
 		<tr>
-			<td>${voluntario.id}</td>
-			<td>${voluntario.cpf}</td>
 			<td>${voluntario.nome}</td>
 			<td>${voluntario.orgao_publico}</td>
 			<td>${voluntario.email}</td>

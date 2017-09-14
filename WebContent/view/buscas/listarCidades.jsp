@@ -26,7 +26,6 @@
 	<div class="container">
 		<table class="table table-striped table-bordered">
 			<tr>
-				<td>Código</td>
 				<td>Nome</td>
 				<td>Região</td>
 				<td>Situação de Risco</td>
@@ -36,7 +35,6 @@
 
 			<c:forEach var="cidade" items="${listacidades}">
 				<tr>
-					<td>${cidade.id}</td>
 					<td>${cidade.nome}</td>
 					<td>${cidade.regiao}</td>
 					<td>${cidade.situacaoRisco}</td>

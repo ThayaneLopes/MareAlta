@@ -29,37 +29,35 @@
 <div class="container">
 	<table class="table table-striped table-bordered">
 		<tr>
-				<td>Codigo</td>
 				<td>NOME</td>
 				<td>NOME DO RESPONSAVEL</td>
 				<td>TELEFONE 1</td>
-				<td>TELEFONE 2</td>
+				
 				<td>ESTADO</td>
 				<td>BAIRRO</td>
 				<td>RUA/AVENIDA</td>
-				<td>COMPLEMENTO</td>
+				
 				<td>CIDADE</td>
-				<td>CEP</td>
+				
 				<td>PRECISA DE VOLUNTARIOS</td>
-				<td>QUANT. FAMILIAS</td>
+				
 				<td> AÇÕES</td>
 						</tr>
 		
 		<c:forEach var="abrigo" items="${listabrigo}">
 			<tr>
-				<td>${abrigo.id}</td>
 				<td>${abrigo.nome}</td>
 				<td>${abrigo.responsavel}</td>
 				<td>${abrigo.telefone1}</td>
-				<td>${abrigo.telefone2}</td>
+				
 				<td>${abrigo.estado}</td>
 				<td>${abrigo.bairro}</td>
 				<td>${abrigo.ruaAvenida}</td>
-				<td>${abrigo.complemento}</td>
+				
 				<td>${abrigo.cidadeRisco.nome}</td>
-				<td>${abrigo.cep}</td>
+				
 				<td>${abrigo.precisaVoluntarios}</td>
-				<td>${abrigo.quantidadeFamilia}</td>
+				
 				<td>
 					<a href="alterarLocalAbrigo?id=${abrigo.id}">Alterar</a> 
 					<a href="removerLocalAbrigo?id=${abrigo.id}">Remover</a>

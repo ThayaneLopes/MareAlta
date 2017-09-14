@@ -25,14 +25,14 @@
 	<div class="container">
 		<table class="table table-striped table-bordered">
 			<tr>
-				<td>Id</td>
+				
 				<td>Nome</td>
 				<td>Ativo</td>
 				<td>Açôes</td>
 			</tr>
 			<c:forEach var="listatipodoacao" items="${listatipodoacao}">
 				<tr>
-					<td>${listatipodoacao.id}</td>
+					
 					<td>${listatipodoacao.nome}</td>
 					<c:choose>
 						<c:when test="${listatipodoacao.ativo == true}">

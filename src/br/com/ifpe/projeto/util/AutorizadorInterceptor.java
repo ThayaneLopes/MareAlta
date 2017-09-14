@@ -13,7 +13,7 @@ public class AutorizadorInterceptor extends HandlerInterceptorAdapter {
 
 		String uri = request.getRequestURI();
 		if ( uri.contains("img") || uri.contains("js")
-				|| uri.endsWith("css") || uri.endsWith("login")) {
+				|| uri.contains("css")|| uri.endsWith("colabore") || uri.endsWith("login") || uri.endsWith("cadastroVoluntario")) {
 			return true;
 		}
 

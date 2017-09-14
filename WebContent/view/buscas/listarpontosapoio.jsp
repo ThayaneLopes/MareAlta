@@ -27,17 +27,17 @@
 	<div class="container">
 		<table class="table table-striped table-bordered">
 			<tr>
-				<td>Codigo</td>
+				
 				<td>NOME</td>
 				<td>NOME DO RESPONSAVEL</td>
 				<td>TELEFONE 1</td>
-				<td>TELEFONE 2</td>
+				
 				<td>ESTADO</td>
 				<td>BAIRRO</td>
 				<td>RUA/AVENIDA</td>
 				<td>COMPLEMENTO</td>
 				<td>CIDADE</td>
-				<td>CEP</td>
+				
 				<td>ATIVO</td>
 				<td>HORÁRIO FUNC.</td>
 				<td>COLETA</td>
@@ -48,17 +48,17 @@
 
 			<c:forEach var="apoio" items="${listapoio}">
 				<tr>
-					<td>${apoio.id}</td>
+					
 					<td>${apoio.nome}</td>
 					<td>${apoio.responsavel}</td>
 					<td>${apoio.telefone1}</td>
-					<td>${apoio.telefone2}</td>
+					
 					<td>${apoio.estado}</td>
 					<td>${apoio.bairro}</td>
 					<td>${apoio.endereco}</td>
 					<td>${apoio.complemento}</td>
 					<td>${apoio.cidade}</td>
-					<td>${apoio.cep}</td>
+					
 					<c:choose>
 						<c:when test="${apoio.ativo == true}">
 							<td>SIM</td>
