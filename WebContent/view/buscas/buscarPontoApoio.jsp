@@ -20,7 +20,7 @@
 <title>Buscar Pontos de Apoio</title>
 </head>
 <body class="fundo">
-	<c:import url="../comum/logout.jsp" />
+	<c:import url="../logout/logout.jsp"/>
 	<div class="colabore">
 		<form action="listapontosapoio" method="POST">
 			<input type="text" name="busca" placeholder="Pesquisar por ...">

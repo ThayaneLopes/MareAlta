@@ -20,7 +20,7 @@
 <title>Buscar Tipo de doação</title>
 </head>
 <body class="fundo">
-	<c:import url="../comum/logout.jsp" />
+	<c:import url="../logout/logout.jsp"/>
 	<div class="colabore">
 		<form action="listartipodoacao" method="post">
 			<input type="text" name="busca" placeholder="Digite o tipo da doação">

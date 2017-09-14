@@ -8,6 +8,7 @@
 <title>Tipos Doação</title>
 </head>
 <body>
+<c:import url="../logout/logout.jsp"/>
 <form action="atribuiapontoapoio" method="POST">
 <c:forEach items="${listatipodoacao}" var="obj">
 			<input type="checkbox" name="tipodoacao" value="${obj.id}">${obj.nome}<br> 

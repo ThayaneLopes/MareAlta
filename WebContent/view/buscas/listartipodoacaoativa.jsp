@@ -21,7 +21,7 @@
 <title>Listar Tipo Doação</title>
 </head>
 <body class="fundo">
-<c:import url="../comum/logout.jsp" />
+<c:import url="../logout/logout.jsp"/>
 	<div class="buscas">
 	<strong>Lista de Tipos Doação</strong>
 	<div class="container">

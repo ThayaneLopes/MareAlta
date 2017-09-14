@@ -22,7 +22,7 @@
 <title>Alterar Cidade de Risco</title>
 </head>
 <body style="margin-left: 1%;">
-<c:import url="../comum/logout.jsp"/>
+<c:import url="../logout/logout.jsp"/>
 	<hr>
 	<h3>Alterar Cidades de Risco</h3>
 	<hr>

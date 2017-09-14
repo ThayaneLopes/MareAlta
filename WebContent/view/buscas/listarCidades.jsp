@@ -17,7 +17,7 @@
 <title>Listar de cidades</title>
 </head>
 <body class="fundo">
-<c:import url="../comum/logout.jsp" />
+<c:import url="../logout/logout.jsp"/>
 	<div class="buscas">
 	<hr>
 	<h3>Listar Cidades em Risco</h3>

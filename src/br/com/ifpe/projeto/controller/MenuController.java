@@ -27,6 +27,6 @@ public class MenuController {
 	}
 	@RequestMapping("/menuLogout")
 	public String menuLogout(){
-		return "comum/menuLogout";
+		return "logout/menuLogout";
 	}	
 }

@@ -20,7 +20,7 @@
 <title>Buscar Voluntário</title>
 </head>
 <body class="fundo">
-	<c:import url="../comum/logout.jsp" />
+	<c:import url="../logout/logout.jsp"/>
 	<div class="colabore">
 		<form action="listarVoluntarios" method="post">
 

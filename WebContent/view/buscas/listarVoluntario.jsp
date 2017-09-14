@@ -20,7 +20,7 @@ pageEncoding="ISO-8859-1"%>
 	<title>Listar Voluntario</title>
 </head>
 <body class="fundo">
-<c:import url="../comum/logout.jsp" />
+<c:import url="../logout/logout.jsp"/>
 	<div class="buscas">
 	<strong>Lista de Voluntarios</strong>
 	<div style="text-align: center; color: red;"> ${mensagem} </div>

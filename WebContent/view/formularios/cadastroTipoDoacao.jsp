@@ -20,7 +20,7 @@
 </head>
 <body>
 <br><br><br><br><br>
-<c:import url="../comum/logout.jsp"/>
+<c:import url="../logout/logout.jsp"/>
 	<div style="text-align: center; color: red;">${mensagem}</div>
 	<div style="text-align: center; color: red;"> ${msg} </div>
 	

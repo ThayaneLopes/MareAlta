@@ -19,7 +19,7 @@
 <title>Alterar de Tipos de Doação</title>
 </head>
 <body>
-<c:import url="../comum/logout.jsp"/>
+<c:import url="../logout/logout.jsp"/>
 	<div class="cadastro">
 	<form action="atualizarTipoDoacao" method="post"	onSubmit="return enviardados();">
 		<form:errors path="tipoDoacao.nome" cssStyle="color:red" />

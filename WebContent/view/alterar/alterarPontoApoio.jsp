@@ -22,7 +22,7 @@
 </head>
 <body>
 <br><br><br><br><br>
-<c:import url="../comum/logout.jsp"/>
+<c:import url="../logout/logout.jsp"/>
 	<div style="color: red;">${mensagem}</div>
 	
 	<form action="atualizarpontoapoio" method="post">

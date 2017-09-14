@@ -20,7 +20,7 @@
 <title>Lista Pontos de Apoio</title>
 </head>
 <body class="fundo">
-	<c:import url="../comum/logout.jsp" />
+	<c:import url="../logout/logout.jsp"/>
 		<div class="buscas">
 	<h3>Lista Pontos de Apoio</h3>
 	<div style="text-align: center; color: red;">${mensagem}</div>

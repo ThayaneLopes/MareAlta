@@ -18,7 +18,7 @@
 <title>Cadastro de Cidades em Risco</title>
 </head>
 <body>
-<c:import url="../comum/logout.jsp"/>
+<c:import url="../logout/logout.jsp"/>s
 <br><br><br><br><br>
 	<div style="text-align: center; color: red;">${mensagem}</div>
 	<div style="text-align: center; color: red;"> ${msg} </div>

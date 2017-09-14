@@ -19,7 +19,7 @@
 <title>Alterar de Local de Abrigo</title>
 </head>
 <body>
-<c:import url="../comum/logout.jsp"/>
+<c:import url="../logout/logout.jsp"/>
 	<div class="cadastro">
 	<form action="atualizarLocalAbrigo" method="post">
 		<input type="hidden" value="${localabrigo.id}" name="id"> <label
