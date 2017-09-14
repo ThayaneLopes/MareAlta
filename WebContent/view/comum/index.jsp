@@ -26,41 +26,15 @@
       <h3>Sobre </h3>
       <p> O projeto MaréAlta tem como finalidade auxiliar vítimas de catástrofes. Organizamos voluntários em Ponto de Apoio (recebe os materiais doados, separa e transfere para locais de abrigo), Local de Abrigo (acolhe as vítimas desabrigadas e distribui alimentos e roupas), Cidades em Risco (cadastro de cidades que foram atingidas pelas catástrofes) e Voluntários (que desejam de alguma forma ajudar ).</p>
     </div>
- <br><br>
-        <div class="container">
-          <h3 class="text-center">Contato</h3>
-          <p class="text-center"><em>Alguma dúvida? Entre em contato!</em></p>
+    <br><br><br><br>
 
-          <div class="row">
-            <div class="col-md-4">
-              <p><span class="glyphicon glyphicon-map-marker"></span>Pernambuco, PE</p>
-            </div>
-            <div class="col-md-8">
-              <div class="row">
-                <div class="col-sm-6 form-group">
-                  <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
-                </div>
-                <div class="col-sm-6 form-group">
-                  <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
-                </div>
-              </div>
-              <textarea class="form-control" id="comments" name="comments" placeholder="Comentário" rows="5"></textarea>
-              <br>
-              <div class="row">
-                <div class="col-md-12 form-group">
-                  <button class="btn pull-right" type="submit">Enviar</button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <br>
 
-          <footer class="text-center">
-            <a class="up-arrow" href="#myPage" data-toggle="tooltip" title="TO TOP">
-              <span class="glyphicon glyphicon-chevron-up"></span>
-            </a><br><br>
-            <p>Maré Alta</p> 
-          </footer>
+<!--           <footer class="text-center"> -->
+<!--             <a class="up-arrow" href="#myPage" data-toggle="tooltip" title="TO TOP"> -->
+<!--               <span class="glyphicon glyphicon-chevron-up"></span> -->
+<!--             </a><br><br> -->
+<!--             <p>Maré Alta</p>  -->
+<!--           </footer> -->
 
         </body>
         </html>
