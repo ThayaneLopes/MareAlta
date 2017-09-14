@@ -13,13 +13,21 @@
 			</div>
 			<div class="collapse navbar-collapse" id="myNavbar">
 				<ul class="nav navbar-nav navbar-right">
+				<li class="dropdown"><a class="dropdown-toggle"
+						data-toggle="dropdown" href="#">Cadastros <span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="cadastroCidadeRisco">Cidade em Risco</a></li>
+							<li><a href="cadastroTipoDoacao">Tipo de Doação</a></li>
+							<li><a href="cadastroLocalAbrigo">Local de Abrigo</a></li>
+							<li><a href="cadastroPontoApoio">Ponto de Apoio</a></li>
+						</ul></li>
 					<li class="dropdown"><a class="dropdown-toggle"
 						data-toggle="dropdown" href="#">Buscas <span class="caret"></span></a>
 						<ul class="dropdown-menu">
 							<li><a href="buscarlocalabrigo">Local de Abrigo</a></li>
 							<li><a href="buscarpontoapoio">Ponto de Apoio</a></li>
 							<li><a href="buscarcidades">Cidades em Risco</a></li>
-							<li><a href="buscartipodedoacao">Tipos de Doação</a></li>
+							<li><a href="buscartipodedoacao">Tipos de Doações</a></li>
 							<li><a href="buscarVoluntario">Voluntário</a></li>
 						</ul></li>
 					<li><a href="efetuarLogout">Logout</a></li>
