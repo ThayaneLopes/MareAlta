@@ -35,6 +35,7 @@
              <label for="senha">Password</label>
              <input type="password" placeholder="Digite sua Senha" name="senha" required/>
              <input type="submit" value="Login" />
+             <h5>Esqueceu a senha? <a href="#">Clique aqui</a></h5>
             </form>
            </fieldset>
         </div>

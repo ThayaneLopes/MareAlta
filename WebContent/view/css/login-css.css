@@ -1,6 +1,6 @@
 #wrap {
   margin: 0;
-  text-aling:top;
+  text-aling:center;
   margin-top:9%;
  }
 
@@ -24,7 +24,7 @@ fieldset {
 
 .login {
   position: relative;
-  width: 350px;
+  width:350px;
   display: none;
 }
 
@@ -48,7 +48,7 @@ fieldset {
 form input[type="text"], form input[type="password"] {
   padding: 7px 5px;
   margin: 10px 0;
-  width: 96%;
+  width: 50%;
   display: block;
   font-size: 18px;
   border-radius: 5px;
