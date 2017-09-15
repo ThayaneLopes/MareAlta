@@ -10,7 +10,7 @@ public class MenuController {
 	public String missao(){
 		return "comum/missao";
 	}
-	
+		
 	@RequestMapping("/index")
 	public String index(){
 		return "comum/index";
