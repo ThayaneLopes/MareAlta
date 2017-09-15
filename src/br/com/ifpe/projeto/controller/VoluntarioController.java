@@ -35,10 +35,10 @@ public class VoluntarioController {
 			System.out.println(perfil.getvalor());
 			voluntario.setPerfil(perfil);
 			dao.inserirVoluntario(voluntario);
-			model.addAttribute("msg", "Volunt·rio incluido com Sucesso!");
+			model.addAttribute("msg", "Volunt√°rio incluido com Sucesso!");
 		} catch (ElementoJaExistenteException e) {
 
-			model.addAttribute("mensagem", "Voluntario j· existente");
+			model.addAttribute("mensagem", "Voluntario j√° existente");
 		}
 		return "forward:cadastroVoluntario";
 	}
@@ -100,7 +100,7 @@ public class VoluntarioController {
 	public String removerVoluntario(Integer id, Model model) {
 		VoluntarioDAO dao = new VoluntarioDAO();
 		dao.remover(id);
-		model.addAttribute("mensagem", "Volunt·rio Removido com Sucesso");
+		model.addAttribute("mensagem", "Volunt√°rio Removido com Sucesso");
 		return "forward:listarVoluntarios?busca=";
 	}
 
@@ -111,6 +111,7 @@ public class VoluntarioController {
 		voluntario = dao.buscarVoluntarioCpf(cpf);
 		if (PasswordStorage.verifyPassword(senha, voluntario.getSenha())) {
 			session.setAttribute("usuarioLogado", voluntario);
+			session.setAttribute("perfil", voluntario.getPerfil().toString());
 			return "forward:menuLogout";
 		}
 		else

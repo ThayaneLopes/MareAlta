@@ -1,3 +1,4 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <body id="myPage" data-spy="scroll" data-target=".navbar"
 	data-offset="50">
 	<nav class="navbar navbar-default navbar-fixed-top">
@@ -13,7 +14,9 @@
 			</div>
 			<div class="collapse navbar-collapse" id="myNavbar">
 				<ul class="nav navbar-nav navbar-right">
-				<li class="dropdown"><a class="dropdown-toggle"
+				<c:choose>
+					<c:when test="${perfil eq 'ADMINISTRADOR'}">
+						<li class="dropdown"><a class="dropdown-toggle"
 						data-toggle="dropdown" href="#">Cadastros <span class="caret"></span></a>
 						<ul class="dropdown-menu">
 							<li><a href="cadastroCidadeRisco">Cidade em Risco</a></li>
@@ -21,6 +24,10 @@
 							<li><a href="cadastroLocalAbrigo">Local de Abrigo</a></li>
 							<li><a href="cadastroPontoApoio">Ponto de Apoio</a></li>
 						</ul></li>
+					</c:when>
+					<c:otherwise>
+				</c:otherwise>
+				</c:choose>
 					<li class="dropdown"><a class="dropdown-toggle"
 						data-toggle="dropdown" href="#">Buscas <span class="caret"></span></a>
 						<ul class="dropdown-menu">

@@ -4,6 +4,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+
   <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="view/css/bootstrap/css/bootstrap.min.css">
@@ -29,8 +30,14 @@
 				<td>Nome</td>
 				<td>Região</td>
 				<td>Situação de Risco</td>
-				<td>Ações</td>
-				<td>Cadastro</td>
+				<c:choose>
+				<c:when test="${perfil eq 'ADMINISTRADOR'}">
+					<td>Ações</td>
+					<td>Cadastro</td>
+				</c:when>
+				<c:otherwise>
+				</c:otherwise>
+			</c:choose>
 			</tr>
 
 			<c:forEach var="cidade" items="${listacidades}">
@@ -38,12 +45,20 @@
 					<td>${cidade.nome}</td>
 					<td>${cidade.regiao}</td>
 					<td>${cidade.situacaoRisco}</td>
+					<c:choose>
+				<c:when test="${perfil eq 'ADMINISTRADOR'}">
 					<td><a href="exibirAlterarCidadeRisco?id=${cidade.id}">Alterar</a>
 					<a href="removerCidade?id=${cidade.id}">Remover</a></td>
 					<td>
 						<a href="cadastroLocalAbrigo">Cadastrar um Local de Abrigo</a> |
 						<a href="cadastroPontoApoio">Cadastrar um Ponto de Apoio</a>
-					</td>	
+					</td>
+				</c:when>
+				<c:otherwise>
+				</c:otherwise>
+			</c:choose>
+					
+						
 				</tr>
 			</c:forEach>
 

@@ -5,17 +5,17 @@
 <html>
 <head>
 <link rel="stylesheet" href="view/css/bootstrap/css/bootstrap.min.css">
-  <script src="view/js/jquery/jquery.min.js"></script>
-  <script src="view/css/bootstrap/js/bootstrap.min.js"></script>
-  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="view/css/bootstrap/css/bootstrap.min.css">
-  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
-  <script src="view/js/jquery/jquery.min.js"></script>
-  <script src="view/css/bootstrap/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="view/css/style.css">
-  <script href="view/js/main.js"></script>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="view/css/bootstrap/css/bootstrap.min.css">
+<link href="https://fonts.googleapis.com/css?family=Lato"
+	rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Montserrat"
+	rel="stylesheet" type="text/css">
+<script src="view/js/jquery/jquery.min.js"></script>
+<script src="view/css/bootstrap/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="view/css/style.css">
+<script href="view/js/main.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Lista de Locais de Abrigo</title>
 </head>
@@ -40,8 +40,15 @@
 				<td>CIDADE</td>
 				
 				<td>PRECISA DE VOLUNTARIOS</td>
+				<c:choose>
+				<c:when test="${perfil eq 'ADMINISTRADOR'}">
+					<td> AÇÕES</td>
+				</c:when>
+				<c:otherwise>
+				</c:otherwise>
+			</c:choose>
+					
 				
-				<td> AÇÕES</td>
 						</tr>
 		
 		<c:forEach var="abrigo" items="${listabrigo}">
@@ -56,12 +63,29 @@
 				
 				<td>${abrigo.cidadeRisco.nome}</td>
 				
-				<td>${abrigo.precisaVoluntarios}</td>
+					<c:choose>
+				<c:when test="${abrigo.precisaVoluntarios}">
+					<td>
+					SIM
+					</td>
+				</c:when>
+				<c:otherwise>
+					<td>
+					NÃO
+					</td>
+				</c:otherwise>
+			</c:choose>
 				
-				<td>
+					<c:choose>
+				<c:when test="${perfil eq 'ADMINISTRADOR'}">
+					<td>
 					<a href="alterarLocalAbrigo?id=${abrigo.id}">Alterar</a> 
 					<a href="removerLocalAbrigo?id=${abrigo.id}">Remover</a>
-				</td>
+					</td>
+				</c:when>
+				<c:otherwise>
+				</c:otherwise>
+			</c:choose>
 				
 	</tr>
 		</c:forEach>

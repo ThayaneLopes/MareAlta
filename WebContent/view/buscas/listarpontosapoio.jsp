@@ -43,7 +43,13 @@
 					<td>COLETA</td>
 					<td>TRIAGEM</td>
 					<td>PRECISA DE VOLUNTARIOS</td>
+					<c:choose>
+				<c:when test="${perfil eq 'ADMINISTRADOR'}">
 					<td>Ações</td>
+				</c:when>
+				<c:otherwise>
+				</c:otherwise>
+			</c:choose>
 				</tr>
 
 				<c:forEach var="apoio" items="${listapoio}">
@@ -95,11 +101,18 @@
 								<td>NÃO</td>
 							</c:otherwise>
 						</c:choose>
-						<td><a href="alterarpontoapoio?id=${apoio.id}">Alterar</a> <a
+							<c:choose>
+							<c:when test="${perfil eq 'ADMINISTRADOR'}">
+					<td><a href="alterarpontoapoio?id=${apoio.id}">Alterar</a> <a
 							href="removerPontoApoio?id=${apoio.id}">Remover</a></td>
 						<a href="atribuirtipodoacao?id=${apoio.id}">Atribuir Tipo
-							Doação</a>
+							</a>
 						</td>
+				</c:when>
+				<c:otherwise>
+				</c:otherwise>
+			</c:choose>
+						
 
 					</tr>
 				</c:forEach>
