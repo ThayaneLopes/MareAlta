@@ -13,6 +13,7 @@
   <link rel="stylesheet" type="text/css" href="view/css/style.css">
   <script href="view/js/main.js"></script>
   <link rel="stylesheet" type="text/css" href="view/css/login-css.css">
+  <link rel="stylesheet" type="text/css" href="view/css/responsive.css">
     <title>Colabore | Maré Alta</title>
 </head>
 
