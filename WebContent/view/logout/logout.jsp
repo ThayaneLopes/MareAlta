@@ -14,20 +14,21 @@
 			</div>
 			<div class="collapse navbar-collapse" id="myNavbar">
 				<ul class="nav navbar-nav navbar-right">
-				<c:choose>
-					<c:when test="${perfil eq 'ADMINISTRADOR'}">
-						<li class="dropdown"><a class="dropdown-toggle"
-						data-toggle="dropdown" href="#">Cadastros <span class="caret"></span></a>
-						<ul class="dropdown-menu">
-							<li><a href="cadastroCidadeRisco">Cidade em Risco</a></li>
-							<li><a href="cadastroTipoDoacao">Tipo de Doação</a></li>
-							<li><a href="cadastroLocalAbrigo">Local de Abrigo</a></li>
-							<li><a href="cadastroPontoApoio">Ponto de Apoio</a></li>
-						</ul></li>
-					</c:when>
-					<c:otherwise>
-				</c:otherwise>
-				</c:choose>
+					<c:choose>
+						<c:when test="${perfil eq 'ADMINISTRADOR'}">
+							<li class="dropdown"><a class="dropdown-toggle"
+								data-toggle="dropdown" href="#">Cadastros <span
+									class="caret"></span></a>
+								<ul class="dropdown-menu">
+									<li><a href="cadastroCidadeRisco">Cidade em Risco</a></li>
+									<li><a href="cadastroTipoDoacao">Tipo de Doação</a></li>
+									<li><a href="cadastroLocalAbrigo">Local de Abrigo</a></li>
+									<li><a href="cadastroPontoApoio">Ponto de Apoio</a></li>
+								</ul></li>
+						</c:when>
+						<c:otherwise>
+						</c:otherwise>
+					</c:choose>
 					<li class="dropdown"><a class="dropdown-toggle"
 						data-toggle="dropdown" href="#">Buscas <span class="caret"></span></a>
 						<ul class="dropdown-menu">
@@ -42,6 +43,7 @@
 			</div>
 		</div>
 	</nav>
-	<br />
-	<br />
-	<br />
+	<footer>
+
+		© Mare<b>Alta</b>
+	</footer>

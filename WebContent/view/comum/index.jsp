@@ -27,10 +27,6 @@
 <!--     </div> -->
 <!--     <br><br><br><br> -->
 
-<footer>
-
-© Mare<b>Alta</b>
-</footer>
 
         </body>
         </html>
