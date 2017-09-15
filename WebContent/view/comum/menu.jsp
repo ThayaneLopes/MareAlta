@@ -20,6 +20,7 @@
       </div>
       <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav navbar-right">
+        <li><a href="missao">Missão</a></li>
         <li><a href="colabore">Colabore Conosco</a></li>
           <li><div id="wrap">
       <a href="#" id="loginform">Login</a> | <a href="cadastroVoluntario">Registre-se</a>

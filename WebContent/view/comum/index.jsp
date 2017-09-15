@@ -16,26 +16,17 @@
   <title>Home | Maré Alta</title>
 </head>
 
-<body>
+<body class="inicio">
   <c:import url="menu.jsp" />
  
- <img src="view/img/inicio.png" class="inicio">
- <br><br><br>
-  
-   <div  class="container text-center">
-      <h3>Sobre </h3>
-      <p> O projeto MaréAlta tem como finalidade auxiliar vítimas de catástrofes. Organizamos voluntários em Ponto de Apoio (recebe os materiais doados, separa e transfere para locais de abrigo), Local de Abrigo (acolhe as vítimas desabrigadas e distribui alimentos e roupas), Cidades em Risco (cadastro de cidades que foram atingidas pelas catástrofes)</p>
-      <p>Se você é algum dos pontos citados acima e deseja compartilhar seu contato para que outras pessoas possam lhe alcançar <a href="cadastroVoluntario"> Cadastre-se</a> e aguarde o contato de outros voluntários </p>
-    </div>
-    <br><br><br><br>
 
+<!--    <div  class="container text-center"> -->
+<!--       <h3>Sobre </h3> -->
+<!--       <p> O projeto MaréAlta tem como finalidade auxiliar vítimas de catástrofes. Organizamos voluntários em Ponto de Apoio (recebe os materiais doados, separa e transfere para locais de abrigo), Local de Abrigo (acolhe as vítimas desabrigadas e distribui alimentos e roupas), Cidades em Risco (cadastro de cidades que foram atingidas pelas catástrofes)</p> -->
+<!--       <p>Se você é algum dos pontos citados acima e deseja compartilhar seu contato para que outras pessoas possam lhe alcançar <a href="cadastroVoluntario"> Cadastre-se</a> e aguarde o contato de outros voluntários </p> -->
+<!--     </div> -->
+<!--     <br><br><br><br> -->
 
-<!--           <footer class="text-center"> -->
-<!--             <a class="up-arrow" href="#myPage" data-toggle="tooltip" title="TO TOP"> -->
-<!--               <span class="glyphicon glyphicon-chevron-up"></span> -->
-<!--             </a><br><br> -->
-<!--             <p>Maré Alta</p>  -->
-<!--           </footer> -->
 
         </body>
         </html>

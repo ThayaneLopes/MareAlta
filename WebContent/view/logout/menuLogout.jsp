@@ -18,23 +18,9 @@
 <link rel="stylesheet" type="text/css" href="view/css/login-css.css">
 <title>Menu | Maré Alta</title>
 </head>
-<body class="fundo">
+<body class="logout">
 	<c:import url="logout.jsp" />
 
-	<div class="colabore">
-		<h2>SEJA BEM VINDO!</h2>
-		<p>Selecione uma opção abaixo</p>
-		</button>
-		<button>
-			<a href="cadastroCidadeRisco">Cadastrar Cidade em Risco</a>
-		</button>
-		<button>
-			<a href="cadastroTipoDoacao">Cadastrar Tipo de Doação</a>
-		</button>
-		<button>
-			<a href="cadastroLocalAbrigo">Cadastrar Local Abrigo</a>
-		</button>
-		<button>
-			<a href="cadastroPontoApoio">Cadastrar Ponto de Apoio</a>
+	
 </body>
 </html>

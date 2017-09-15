@@ -6,14 +6,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class MenuController {
 
-	@RequestMapping("/menuCadastro")
-	public String abrirCadastro(){
-		return "comum/cadastro";
-	}
-	
-	@RequestMapping("/menuBusca")
-	public String abrirBusca(){
-		return "comum/buscas";
+	@RequestMapping("/missao")
+	public String missao(){
+		return "comum/missao";
 	}
 	
 	@RequestMapping("/index")
