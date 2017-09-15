@@ -36,7 +36,7 @@
 		<br>
 		<div class="borda"></div>
 		<br>
-		<h3>O que é Ponto de Coleta e Ponto de Triagem?</h3>
+		<h3>Ponto de Coleta e Ponto de Triagem?</h3>
 		<p>Ponto de Coleta são os locais que recebem os materiais doados</p>
 		<p>Ponto de Triagem são os locais que separam os materias doados</p>
 

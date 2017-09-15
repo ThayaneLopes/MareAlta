@@ -11,8 +11,7 @@
   <script src="view/js/jquery/jquery.min.js"></script>
   <script src="view/css/bootstrap/js/bootstrap.min.js"></script>
   <link rel="stylesheet" type="text/css" href="view/css/style.css">
-  <script href="view/js/main.js"></script>
-  <link rel="stylesheet" type="text/css" href="view/css/login-css.css">
+ <link rel="stylesheet" type="text/css" href="view/css/login-css.css">
     <title>Colabore | Maré Alta</title>
 </head>
 
@@ -21,9 +20,9 @@
   <br><br>
    <div  class="colabore">
       <p>Participe desse projeto e também seja um voluntário!</p>
-      <h5>Se deseja colaborar conosco, registre-se e faça parte.</h5>
-      <button><a href="cadastroVoluntario"> Registre-se</a></button>
-	<p>Já possue um registro? Acesse sua conta através do login localizado no menu da página</p>
+      <h5>Se deseja colaborar conosco, <a href="cadastroVoluntario"> Registre-se</a> e faça parte.</h5>
+	<p>Já possue um registro? </p>
+	<h5>Acesse sua conta através do login localizado no menu da página</h5>
       
     </div>
  
