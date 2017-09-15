@@ -34,7 +34,7 @@ public class CidadeRiscoController {
 				dao.inserirCidadeRisco(cidaderisco);
 				model.addAttribute("msg", "Cidade de Risco incluida com Sucesso!");
 			} catch (ElementoJaExistenteException e) {
-				model.addAttribute("mensagem", "Cidade J√° existente");
+				model.addAttribute("mensagem", "Cidade j· existente");
 			}
 
 			return "formularios/cadastroCidadeRisco";
@@ -96,7 +96,7 @@ public class CidadeRiscoController {
 			model.addAttribute("mensagem", "Cidade Excluida com Sucesso");
 
 		} else {
-			model.addAttribute("mensagem", "A cidade n√£o pode ser excluida");
+			model.addAttribute("mensagem", "A cidade n„o pode ser excluida");
 		}
 		return "forward:listarcidade?busca=&situacaoRisco=";
 	}

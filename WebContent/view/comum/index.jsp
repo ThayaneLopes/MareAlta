@@ -22,7 +22,7 @@
 
 <!--    <div  class="container text-center"> -->
 <!--       <h3>Sobre </h3> -->
-<!--       <p> O projeto MaréAlta tem como finalidade auxiliar vítimas de catástrofes. Organizamos voluntários em Ponto de Apoio (recebe os materiais doados, separa e transfere para locais de abrigo), Local de Abrigo (acolhe as vítimas desabrigadas e distribui alimentos e roupas), Cidades em Risco (cadastro de cidades que foram atingidas pelas catástrofes)</p> -->
+<!--       <p> O projeto MaréAlta tem como finalidade auxiliar vítimas de catástrofes. Organizando voluntários em Ponto de Apoio (recebe os materiais doados, separa e transfere para locais de abrigo), Local de Abrigo (acolhe as vítimas desabrigadas e distribui alimentos e roupas), Cidades em Risco (cadastro de cidades que foram atingidas pelas catástrofes)</p> -->
 <!--       <p>Se você é algum dos pontos citados acima e deseja compartilhar seu contato para que outras pessoas possam lhe alcançar <a href="cadastroVoluntario"> Cadastre-se</a> e aguarde o contato de outros voluntários </p> -->
 <!--     </div> -->
 <!--     <br><br><br><br> -->

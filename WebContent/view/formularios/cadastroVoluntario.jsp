@@ -24,7 +24,7 @@
 <body class="fundo">
 
 <c:import url="../comum/menu.jsp"/>
-	<div style="text-align: center; color: red;">${mensagem}</div>
+	<div style="text-align: center; color: white;">${mensagem}</div>
 
 	<form action="cadastroComSucessoVoluntario" method="post" id="Form">
 		<form:errors path="voluntario.nome" cssStyle="color:red" />

@@ -20,8 +20,8 @@
 <body class="fundo">
 <c:import url="../logout/logout.jsp"/>
 <br><br><br><br><br>
-	<div style="text-align: center; color: red;">${mensagem}</div>
-	<div style="text-align: center; color: red;"> ${msg} </div>
+	<div style="text-align: center; color: white;">${mensagem}</div>
+	<div style="text-align: center; color: white;"> ${msg} </div>
 	
 	<form action="cadastroComSucessoCidadeRisco" method="post">
 		<form:errors path="cidadeRisco.nome" cssStyle="color:red" />

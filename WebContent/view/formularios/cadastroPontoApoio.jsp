@@ -22,7 +22,7 @@
 <body class="fundo">
 <br><br><br><br><br>
 <c:import url="../logout/logout.jsp"/>
-	<div style="text-align: center; color: red;">${mensagem}</div>
+	<div style="text-align: center; color: white;">${mensagem}</div>
 	
 	<form action="cadastroComSucessoPontoApoio" method="post">
 		<form:errors path="pontoApoio.nome" cssStyle="color:red" />

@@ -30,7 +30,7 @@ public class PontoApoioController {
 				dao.inserirPontoApoio(pontoapoio);
 				model.addAttribute("mensagem", "Ponto de Apoio incluido com Sucesso!");
 			} catch (ElementoJaExistenteException e) {
-				model.addAttribute("mensagem", "Ponto de Apoio JÃ¡ existente");
+				model.addAttribute("mensagem", "Ponto de Apoio já existente");
 			}
 
 			return "formularios/cadastroPontoApoio";

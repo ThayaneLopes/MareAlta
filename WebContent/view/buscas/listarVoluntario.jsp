@@ -25,7 +25,7 @@ pageEncoding="ISO-8859-1"%>
 	<hr>
 	<h3>Lista Voluntários</h3>
 	<hr>
-	<div style="text-align: center; color: red;"> ${mensagem} </div>
+	<div style="text-align: center; color:  #00b3b3;"> ${mensagem} </div>
 <div class="container">
 	<table border="1"class="border">
 		<tr>

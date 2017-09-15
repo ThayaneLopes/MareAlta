@@ -27,7 +27,7 @@
 	<h3>Alterar Cidades de Risco</h3>
 	<hr>
 
-	<div style="text-align: center; color: red;">${msg}</div>
+	<div style="text-align: center; color: white;">${msg}</div>
 
 	<form action="alterarCidadeRisco" method="post">
 

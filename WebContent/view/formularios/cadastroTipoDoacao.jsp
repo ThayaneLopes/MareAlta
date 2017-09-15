@@ -21,8 +21,8 @@
 <body class="fundo">
 <br><br><br><br><br>
 <c:import url="../logout/logout.jsp"/>
-	<div style="text-align: center; color: red;">${mensagem}</div>
-	<div style="text-align: center; color: red;"> ${msg} </div>
+	<div style="text-align: center; color: white;">${mensagem}</div>
+	<div style="text-align: center; color: white;"> ${msg} </div>
 	
 	<form action="cadastroComSucessoTipoDoacao" method="post" onSubmit="return enviardados();">
 		<form:errors path="tipoDoacao.nome" cssStyle="color:red" /> 

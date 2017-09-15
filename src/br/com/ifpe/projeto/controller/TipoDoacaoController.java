@@ -25,9 +25,9 @@ public class TipoDoacaoController {
 			TipoDoacaoDAO dao = new TipoDoacaoDAO();
 			try {
 				dao.inserirTipoDoacao(tipoDoacao);
-				model.addAttribute("msg", "Tipo de Doa√ß√£o incluido com Sucesso!");
+				model.addAttribute("msg", "Tipo de DoaÁ„o incluido com Sucesso!");
 			} catch (ElementoJaExistenteException e) {
-				model.addAttribute("mensagem", "J√° Existe este tipo de doa√ß√£o");
+				model.addAttribute("mensagem", "J· Existe este tipo de doa√ß√£o");
 				return "formularios/cadastroTipoDoacao";
 			}
 		}
@@ -71,7 +71,7 @@ public class TipoDoacaoController {
 	public String atualizarTipoDoacao(TipoDoacao tipoDoacao, Model model) {
 		TipoDoacaoDAO dao = new TipoDoacaoDAO();
 		dao.atualizarTipoDoacao(tipoDoacao);
-		model.addAttribute("mensagem", "Tipo de Doa√ßl√£o Alterado com Sucesso!");
+		model.addAttribute("mensagem", "Tipo de DoaÁ„o Alterado com Sucesso!");
 		return "forward:listartipodoacao?busca=";
 	}
 

@@ -23,7 +23,7 @@
 <body class="fundo">
 
 <c:import url="../logout/logout.jsp"/>
-	<div style="color: red;">${mensagem}</div>
+	<div style="color: white;">${mensagem}</div>
 	
 	<form action="atualizarpontoapoio" method="post">
 		<form:errors path="pontoApoio.nome" cssStyle="color:red" />

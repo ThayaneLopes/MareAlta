@@ -15,7 +15,7 @@
 }
 
 body {
-	font: 400 15px/1.8 Lato, sans-serif;
+	font: 400 15px/1.8 Lato, serif;
 	color: #777;
 }
 
@@ -104,12 +104,12 @@ h3, h4 {
 }
 
 .navbar {
-	font-family: Montserrat, sans-serif;
+	font-family: Times New Roman, serif;
 	margin-bottom: 0;
 	background-color: #F5FFFA;
 	border: 0;
-	font-size: 11px !important;
-	letter-spacing: 4px;
+	font-size: 10px !important;
+/* 	letter-spacing: 4px; */
 	opacity: 0.9;
 	padding: 15px;
 }
@@ -192,7 +192,7 @@ textarea {
 	border-radius:12px;
 	border-style: solid;
 	border-color:#20B2AA;
-	text-align:center;
+	text-align:justify;
 	width:75%;
 	heigth:25%;
 	padding:20px;
@@ -200,6 +200,10 @@ textarea {
 	margin-top:10%;
 	background-color:#fff;
 	 
+}
+.colabore>h3{
+	text-align: center;
+	font-weight:bold;
 }
 .colabore > button > a{
 	color:#000080;
@@ -293,5 +297,9 @@ table{
 	text-align: center;
 	color:#008B8B;
 	background-color: white;
+}
+.borda{
+	      border: solid 1px #008B8B;
+	      
 }
 
