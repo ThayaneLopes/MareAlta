@@ -24,4 +24,9 @@ public class MenuController {
 	public String menuLogout(){
 		return "logout/menuLogout";
 	}	
+	
+	@RequestMapping("/acesso")
+	public String acesso(){
+		return "comum/login";
+	}	
 }

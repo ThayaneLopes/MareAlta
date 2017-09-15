@@ -23,6 +23,7 @@
 	<c:import url="/view/logout/logout.jsp"/>
 	<div class="colabore">
 		<form action="listarcidade" method="post">
+			<h3>Busca Cidades em Risco</h3>
 			<input type="text" name="busca" placeholder="Digite o nome da cidade"><br>
 			<label for="situacaoRisco">Filtra por Situação de Risco</label> <select
 				name="situacaoRisco">

@@ -23,6 +23,7 @@
 	<c:import url="/view/logout/logout.jsp"/>
 	<div class="colabore">
 		<form action="listarlocalabrigo" method="post">
+		<h3>Busca Locais de Abrigo</h3>
 			<input type="text" name="busca" placeholder="Digite o nome do Abrigo">
 			<BR> <input type="submit" value="Buscar">
 		</form>

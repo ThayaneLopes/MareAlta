@@ -23,7 +23,6 @@
 </head>
 <body style="margin-left: 1%;" class="fundo">
 <c:import url="../logout/logout.jsp"/>
-<br><br><br><br><br>
 	<hr>
 	<h3>Alterar Cidades de Risco</h3>
 	<hr>

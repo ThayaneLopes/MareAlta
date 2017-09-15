@@ -23,6 +23,7 @@
 	<c:import url="/view/logout/logout.jsp"/>
 	<div class="colabore">
 		<form action="listarVoluntarios" method="post">
+		<h3>Busca Vosluntários</h3>
 			<input type="text" name="busca" id="buscaVoluntario" placeholder="Insira aqui sua busca">
 			 <br> <input type="submit" value="Buscar"> 
 				<input type="reset"	 value="Limpar">

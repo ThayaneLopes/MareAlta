@@ -23,6 +23,7 @@
 	<c:import url="/view/logout/logout.jsp"/>
 	<div class="colabore">
 		<form action="listartipodoacao" method="post">
+		<h3>Busca Tipos de Doações</h3>
 			<input type="text" name="busca" placeholder="Digite o tipo da doação">
 			<br> <input type="submit" value="Buscar">
 		</form>

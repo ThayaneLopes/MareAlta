@@ -20,7 +20,6 @@
 </head>
 <body class="fundo">
 <c:import url="../logout/logout.jsp"/>
-<br><br><br><br><br>
 	<div class="cadastro">
 	<form action="atualizarTipoDoacao" method="post"	onSubmit="return enviardados();">
 		<form:errors path="tipoDoacao.nome" cssStyle="color:red" />

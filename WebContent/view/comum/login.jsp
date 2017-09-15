@@ -27,7 +27,7 @@
            <fieldset>
            <form action="efetuarLogin" method="POST">
              <label for="cpf">CPF</label>
-             <input type="text" placeholder="Digite seu CPF" name="cpf" onkeyup="maskIt(this,event,'###.###.###-##')" required/>
+             <input type="text" placeholder="Digite seu CPF" name="cpf" onkeyup="maskIt(this,event,'###.###.###-##')" maxlength="14" required/>
              <label for="senha">Password</label>
              <input type="password" placeholder="Digite sua Senha" name="senha" required/>
              <input type="submit" value="Login" />

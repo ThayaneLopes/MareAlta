@@ -24,6 +24,7 @@
 	
 	<div class="colabore">
 		<form action="listapontosapoio" method="POST">
+		<h3>Busca Pontos de Apoio</h3>
 			<input type="text" name="busca" placeholder="Pesquisar por ...">
 			<br> <label for="cidade">Filtrar por cidade:</label><br> <select
 				name="cidade">

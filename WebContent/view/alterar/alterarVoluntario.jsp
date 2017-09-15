@@ -23,7 +23,6 @@
 </head>
 <body class="fundo">
   <c:import url="../logout/logout.jsp"/>
-  <br><br><br><br><br>
   	<div class="cadastro">
 	 <form action="atualizarVoluntario" method="post" ">
 		<input type="hidden" value="${voluntario.id}" name="id">
