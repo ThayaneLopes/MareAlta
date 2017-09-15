@@ -21,8 +21,9 @@
 <link rel="stylesheet" type="text/css" href="view/css/login-css.css"> 
 <title>Alterar Voluntário</title>
 </head>
-<body>
+<body class="fundo">
   <c:import url="../logout/logout.jsp"/>
+  <br><br><br><br><br>
   	<div class="cadastro">
 	 <form action="atualizarVoluntario" method="post" ">
 		<input type="hidden" value="${voluntario.id}" name="id">

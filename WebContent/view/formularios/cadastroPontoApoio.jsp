@@ -19,7 +19,7 @@
     <script language="JavaScript" type="text/javascript" src="view/js/mascara.js"></script> 
 <title>Cadastro de Ponto de Apoio</title>
 </head>
-<body>
+<body class="fundo">
 <br><br><br><br><br>
 <c:import url="../logout/logout.jsp"/>
 	<div style="text-align: center; color: red;">${mensagem}</div>

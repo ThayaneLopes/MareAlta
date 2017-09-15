@@ -21,12 +21,8 @@
 	src="view/js/mascara.js"></script>
 <title>Cadastro de Voluntário</title>
 </head>
-<body>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
+<body class="fundo">
+
 <c:import url="../comum/menu.jsp"/>
 	<div style="text-align: center; color: red;">${mensagem}</div>
 
@@ -60,7 +56,8 @@
 				<label for="senha">Senha</label> 
 				<input type="password" name="senha"
 				placeholder="Digite a Sua senha" id="senha" minlength="8" required> <br>
-				Confirmar Senha: <input type="password" name="confsenha"
+				<label for="confirmarSenha">Confirmar Senha:</label> 
+				<input type="password" name="confsenha"
 				placeholder="Confirme a Sua senha" id="confsenha" minlength="8" required> <br>
 <!--				<label for="pontoApoio">Ponto de Apoio:</label> <br> -->
 <!-- 				<select name="pontoApoio"> -->

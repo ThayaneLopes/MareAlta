@@ -20,12 +20,14 @@ pageEncoding="ISO-8859-1"%>
 	<title>Listar Voluntario</title>
 </head>
 <body class="fundo">
-<c:import url="../logout/logout.jsp"/>
+<c:import url="/view/logout/logout.jsp"/>
 	<div class="buscas">
-	<strong>Lista de Voluntarios</strong>
+	<hr>
+	<h3>Lista Voluntários</h3>
+	<hr>
 	<div style="text-align: center; color: red;"> ${mensagem} </div>
 <div class="container">
-	<table class="table table-striped table-bordered">
+	<table border="1"class="border">
 		<tr>
 			<td>Nome</td>
 			<td>Orgão Público</td>

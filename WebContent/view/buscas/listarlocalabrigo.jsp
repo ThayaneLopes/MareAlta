@@ -20,14 +20,14 @@
 <title>Lista de Locais de Abrigo</title>
 </head>
 <body class="fundo">
-<c:import url="../logout/logout.jsp"/>
-	<div class="buscas">
+<c:import url="/view/logout/logout.jsp"/>	
+<div class="buscas">
 <hr>
 	<h3>Lista Locais de Abrigo</h3>
 	<hr>
 	<div style="text-align: center; color: red;"> ${mensagem} </div>
 <div class="container">
-	<table class="table table-striped table-bordered">
+	<table border="1"class="border">
 		<tr>
 				<td>NOME</td>
 				<td>NOME DO RESPONSAVEL</td>

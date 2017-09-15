@@ -20,9 +20,10 @@
 <link rel="stylesheet" type="text/css" href="view/css/login-css.css">
 <title>alterar Ponto de Apoio</title>
 </head>
-<body>
-<br><br><br><br><br>
+<body class="fundo">
+
 <c:import url="../logout/logout.jsp"/>
+<br><br><br><br><br>
 	<div style="color: red;">${mensagem}</div>
 	
 	<form action="atualizarpontoapoio" method="post">

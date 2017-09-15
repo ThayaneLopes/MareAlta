@@ -20,7 +20,7 @@
 <title>Buscar Cidade</title>
 </head>
 <body class="fundo">
-	<c:import url="../logout/logout.jsp"/>
+	<c:import url="/view/logout/logout.jsp"/>
 	<div class="colabore">
 		<form action="listarcidade" method="post">
 			<input type="text" name="busca" placeholder="Digite o nome da cidade"><br>

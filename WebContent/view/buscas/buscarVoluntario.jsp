@@ -20,16 +20,12 @@
 <title>Buscar Voluntário</title>
 </head>
 <body class="fundo">
-	<c:import url="../logout/logout.jsp"/>
+	<c:import url="/view/logout/logout.jsp"/>
 	<div class="colabore">
 		<form action="listarVoluntarios" method="post">
-
-			<input type="text" name="busca" id="buscaVoluntario"
-				class="form-control"
-				placeholder="Insira aqui sua busca de voluntários"
-				style="width: 300px;"> <br> <input type="submit"
-				class="btn btn-primary" value="Buscar"> <input type="reset"
-				class="btn btn-warning" value="Limpar">
+			<input type="text" name="busca" id="buscaVoluntario" placeholder="Insira aqui sua busca">
+			 <br> <input type="submit" value="Buscar"> 
+				<input type="reset"	 value="Limpar">
 
 		</form>
 	</div>

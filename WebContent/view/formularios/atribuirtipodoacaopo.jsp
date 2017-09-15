@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Tipos Doação</title>
 </head>
-<body>
+<body class="fundo">
 <c:import url="../logout/logout.jsp"/>
 <form action="atribuiapontoapoio" method="POST">
 <c:forEach items="${listatipodoacao}" var="obj">

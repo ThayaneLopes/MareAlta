@@ -20,89 +20,91 @@
 <title>Lista Pontos de Apoio</title>
 </head>
 <body class="fundo">
-	<c:import url="../logout/logout.jsp"/>
-		<div class="buscas">
+	<c:import url="/view/logout/logout.jsp" />
+	<div class="buscas">
+		<hr>
 	<h3>Lista Pontos de Apoio</h3>
-	<div style="text-align: center; color: red;">${mensagem}</div>
-	<div class="container">
-		<table class="table table-striped table-bordered">
-			<tr>
-				
-				<td>NOME</td>
-				<td>NOME DO RESPONSAVEL</td>
-				<td>TELEFONE 1</td>
-				
-				<td>ESTADO</td>
-				<td>BAIRRO</td>
-				<td>RUA/AVENIDA</td>
-				<td>COMPLEMENTO</td>
-				<td>CIDADE</td>
-				
-				<td>ATIVO</td>
-				<td>HORÁRIO FUNC.</td>
-				<td>COLETA</td>
-				<td>TRIAGEM</td>
-				<td>PRECISA DE VOLUNTARIOS</td>
-				<td>Ações</td>
-			</tr>
-
-			<c:forEach var="apoio" items="${listapoio}">
+	<hr>
+		<div style="text-align: center; color: red;">${mensagem}</div>
+		<div class="container">
+			<table border="1"class="border" >
 				<tr>
-					
-					<td>${apoio.nome}</td>
-					<td>${apoio.responsavel}</td>
-					<td>${apoio.telefone1}</td>
-					
-					<td>${apoio.estado}</td>
-					<td>${apoio.bairro}</td>
-					<td>${apoio.endereco}</td>
-					<td>${apoio.complemento}</td>
-					<td>${apoio.cidade}</td>
-					
-					<c:choose>
-						<c:when test="${apoio.ativo == true}">
-							<td>SIM</td>
-						</c:when>
-						<c:otherwise>
-							<td>NÃO</td>
-						</c:otherwise>
-					</c:choose>
 
-					<td>${apoio.horarioFuncionamento}</td>
-					<c:choose>
-						<c:when test="${apoio.fazColeta == true}">
-							<td>SIM</td>
-						</c:when>
-						<c:otherwise>
-							<td>NÃO</td>
-						</c:otherwise>
-					</c:choose>
-
-					<c:choose>
-						<c:when test="${apoio.fazTriagem == true}">
-							<td>SIM</td>
-						</c:when>
-						<c:otherwise>
-							<td>NÃO</td>
-						</c:otherwise>
-					</c:choose>
-
-					<c:choose>
-						<c:when test="${apoio.precisaVoluntarios == true}">
-							<td>SIM</td>
-						</c:when>
-						<c:otherwise>
-							<td>NÃO</td>
-						</c:otherwise>
-					</c:choose>
-					<td><a href="alterarpontoapoio?id=${apoio.id}">Alterar</a> <a
-						href="removerPontoApoio?id=${apoio.id}">Remover</a></td>
-						<a href="atribuirtipodoacao?id=${apoio.id}">Atribuir Tipo Doação</a></td>
-
+					<td>NOME</td>
+					<td>NOME DO RESPONSAVEL</td>
+					<td>TELEFONE 1</td>
+					<td>ESTADO</td>
+					<td>BAIRRO</td>
+					<td>RUA/AVENIDA</td>
+					<td>COMPLEMENTO</td>
+					<td>CIDADE</td>
+					<td>ATIVO</td>
+					<td>HORÁRIO FUNC.</td>
+					<td>COLETA</td>
+					<td>TRIAGEM</td>
+					<td>PRECISA DE VOLUNTARIOS</td>
+					<td>Ações</td>
 				</tr>
-			</c:forEach>
 
-		</table>
-	</div>
+				<c:forEach var="apoio" items="${listapoio}">
+					<tr>
+
+						<td>${apoio.nome}</td>
+						<td>${apoio.responsavel}</td>
+						<td>${apoio.telefone1}</td>
+
+						<td>${apoio.estado}</td>
+						<td>${apoio.bairro}</td>
+						<td>${apoio.endereco}</td>
+						<td>${apoio.complemento}</td>
+						<td>${apoio.cidade}</td>
+
+						<c:choose>
+							<c:when test="${apoio.ativo == true}">
+								<td>SIM</td>
+							</c:when>
+							<c:otherwise>
+								<td>NÃO</td>
+							</c:otherwise>
+						</c:choose>
+
+						<td>${apoio.horarioFuncionamento}</td>
+						<c:choose>
+							<c:when test="${apoio.fazColeta == true}">
+								<td>SIM</td>
+							</c:when>
+							<c:otherwise>
+								<td>NÃO</td>
+							</c:otherwise>
+						</c:choose>
+
+						<c:choose>
+							<c:when test="${apoio.fazTriagem == true}">
+								<td>SIM</td>
+							</c:when>
+							<c:otherwise>
+								<td>NÃO</td>
+							</c:otherwise>
+						</c:choose>
+
+						<c:choose>
+							<c:when test="${apoio.precisaVoluntarios == true}">
+								<td>SIM</td>
+							</c:when>
+							<c:otherwise>
+								<td>NÃO</td>
+							</c:otherwise>
+						</c:choose>
+						<td><a href="alterarpontoapoio?id=${apoio.id}">Alterar</a> <a
+							href="removerPontoApoio?id=${apoio.id}">Remover</a></td>
+						<a href="atribuirtipodoacao?id=${apoio.id}">Atribuir Tipo
+							Doação</a>
+						</td>
+
+					</tr>
+				</c:forEach>
+
+			</table>
+		</div>
 </body>
 </html>

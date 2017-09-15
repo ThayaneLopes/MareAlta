@@ -21,12 +21,14 @@
 <title>Listar Tipo Doação</title>
 </head>
 <body class="fundo">
-<c:import url="../logout/logout.jsp"/>
+<c:import url="/view/logout/logout.jsp"/>
 	<div class="buscas">
-	<strong>Lista de Tipos Doação</strong>
+	<hr>
+	<h3>Lista Tipos de Doação</h3>
+	<hr>
 	<div class="container">
 	<form action="atribuiapontoapoio" method="post">
-		<table class="table table-striped table-bordered opcoes">
+		<table border="1"class="border">
 			<tr>
 				<th>Tipos de Doações</th>
 			</tr>

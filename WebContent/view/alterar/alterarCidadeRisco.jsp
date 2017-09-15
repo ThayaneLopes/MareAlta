@@ -21,8 +21,9 @@
 <link rel="stylesheet" type="text/css" href="view/css/login-css.css">
 <title>Alterar Cidade de Risco</title>
 </head>
-<body style="margin-left: 1%;">
+<body style="margin-left: 1%;" class="fundo">
 <c:import url="../logout/logout.jsp"/>
+<br><br><br><br><br>
 	<hr>
 	<h3>Alterar Cidades de Risco</h3>
 	<hr>

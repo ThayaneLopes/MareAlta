@@ -35,10 +35,10 @@ public class VoluntarioController {
 			System.out.println(perfil.getvalor());
 			voluntario.setPerfil(perfil);
 			dao.inserirVoluntario(voluntario);
-			model.addAttribute("msg", "Volunt√°rio incluido com Sucesso!");
+			model.addAttribute("msg", "Volunt·rio incluido com Sucesso!");
 		} catch (ElementoJaExistenteException e) {
 
-			model.addAttribute("mensagem", "Voluntario j√° existente");
+			model.addAttribute("mensagem", "Voluntario j· existente");
 		}
 		return "forward:cadastroVoluntario";
 	}

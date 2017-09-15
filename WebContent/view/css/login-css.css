@@ -52,6 +52,7 @@ form input[type="text"], form input[type="password"] {
   display: block;
   font-size: 18px;
   border-radius: 5px;
+  border-color: #b3fff0;
 /*   border: none; */
   -webkit-transition: 0.3s linear;
   -moz-transition: 0.3s linear;

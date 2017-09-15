@@ -17,14 +17,14 @@
 <title>Listar de cidades</title>
 </head>
 <body class="fundo">
-<c:import url="../logout/logout.jsp"/>
+<c:import url="/view/logout/logout.jsp"/>
 	<div class="buscas">
 	<hr>
 	<h3>Listar Cidades em Risco</h3>
 	<hr>
 	<div style="text-align: center; color: red;"> ${mensagem} </div>
 	<div class="container">
-		<table class="table table-striped table-bordered">
+		<table border="1"class="border">
 			<tr>
 				<td>Nome</td>
 				<td>Região</td>
